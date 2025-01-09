@@ -1,34 +1,36 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-  }
-
-@font-face {
-    font-family: 'NewpitchScript';
-    src: url(font/NewpitchScript_PERSONAL_USE_ONLY.otf);
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
-html{
-    background-image: url("bg.jpg");
-    background-repeat: no-repeat;
-    background-size: auto;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+@font-face {
+  font-family: 'NewpitchScript';
+  src: url(font/NewpitchScript_PERSONAL_USE_ONLY.otf);
+}
+
+html {
+  background-image: url("bg.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #bg2 {
   background-image: url("bg2.jpg");
-    background-repeat: no-repeat;
-    background-size: auto;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background-repeat: no-repeat;
+  background-size: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
 h1 {
   font-family: 'NewpitchScript';
   color: purple;
@@ -36,50 +38,53 @@ h1 {
   text-align: center;
   margin-top: 100px;
   -webkit-text-stroke: 1px aliceblue;
-  animation: glow 1.5s ease-in-out infinite alternate; 
+  animation: glow 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
   0% {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px purple, 0 0 30px pink;
   }
+
   100% {
     text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px purple, 0 0 50px pink;
   }
 }
 
 .játékgomb {
-    font-family: 'NewpitchScript';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 15px 30px;
-    font-size: 20px;
-    color: white;
-    background-color: purple;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    animation: pulse 1.5s infinite;
+  font-family: 'NewpitchScript';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 30px;
+  font-size: 20px;
+  color: white;
+  background-color: purple;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
 }
 
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-      box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 15px purple;
-    }
-    50% {
-      transform: scale(1.1);
-      box-shadow: 0 0 10px rgba(255, 255, 1, 0.9), 0 0 25px purple;
-    }
-    100% {
-      transform: scale(1);
-      box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 15px purple;
-    }
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 15px purple;
   }
-  
-  button:hover {
-    background-color: pink;
-    box-shadow: 0 0 20px purple;
+
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 255, 1, 0.9), 0 0 25px purple;
   }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 15px purple;
+  }
+}
+
+button:hover {
+  background-color: pink;
+  box-shadow: 0 0 20px purple;
+}
