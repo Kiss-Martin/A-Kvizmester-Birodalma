@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'NewpitchScript';
+    src: url(font/NewpitchScript_PERSONAL_USE_ONLY.otf);
+}
+
+html{
+    background-image: url("bg.jpg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+h1{
+    font-family: 'NewpitchScript';
+    color: purple;
+    font-size: 100px;
+    text-align: center;
+    margin-top: 100px;
+    -webkit-text-stroke: 1px aliceblue;
+}
