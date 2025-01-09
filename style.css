@@ -19,13 +19,24 @@ html{
     -o-background-size: cover;
     background-size: cover;
 }
-h1{
-    font-family: 'NewpitchScript';
-    color: purple;
-    font-size: 100px;
-    text-align: center;
-    margin-top: 100px;
-    -webkit-text-stroke: 1px aliceblue;
+h1 {
+  font-family: 'NewpitchScript';
+  color: purple;
+  font-size: 100px;
+  text-align: center;
+  margin-top: 100px;
+  -webkit-text-stroke: 1px aliceblue;
+  animation: glow 1.5s ease-in-out infinite alternate; /* Fény hatás */
+}
+
+/* Fénycsóva animáció */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px purple, 0 0 30px pink;
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px purple, 0 0 50px pink;
+  }
 }
 
 .játékgomb {
