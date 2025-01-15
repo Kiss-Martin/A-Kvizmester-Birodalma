@@ -105,14 +105,34 @@ h1 {
   border-radius: 10px;
   display: flex;
   justify-content: center; 
-  align-items: center;   
+  align-items: center; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.kártyák div:hover {
+  transform: scale(1.1); /* Kártya nagyítása hover állapotban */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Árnyék hover állapotban */
+}
+
+.kártyák div {
+  filter: grayscale(80%) brightness(70%); /* Halványabb és szürkébb képek alapból */
+}
+
+.kártyák div:hover {
+  filter: grayscale(0%) brightness(100%); /* Kép visszaállítása eredeti színére hover állapotban */
+}
+
 
 .kártyák {
   display: flex;
   justify-content: center; 
   align-items: center;
   gap: 150px;
+}
+
+#játék1 {
+  background-image: url("MSJA-Quiz.jpg");
+  background-size: contain;
 }
 
 #játék2 {
