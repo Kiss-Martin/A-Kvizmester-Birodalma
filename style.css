@@ -75,7 +75,7 @@ h1 {
   }
 }
 
-button:hover {
+.játékgomb:hover {
   background-color: pink;
   box-shadow: 0 0 20px purple;
 }
@@ -83,77 +83,39 @@ button:hover {
 
 
 
-#menu-page {
+#menubody {
   background-image: url("bg2.jpg");
   background-repeat: no-repeat;
-  background-size: auto;
-  -webkit-background-size: cover;
+  /* background-size: auto; */
+  /* -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
+  -o-background-size: cover; */
   background-size: cover;
-
-  color: white;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-
+  height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center; 
+  justify-content: center; 
+  align-items: center;
 }
 
-#menu-page .menu-container {
-  width: 90%; 
-  max-width: 900px; 
-  background-color: rgba(26, 26, 46, 0.8); 
-  border-radius: 12px;
-  padding: 30px; 
-  box-shadow: 0 6px 15px rgba(128, 0, 128, 0.5);
-}
-
-#menu-page .menu-section {
-  text-align: center;
-  margin-bottom: 30px; 
-
-}
-
-#menu-page .menu-section h2 {
-  font-family: 'NewpitchScript';
-  margin-bottom: 20px; 
-  font-size: 36px; 
-  text-transform: uppercase;
-  color: #d8b9ff; 
-  text-shadow: 0 0 15px purple, 0 0 30px #ff00ff;
-}
-
-#menu-page .menu-section hr {
-  border: none;
-  border-top: 3px solid #d8b9ff; 
-  margin: 30px 0 15px; 
-  box-shadow: 0 0 15px #d8b9ff, 0 0 30px purple;
-}
-
-#menu-page .button-row {
+.kártyák div {
+  
+  width: 300px;
+  height: 600px;
+  border: black 1px solid;
+  border-radius: 10px;
   display: flex;
-  justify-content: space-around;
-  margin-top: 15px; 
+  justify-content: center; 
+  align-items: center;   
 }
 
-#menu-page button {
-  padding: 15px 30px; 
-  font-size: 24px; 
-  color: #fff;
-  background-color: rgba(128, 0, 128, 0.4); 
-  border: 3px solid #d8b9ff; 
-  border-radius: 12px; 
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-shadow: 0 0 10px #ff00ff, 0 0 20px #d8b9ff;
+.kártyák {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 150px;
 }
 
-#menu-page button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.2);
-  box-shadow: 0 0 40px #d8b9ff, 0 0 60px #ff00ff;
+#játék2 {
+  background-image: url("newpitch-script_poster01.png");
+  background-size: contain;
 }
