@@ -1,0 +1,9 @@
+[
+    {
+      "question": "What is the capital of France?",
+      "correct_answer": "Paris",
+      "incorrect_answers": ["London", "Berlin", "Rome"],
+      "category": "Geography",
+      "difficulty": "easy"
+    }
+  ]
