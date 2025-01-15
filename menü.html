@@ -12,14 +12,26 @@
 
 <body id="menubody">
 
-   
+
     <div class="kártyák d-flex justify-content-center align-items-center">
         <div id="játék1"></div>
         <div id="játék2"></div>
         <div id="játék3"></div>
     </div>
 
+    <script>
+        document.getElementById('játék1').addEventListener('click', function () {
+            window.location.href = '';
+        });
 
+        document.getElementById('játék2').addEventListener('click', function () {
+            window.location.href = 'hangman.html';
+        });
+
+        document.getElementById('játék3').addEventListener('click', function () {
+            window.location.href = '';
+        });
+    </script>
 
 
 </body>
