@@ -116,6 +116,11 @@ h1 {
 }
 
 #játék2 {
-  background-image: url("newpitch-script_poster01.png");
+  background-image: url("akasztás.png");
+  background-size: contain;
+}
+
+#játék3 {
+  background-image: url("kérdőjel.jpg");
   background-size: contain;
 }
