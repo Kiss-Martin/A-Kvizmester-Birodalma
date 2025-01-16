@@ -11,7 +11,7 @@ html {
   src: url(font/NewpitchScript_PERSONAL_USE_ONLY.otf);
 }
 
-html {
+#indexbody {
   background-image: url("bg.jpg");
   background-repeat: no-repeat;
   background-size: auto;
@@ -110,16 +110,16 @@ h1 {
 }
 
 .kártyák div:hover {
-  transform: scale(1.1); /* Kártya nagyítása hover állapotban */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Árnyék hover állapotban */
+  transform: scale(1.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 .kártyák div {
-  filter: grayscale(80%) brightness(70%); /* Halványabb és szürkébb képek alapból */
+  filter: grayscale(80%) brightness(70%); 
 }
 
 .kártyák div:hover {
-  filter: grayscale(0%) brightness(100%); /* Kép visszaállítása eredeti színére hover állapotban */
+  filter: grayscale(0%) brightness(100%); 
 }
 
 
