@@ -12,7 +12,7 @@ html {
 }
 
 #indexbody {
-  background-image: url("bg.jpg");
+  background-image: url("img/bg.jpg");
   background-repeat: no-repeat;
   background-size: auto;
   /* -webkit-background-size: cover;
@@ -84,7 +84,7 @@ h1 {
 
 
 #menubody {
-  background-image: url("bg2.jpg");
+  background-image: url("img/bg2.jpg");
   background-repeat: no-repeat;
   /* background-size: auto; */
   /* -webkit-background-size: cover;
@@ -131,17 +131,17 @@ h1 {
 }
 
 #játék1 {
-  background-image: url("MSJA-Quiz.jpg");
+  background-image: url("img/MSJA-Quiz.jpg");
   background-size: contain;
 }
 
 #játék2 {
-  background-image: url("hangman.jpg");
+  background-image: url("img/hangman.jpg");
   background-size: contain;
 }
 
 #játék3 {
-  background-image: url("kérdőjel.jpg");
+  background-image: url("img/kérdőjel.jpg");
   background-size: contain;
 }
 
