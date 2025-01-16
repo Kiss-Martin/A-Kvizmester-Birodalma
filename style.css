@@ -89,6 +89,8 @@ h1 {
 
 
 
+
+
 #menubody {
   background-image: url("img/bg2.jpg");
   background-repeat: no-repeat;
@@ -152,7 +154,9 @@ h1 {
 }
 
 #hangmanbody {
-  background-color: purple;
+  background: linear-gradient(to right, purple, orange);
 }
+
+
 
 
