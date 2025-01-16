@@ -15,9 +15,9 @@ html {
   background-image: url("bg.jpg");
   background-repeat: no-repeat;
   background-size: auto;
-  -webkit-background-size: cover;
+  /* -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
+  -o-background-size: cover; */
   background-size: cover;
 }
 
