@@ -24,9 +24,7 @@ html {
 h1 {
   font-family: 'NewpitchScript';
   color: purple;
-  font-size: 100px;
   text-align: center;
-  margin-top: 100px;
   -webkit-text-stroke: 1px aliceblue;
   animation: glow 1.5s ease-in-out infinite alternate;
 }
@@ -48,43 +46,52 @@ h1 {
   justify-content: center;
 }
 
+.container-sm{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.card{
+  background-color: #ffffff00;
+}
+
 .játékgomb {
-  font-family: 'NewpitchScript';
-  /* position: absolute;
-  top: 50%;
-  left: 50%; */
-  transform: translate(-50%, -50%);
+  font-family: 'comic sans ms';
+  margin-top: 6rem;
   padding: 15px 30px;
   font-size: 20px;
   color: white;
-  background-color: purple;
   border: none;
+  background-color: #ffffff00;
   border-radius: 5px;
   cursor: pointer;
-  animation: pulse 1.5s infinite;
+  animation: pulse 5s infinite;
 }
 
 @keyframes pulse {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 15px purple;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 5px purple;
   }
 
   50% {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(255, 255, 1, 0.9), 0 0 25px purple;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 255, 1, 0.9), 0 0 5px purple;
   }
 
   100% {
     transform: scale(1);
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 15px purple;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 5px purple;
   }
 }
 
-.játékgomb:hover {
+/* .játékgomb:hover {
   background-color: pink;
   box-shadow: 0 0 20px purple;
-}
+} */
 
 
 

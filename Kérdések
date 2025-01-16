@@ -1,9 +1,107 @@
 [
-    {
-      "question": "What is the capital of France?",
-      "correct_answer": "Paris",
-      "incorrect_answers": ["London", "Berlin", "Rome"],
-      "category": "Geography",
-      "difficulty": "easy"
-    }
-  ]
+  {
+      "question": "Melyik magyar városban található a Halászbástya?",
+      "correct_answer": "Budapest",
+      "incorrect_answers": ["Szeged", "Debrecen", "Pécs"],
+      "category": "Földrajz",
+      "difficulty": "közepes"
+  },
+  {
+      "question": "Ki írta a 'Toldi' trilógiát?",
+      "correct_answer": "Arany János",
+      "incorrect_answers": ["Petőfi Sándor", "Mikszáth Kálmán", "Jókai Mór"],
+      "category": "Irodalom",
+      "difficulty": "közepes"
+  },
+  {
+      "question": "Melyik évben volt a nándorfehérvári diadal?",
+      "correct_answer": "1456",
+      "incorrect_answers": ["1526", "1703", "1849"],
+      "category": "Történelem",
+      "difficulty": "nehéz"
+  },
+  {
+      "question": "Melyik kémiai elem vegyjele az 'Hg'?",
+      "correct_answer": "Higany",
+      "incorrect_answers": ["Hélium", "Hafnium", "Holmium"],
+      "category": "Tudomány",
+      "difficulty": "közepes"
+  },
+  {
+      "question": "Melyik sportágban ért el világhírt Puskás Ferenc?",
+      "correct_answer": "Labdarúgás",
+      "incorrect_answers": ["Vízilabda", "Kézilabda", "Kajak-kenu"],
+      "category": "Sport",
+      "difficulty": "könnyű"
+  },
+  {
+      "question": "Ki volt az első ember a Holdon?",
+      "correct_answer": "Neil Armstrong",
+      "incorrect_answers": ["Buzz Aldrin", "Yuri Gagarin", "Alan Shepard"],
+      "category": "Történelem",
+      "difficulty": "könnyű"
+  },
+  {
+      "question": "Melyik évben történt az első atombomba ledobása?",
+      "correct_answer": "1945",
+      "incorrect_answers": ["1939", "1951", "1962"],
+      "category": "Történelem",
+      "difficulty": "nehéz"
+  },
+  {
+      "question": "Melyik országban található Machu Picchu?",
+      "correct_answer": "Peru",
+      "incorrect_answers": ["Mexikó", "Brazília", "Chile"],
+      "category": "Földrajz",
+      "difficulty": "közepes"
+  },
+  {
+      "question": "Melyik magyar tudós fejlesztette ki a számítógép egyik alapelvét?",
+      "correct_answer": "Neumann János",
+      "incorrect_answers": ["Jedlik Ányos", "Bolyai János", "Eötvös Loránd"],
+      "category": "Tudomány",
+      "difficulty": "nehéz"
+  },
+  {
+      "question": "Ki írta a 'Pál utcai fiúk' című regényt?",
+      "correct_answer": "Molnár Ferenc",
+      "incorrect_answers": ["Mikszáth Kálmán", "Jókai Mór", "Gárdonyi Géza"],
+      "category": "Irodalom",
+      "difficulty": "közepes"
+  },
+  {
+      "question": "Melyik folyó szeli ketté Budapestet?",
+      "correct_answer": "Duna",
+      "incorrect_answers": ["Tisza", "Dráva", "Rába"],
+      "category": "Földrajz",
+      "difficulty": "könnyű"
+  },
+  {
+      "question": "Melyik évben alapították az első modern olimpiai játékokat?",
+      "correct_answer": "1896",
+      "incorrect_answers": ["1900", "1888", "1924"],
+      "category": "Sport",
+      "difficulty": "közepes"
+  },
+  {
+      "question": "Melyik magyar találmány segíti a vakok olvasását?",
+      "correct_answer": "Braille-írás",
+      "incorrect_answers": ["Golyóstoll", "Dinamó", "Rubik-kocka"],
+      "category": "Tudomány",
+      "difficulty": "közepes"
+  },
+  {
+      "question": "Melyik csillag a Naprendszer központi csillaga?",
+      "correct_answer": "Nap",
+      "incorrect_answers": ["Sirius", "Polaris", "Betelgeuse"],
+      "category": "Tudomány",
+      "difficulty": "könnyű"
+  },
+  {
+      "question": "Ki volt az első magyar űrhajós?",
+      "correct_answer": "Farkas Bertalan",
+      "incorrect_answers": ["Charles Simonyi", "Magyari Béla", "Siklósi András"],
+      "category": "Történelem",
+      "difficulty": "nehéz"
+  }
+]
