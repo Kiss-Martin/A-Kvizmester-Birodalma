@@ -23,9 +23,9 @@ html {
 
 h1 {
   font-family: 'NewpitchScript';
-  color: purple;
   text-align: center;
-  -webkit-text-stroke: 1px aliceblue;
+  margin-top: 10%;
+  -webkit-text-stroke: 1px rgb(252, 240, 255);
   animation: glow 1.5s ease-in-out infinite alternate;
 }
 
