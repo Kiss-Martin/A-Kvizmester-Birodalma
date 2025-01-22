@@ -1,5 +1,4 @@
-body,
-html {
+body html {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -162,7 +161,10 @@ h1 {
   background-size: contain;
 }
 
-#hangmanbody {
+
+
+
+#akasztófabody {
   background: linear-gradient(to right, purple, orange);
 }
 
