@@ -23,9 +23,11 @@ html {
 
 h1 {
   font-family: 'NewpitchScript';
+  color: purple;
+  font-size: 100px;
   text-align: center;
-  margin-top: 10%;
-  -webkit-text-stroke: 1px rgb(252, 240, 255);
+  margin-top: 100px;
+  -webkit-text-stroke: 1px aliceblue;
   animation: glow 1.5s ease-in-out infinite alternate;
 }
 
@@ -46,7 +48,7 @@ h1 {
   justify-content: center;
 }
 
-.container-sm{
+/* .container-sm{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,19 +58,19 @@ h1 {
 
 .card{
   background-color: #ffffff00;
-}
+} */
 
 .játékgomb {
-  font-family: 'comic sans ms';
-  margin-top: 6rem;
+  font-family: 'NewpitchScript';
+  transform: translate(-50%, -50%);
   padding: 15px 30px;
   font-size: 20px;
   color: white;
+  background-color: purple;
   border: none;
-  background-color: #ffffff00;
   border-radius: 5px;
   cursor: pointer;
-  animation: pulse 5s infinite;
+  animation: pulse 1.5s infinite;
 }
 
 @keyframes pulse {
