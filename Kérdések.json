@@ -1,4 +1,5 @@
-[
+{
+    "kérdések": [
   {
       "question": "Melyik magyar városban található a Halászbástya?",
       "correct_answer": "Budapest",
@@ -104,4 +105,17 @@
       "category": "Történelem",
       "difficulty": "nehéz"
   }
-]
+],
+
+
+"szavak": [
+      { "word": "typescript", "category": "programming" },
+      { "word": "json", "category": "data" },
+      { "word": "hangman", "category": "game" }
+    ]
+}
+
+
+
+
+
