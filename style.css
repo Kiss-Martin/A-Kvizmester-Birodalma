@@ -74,6 +74,8 @@ h1 {
   padding: 15px 30px;
   border: none;
   cursor: help;
+  transform: scale(100%);
+  transition: 1s;
 }
 
 @keyframes pulse {
@@ -94,8 +96,8 @@ h1 {
 }
 
 .játékgomb:hover {
-  background-color: pink;
-  box-shadow: 0 0 20px purple;
+  transform: scale(110%);
+  transition: 1s;
 }
 
 
