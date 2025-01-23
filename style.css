@@ -100,9 +100,24 @@ h1 {
   transition: 1s;
 }
 
+.card-title{
+  font-family: 'NewpitchScript';
+  font-size: 24px;
+  color: rgb(196, 12, 89); 
+  -webkit-text-stroke: 0.5px aliceblue;}
 
+.card-footer{
+  font-family: 'NewpitchScript';
+  font-size: 24px;
+  color: purple;
+  text-align: center;
+}
 
-
+.text-purple {
+  color: purple;
+  font-weight: bold;
+  font-style: italic;
+}
 
 
 #menubody {
@@ -148,6 +163,7 @@ h1 {
   gap: 150px;
 }
 
+
 #játék1 {
   background-image: url("img/MSJA-Quiz.jpg");
   background-size: contain;
@@ -167,5 +183,79 @@ h1 {
 
 
 
+#akasztófabody {
+  background-image: url("img/bgakasztófa.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  height: 100vh;
+  margin: 0;
+}
+
+.akasztófakártyák {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center; 
+  align-items: center;
+  gap: 50px; 
+  max-width: 800px; 
+}
+
+.akasztófakártyák div {
+  width: 300px; 
+  height: 150px; 
+  border: black 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.akasztófakártyák div:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
 
 
+@media (max-width: 768px) {
+  .akasztófakártyák {
+    flex-direction: column; 
+    gap: 15px; 
+  }
+
+  .akasztófakártyák div {
+    width: 100%; 
+    max-width: 300px; 
+    height: 80px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .akasztófakártyák div {
+    width: 90%; 
+    font-size: 14px; 
+    height: 70px; 
+  }
+}
+
+h5 {
+  margin-top: 0;
+  text-align: center;
+}
+
+
+.visszagomb {
+  
+}
+
+.text-pink {
+    color: pink;
+}
