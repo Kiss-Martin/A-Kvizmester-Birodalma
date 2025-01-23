@@ -16,4 +16,16 @@
 - Leggyakoribb Válasz Játékmód
 - Gyors Játékmenet
 ---
+
 ## Technikai Részletek
+
+- [x] Reszponzivitás
+- [x] Json szerver használata
+- [x] Egységes design
+
+### A Weboldal Készítői
+```javascript
+const Alkotók = [];
+fruits.push("Kapocsi Hunor", "Kiss Martin", "Szemethy Levente");
+console.log(Alkotók);
+```
