@@ -100,9 +100,24 @@ h1 {
   transition: 1s;
 }
 
+.card-title{
+  font-family: 'NewpitchScript';
+  font-size: 24px;
+  color: rgb(196, 12, 89); 
+  -webkit-text-stroke: 0.5px aliceblue;}
 
+.card-footer{
+  font-family: 'NewpitchScript';
+  font-size: 24px;
+  color: purple;
+  text-align: center;
+}
 
-
+.text-purple {
+  color: purple;
+  font-weight: bold;
+  font-style: italic;
+}
 
 
 #menubody {
@@ -147,6 +162,7 @@ h1 {
   align-items: center;
   gap: 150px;
 }
+
 
 #játék1 {
   background-image: url("img/MSJA-Quiz.jpg");
@@ -240,5 +256,6 @@ h5 {
   
 }
 
-
-
+.text-pink {
+    color: pink;
+}
