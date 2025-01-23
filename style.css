@@ -74,6 +74,8 @@ h1 {
   padding: 15px 30px;
   border: none;
   cursor: help;
+  transform: scale(100%);
+  transition: 1s;
 }
 
 @keyframes pulse {
@@ -94,9 +96,30 @@ h1 {
 }
 
 .játékgomb:hover {
-  background-color: pink;
-  box-shadow: 0 0 20px purple;
+  transform: scale(110%);
+  transition: 1s;
 }
+
+.card-title{
+  font-family: 'NewpitchScript';
+  font-size: 24px;
+  color: rgb(196, 12, 89); 
+  -webkit-text-stroke: 0.5px aliceblue;}
+
+.card-footer{
+  font-family: 'NewpitchScript';
+  font-size: 24px;
+  color: purple;
+  text-align: center;
+}
+
+.text-purple {
+  color: purple;
+  font-weight: bold;
+  font-style: italic;
+}
+
+
 
 
 
@@ -113,15 +136,18 @@ h1 {
   align-items: center;
 }
 
-.kártyák div {
-  
+.kártyák {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 150px;
+}
+
+.kártyák div {  
   width: 300px;
   height: 600px;
   border: black 1px solid;
   border-radius: 10px;
-  /* display: flex;
-  justify-content: center; 
-  align-items: center;  */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -139,12 +165,8 @@ h1 {
 }
 
 
-.kártyák {
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  gap: 150px;
-}
+
+
 
 #játék1 {
   background-image: url("img/MSJA-Quiz.jpg");
@@ -165,13 +187,12 @@ h1 {
 
 
 
+
+
 #akasztófabody {
   background-image: url("img/bgakasztófa.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   margin: 0;
 }
@@ -234,9 +255,7 @@ h5 {
 }
 
 
-.visszagomb {
-  
+
+.text-pink {
+    color: pink;
 }
-
-
-
