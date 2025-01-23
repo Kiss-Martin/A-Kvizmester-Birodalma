@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .flex-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 500px;
+            max-width: 750px;
+            flex-wrap: wrap;
+            margin: auto;
+        }
+
+        .flex-container>div {
+            background-color: #f1f1f1;
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+
+        body {
+            background-image: url("img/bgakasztófa.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h1 {
+            text-align: center;
+        }
+        
+        .visszagomb {
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Válassz egy témát!</h1>
+
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+
+    <a href="menü.html">
+        <button class="visszagomb">Vissza</button>
+    </a>
+
+</body>
+
+</html>
