@@ -20,3 +20,12 @@ function fetchWords() {
         }
     });
 }
+document.addEventListener("DOMContentLoaded", () => {
+    const megjelenitesDiv = document.getElementById("megjelenítés");
+    const kartyak = document.querySelectorAll(".flex-container div");
+    kartyak.forEach(kartya => {
+        kartya.addEventListener("click", () => {
+            megjelenitesDiv.style.display = "none";
+        });
+    });
+});
