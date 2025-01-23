@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
         .flex-container {
             display: flex;
             align-items: center;
@@ -26,23 +25,30 @@
             display: flex;
             justify-content: center;
             align-items: center;
-           
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+        }
+
+        .flex-container div:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         body {
             background-image: url("img/bgakasztófa.jpg");
             background-repeat: no-repeat;
             background-size: cover;
+            height: 100vh;
         }
 
         h1 {
             text-align: center;
         }
-        
+
         .visszagomb {
             text-align: center;
         }
-
     </style>
 </head>
 
