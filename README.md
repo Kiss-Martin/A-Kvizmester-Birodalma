@@ -25,7 +25,5 @@
 
 ### A Weboldal Készítői
 ```javascript
-const Alkotók = [];
-Alkotók.push("Kapocsi Hunor", "Kiss Martin", "Szemethy Levente");
-console.log(Alkotók);
+const Alkotók = ["Kapocsi Hunor", "Kiss Martin", "Szemethy Levente"];
 ```
