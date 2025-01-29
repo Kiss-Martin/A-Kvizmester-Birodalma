@@ -19,8 +19,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const kartyak = document.querySelectorAll(".flex-container div");
 
     kartyak.forEach(kartya => {
-        kartya.addEventListener("click", () => {
+        kartya.addEventListener("click", async () => {
             megjelenitesDiv.style.display = "none";
+
+
+            const TemaId = kartya.id
+            const kérdések = await fetchWords();
+            const kategoriak = kérdések.filter(kérdés => kérdés.category === TemaId);
+
+            
 
 
 
@@ -59,31 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// function letrehozEleteroCsik(): HTMLDivElement {
-//     const healthBarContainer = document.createElement("div");
-//     healthBarContainer.id = "health-bar-container";
-//     healthBarContainer.style.width = "95%";
-//     healthBarContainer.style.height = "20px";
-//     healthBarContainer.style.margin = "0 auto 10px";
-//     healthBarContainer.style.backgroundColor = "#ccc";
-//     healthBarContainer.style.borderRadius = "10px";
-//     healthBarContainer.style.overflow = "hidden";
-
-//     const healthBarInner = document.createElement("div");
-//     healthBarInner.id = "health-bar-inner";
-//     healthBarInner.style.width = "100%"; // Kezdetben 100% majd porbára megy le
-//     healthBarInner.style.height = "100%";
-//     healthBarInner.style.backgroundColor = "#FF4500";
-//     healthBarInner.style.transition = "width 0.3s ease-in-out";
-//     healthBarContainer.appendChild(healthBarInner);
-
-//     return healthBarContainer;
-// }
-
-
-
-
-function megjelenítBillentyuzetet() {
+async function megjelenítBillentyuzetet() {
     const abc = "aábcdeéfghiíjklmnoóöőpqrstuúüűvwxyz".split("");
     const keyboardContainer = document.createElement("div");
 
@@ -103,9 +86,6 @@ function megjelenítBillentyuzetet() {
     keyboardContainer.style.maxHeight = "30vh"; // max magasság majd ez állítjuk hgy megjelenejn az asló vonal  
     keyboardContainer.style.overflowY = "auto"; 
 
-    // const healthBar = letrehozEleteroCsik();
-    // keyboardContainer.appendChild(healthBar);
-
     abc.forEach(betu => {
         const betuCard = document.createElement("div");
         betuCard.textContent = betu;
@@ -124,4 +104,9 @@ function megjelenítBillentyuzetet() {
     });
 
     document.body.appendChild(keyboardContainer);
+
+    
+
+    
+    
 }
