@@ -10,7 +10,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 function fetchWords() {
     return __awaiter(this, void 0, void 0, function* () {
+<<<<<<< HEAD
+        const response = yield fetch("http://localhost:3000/books");
+=======
         const response = yield fetch("http://localhost:3000/szavak");
+>>>>>>> 697fea51de95c21baada104df152dafff9ca5357
         if (!response.ok) {
             throw new Error("Hiba van");
         }
@@ -20,6 +24,8 @@ function fetchWords() {
         }
     });
 }
+<<<<<<< HEAD
+=======
 document.addEventListener("DOMContentLoaded", () => {
     const megjelenitesDiv = document.getElementById("megjelenítés");
     const kartyak = document.querySelectorAll(".flex-container div");
@@ -113,3 +119,4 @@ function megjelenítBillentyuzetet() {
     });
     document.body.appendChild(keyboardContainer);
 }
+>>>>>>> 697fea51de95c21baada104df152dafff9ca5357
