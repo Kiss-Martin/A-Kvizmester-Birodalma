@@ -3,16 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz-Time</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .answer-btn {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">Quiz Játék</h1>
-        <div id="quiz-container" class="card p-4">
-          <p class="text-center">Kérdések betöltése...</p>
+  <div id="error-container" class="alert alert-danger d-none">
+    Failed to load questions. Please check if the server is running.
+</div>
+    <div class="container">
+        <div id="quiz-container" class="mx-auto p-4">
+            <div class="text-center">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
         </div>
-      </div>
-    <script type="module" src="public/quiz.js"></script>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="quiz.js"></script>
 </body>
 </html>

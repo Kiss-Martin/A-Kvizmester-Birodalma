@@ -23,6 +23,18 @@ html {
   min-height: 100vh;
   background-color: #0e0101;
 }
+#quizbody {
+  background-image: url("img/bgquizgame.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  /* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; */
+  background-size: cover;
+  overflow-y: auto;
+  min-height: 100vh;
+  background-color: #0e0101;
+}
 
 .title {
   font-family: 'NewpitchScript';
