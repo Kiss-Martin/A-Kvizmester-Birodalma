@@ -35,6 +35,7 @@ async function valaszViszaly() {
         console.error("Hiba történt a játék során:", error);
     }
 }
+
 document.addEventListener("DOMContentLoaded", async () => {
     const questionContainer = document.getElementById('question-text');
     const answerInput = document.getElementById('answer-input');
@@ -42,21 +43,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     const feedback = document.getElementById('feedback');
     const endMessage = document.getElementById('end-message');
     const gameContainer = document.getElementById('game-container');
-
     const questions = await fetchQuestions();
     let currentQuestionIndex = 0;
-
     function showQuestion() {
         const question = questions[currentQuestionIndex];
         questionContainer!.textContent = question.kerdes;
         (answerInput as HTMLInputElement).value = '';
         feedback!.textContent = '';
     }
-
     function checkAnswer() {
         const userAnswer = (answerInput as HTMLInputElement).value.trim().toLowerCase();
         const correctAnswers = questions[currentQuestionIndex].valaszok.map(v => v.toLowerCase());
-
         if (correctAnswers.includes(userAnswer)) {
             feedback!.textContent = "Helyes válasz!";
             feedback!.className = "text-success";
@@ -64,9 +61,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             feedback!.textContent = `Helytelen! A helyes válaszok: ${questions[currentQuestionIndex].valaszok.join(', ')}`;
             feedback!.className = "text-danger";
         }
-
         currentQuestionIndex++;
-
         if (currentQuestionIndex < questions.length) {
             setTimeout(showQuestion, 2000);
         } else {
