@@ -1,0 +1,6 @@
+{
+    "revolver": {
+      "bullets": [0, 0, 0, 0, 0, 0],
+      "max_bullets": 6
+    }
+  }
