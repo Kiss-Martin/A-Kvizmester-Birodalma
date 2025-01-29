@@ -17,17 +17,25 @@
             <img class="játékgomb" src="img/portal.gif" alt="">
         </a>
     </div>
+    
+</div>
 
-    <div class="position-absolute start-0 top-50 translate-middle-y ms-4 d-flex flex-column gap-4 rounded" style="background-color: black;">
-        <div class="card bg-transparent" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title text-pink">Üdvözlünk!</h5>
-                <p class="card-text text-purple">A portálon belépve kiválaszthatod a 3 játék egyikét!</p>
-                
+<div class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="row row-cols-1 row-cols-lg-3 g-4 card-group mx-auto justify-content-center">
+        <div class="col">
+            <div class="card h-100 bg-black" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-pink">Üdvözlünk!</h5>
+                    <p class="card-text text-purple">A portálon belépve kiválaszthatod a 3 játék egyikét!</p>
+                    <p class="card-text text-purple">A Játékokkártyák a következő sorrendben vannak: Quiz-Time, Akasztófa, Válasz-Viszály</p>
+                    <p class="card-text text-purple">Jó szórakozást kívánunk!</p>
+                    
+                </div>
             </div>
         </div>
-    
-        <div class="card bg-transparent" style="width: 18rem;">
+        
+        <div class="col">
+        <div class="card h-100 bg-black" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title text-pink">Rekordjaid</h5>
                 <p class="card-text text-purple">Itt találhatod a játékokban elért eredményeid.</p>
@@ -38,23 +46,27 @@
                   </ul>
             </div>
         </div>
-    
-        <div class="card bg-transparent" style="width: 18rem;">
+        </div>
+        <div class="col">
+        <div class="card h-100 bg-black" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="text-pink card-title">A Weboldal készítői:</h5>
-                <div class="card-title">
+                <br>
+                <div class="keszito">
                     Kapocsi Hunor
                   </div>
-                  <div class="card-title text-pink">
+                  <div class="keszito">
                     Kiss Martin
                   </div>
-                  <div class="card-title">
+                  <div class="keszito">
                     Szemethy Levente
                   </div>
             </div>
         </div>
+        </div>
+        
     </div>
-    
+</div>
    
 
     <audio src="Gameshow-[AudioTrimmer.com].mp3" autoplay loop></audio>
@@ -65,6 +77,12 @@
     <script>
         function startInfiniteConfetti() {
             setInterval(() => {
+                confetti({
+                    particleCount: 30,
+                    angle: 60,
+                    spread: 100,
+                    origin: { x: 0 }, 
+                });
                 confetti({
                     particleCount: 30,
                     angle: 120,
