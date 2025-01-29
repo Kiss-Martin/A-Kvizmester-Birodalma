@@ -120,25 +120,37 @@ h1 {
 }
 
 
+
+
+
+
+
+
 #menubody {
   background-image: url("img/bg2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  /* height: 100%; */
+  height: 100vh;
+}
+
+.kártyák {
   display: flex;
   justify-content: center; 
   align-items: center;
+  margin: auto;
+  flex-wrap: wrap;
+  height: 500px;
+  max-width: 1000px;
+  cursor: pointer;
+
 }
 
-.kártyák div {
-  
-  width: 300px;
-  height: 600px;
+.kártyák div { 
+  margin: 10px; 
+  width: 200px;
+  height: 400px;
   border: black 1px solid;
   border-radius: 10px;
-  /* display: flex;
-  justify-content: center; 
-  align-items: center;  */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -156,12 +168,7 @@ h1 {
 }
 
 
-.kártyák {
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  gap: 150px;
-}
+
 
 
 #játék1 {
@@ -179,6 +186,38 @@ h1 {
   background-size: contain;
 }
 
+#játék4 {
+  background-image: url("img/revolver.webp");
+  background-size: contain;
+}
+
+.styled-button {
+  background: linear-gradient(90deg, #f39c12, #d35400);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 50px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.styled-button:hover {
+  background: linear-gradient(90deg, #e67e22, #c0392b);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.styled-button:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
 
 
 
@@ -187,9 +226,6 @@ h1 {
   background-image: url("img/bgakasztófa.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   height: 100vh;
   margin: 0;
 }
@@ -252,9 +288,6 @@ h5 {
 }
 
 
-.visszagomb {
-  
-}
 
 .text-pink {
     color: pink;

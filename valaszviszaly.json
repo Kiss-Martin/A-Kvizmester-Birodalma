@@ -1,1 +1,84 @@
-{}
+{
+    "valaszok": [
+        {
+            "kerdes": "Mi a legjobb nyári gyümölcs?",
+            "valaszok": ["dinnye", "eper", "barack", "szőlő"]
+        },
+        {
+            "kerdes": "Milyen sportot néznek a legtöbben?",
+            "valaszok": ["foci", "kosárlabda", "tenisz", "úszás"]
+        },
+        {
+            "kerdes": "Legjobb reggeli étel?",
+            "valaszok": ["tojás", "kenyér", "zabkása", "gyümölcs"]
+        },
+        {
+            "kerdes": "Preferált hétvégi program?",
+            "valaszok": ["pihenés", "kirándulás", "főzés", "filmenézés"]
+        },
+        {
+            "kerdes": "Ételek, amiről eszedbe jut a karácsony?",
+            "valaszok": ["halászlé", "bejgli", "töltött káposzta", "mézeskalács"]
+        },
+        {
+            "kerdes": "Elengedhetetlen tárgyak nyaraláshoz?",
+            "valaszok": ["ruha", "telefon", "naptej", "pénz"]
+        },
+        {
+            "kerdes": "Mi a legnépszerűbb gyorsétel?",
+            "valaszok": ["hamburger", "pizza", "hotdog", "kebab"]
+        },
+        {
+            "kerdes": "Elfoglaltságok a strandon?",
+            "valaszok": ["napozás", "úszás", "homokvár építés", "fagyizás"]
+        },
+        {
+            "kerdes": "Mi az, ami mindig van egy iskolatáskában?",
+            "valaszok": ["füzet", "ceruza", "tankönyv", "radír"]
+        },
+        {
+            "kerdes": "Milyen zöldséget használunk salátához?",
+            "valaszok": ["paradicsom", "uborka", "saláta", "hagyma"]
+        },
+        {
+            "kerdes": "Mi a legnépszerűbb üdítőital?",
+            "valaszok": ["kóla", "narancslé", "víz", "tea"]
+        },
+        {
+            "kerdes": "Mi az, amit télen viselünk?",
+            "valaszok": ["kabát", "sál", "sapka", "kesztyű"]
+        },
+        {
+            "kerdes": "Melyik szobában töltjük a legtöbb időt?",
+            "valaszok": ["nappali", "hálószoba", "konyha", "fürdőszoba"]
+        },
+        {
+            "kerdes": "Elengedhetetlen piknik kellékek?",
+            "valaszok": ["szendvics", "takaró", "gyümölcslé", "frizbi"]
+        },
+        {
+            "kerdes": "Melyik napot szeretjük a legjobban?",
+            "valaszok": ["szombat", "péntek", "vasárnap", "szerda"]
+        },
+        {
+            "kerdes": "Mi az, amit általában egy születésnapi partin látunk?",
+            "valaszok": ["torta", "lufi", "ajándék", "gyertya"]
+        },
+        {
+            "kerdes": "Mit nézünk a tévében?",
+            "valaszok": ["hírek", "film", "sorozat", "sport"]
+        },
+        {
+            "kerdes": "Mi az, amit egy koncerten hallunk?",
+            "valaszok": ["zene", "ének", "taps", "kiáltás"]
+        },
+        {
+            "kerdes": "Mi az, amit vacsorára készítünk?",
+            "valaszok": ["pörkölt", "tészta", "hal", "saláta"]
+        },
+        {
+            "kerdes": "Tevékenységek egy parkban?",
+            "valaszok": ["sétálás", "biciklizés", "kutya sétáltatás", "pihenés"]
+        }
+    ]
+}
