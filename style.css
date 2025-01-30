@@ -23,7 +23,7 @@ html {
   min-height: 100vh;
   background-color: #0e0101;
 }
-#quizbody {
+#quiz-body {
   background-image: url("img/bgquizgame.jpg");
   background-repeat: no-repeat;
   background-size: auto;
@@ -34,6 +34,16 @@ html {
   overflow-y: auto;
   min-height: 100vh;
   background-color: #0e0101;
+}
+
+#quiz-body .card-title{
+  font-family: 'Courier New', Courier, monospace !important;
+}
+
+.footerScore{
+  font-family: 'Courier New', Courier, monospace !important;
+  font-weight: bolder;
+  font-style: italic;
 }
 
 .title {
@@ -92,7 +102,7 @@ h1 {
   cursor: help;
   transform: scale(100%);
   transition: 1s;
-}
+};
 
 @keyframes pulse {
   0% {
