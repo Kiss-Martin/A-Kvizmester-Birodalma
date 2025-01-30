@@ -39,26 +39,39 @@ function displayQuestion() {
     if (!quizContainer)
         return;
     quizContainer.innerHTML = `
-      <div class="card">
-          <div class="card-header d-flex justify-content-between">
-              <span class="badge bg-primary">${question.category}</span>
-              <span class="badge bg-secondary">${question.difficulty}</span>
+      
+      <div class="card bg-black">
+          <div class="bg-dark card-header d-flex justify-content-between">
+              <span class="badge text-bg-light">${question.category}</span>
+              <span id='difficulty' class="badge">${question.difficulty}</span>
           </div>
           <div class="card-body">
               <h5 class="card-title mb-4">${question.question}</h5>
               <div class="d-grid gap-2">
                   ${allAnswers.map(answer => `
-                      <button class="btn btn-outline-primary answer-btn" data-answer="${answer}">
-                          ${answer}
+                      <button class="btn btn-outline-warning answer-btn" data-answer="${answer}">
+                          <b>${answer}</b>
                       </button>
                   `).join('')}
               </div>
           </div>
-          <div class="card-footer text-muted">
-              Pontszám: ${currentScore} | Kérdés: ${currentQuestionIndex + 1}/${questions.length}
+          <div class="card-footer">
+              Pontszám: <span class="footerScore">${currentScore}</span> | Kérdés: <span class="footerScore">${currentQuestionIndex + 1}/${questions.length}</span>
           </div>
       </div>
   `;
+    let difficulty = document.getElementById('difficulty');
+    if (difficulty) {
+        if (question.difficulty === 'Könnyű') {
+            difficulty.classList.add("text-bg-success");
+        }
+        else if (question.difficulty === 'Közepes') {
+            difficulty.classList.add("text-bg-warning");
+        }
+        else {
+            difficulty.classList.add("text-bg-danger");
+        }
+    }
     document.querySelectorAll('.answer-btn').forEach(button => {
         button.addEventListener('click', handleAnswer);
     });
@@ -90,12 +103,13 @@ function showFinalScore() {
     if (!quizContainer)
         return;
     quizContainer.innerHTML = `
-      <div class="card text-center">
+      <div class="card bg-black text-center">
           <div class="card-body">
               <h5 class="card-title">Játék vége!</h5>
-              <p class="card-text">Végső pontszám: ${currentScore}</p>
-              <button class="btn btn-primary" onclick="location.reload()">Újra játszás</button>
+              <p class="card-footer">Végső pontszám: <span class="footerScore">${currentScore}</span></p>
+              <button class="btn btn-success" onclick="location.reload()">Újrajátszás</button>
               <a href="index.html" class="btn btn-secondary">Főoldal</a>
+              <a href="menü.html" class="btn btn-secondary">Menü</a>
           </div>
       </div>
   `;
