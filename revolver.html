@@ -71,23 +71,43 @@
         }
 
         .lyuk:nth-child(1) { transform: rotate(0deg) translateX(40px) translateY(10px); }
-.lyuk:nth-child(2) { transform: rotate(60deg) translateX(40px) translateY(10px); }
-.lyuk:nth-child(3) { transform: rotate(120deg) translateX(40px) translateY(10px); }
-.lyuk:nth-child(4) { transform: rotate(180deg) translateX(40px) translateY(10px); }
-.lyuk:nth-child(5) { transform: rotate(240deg) translateX(40px) translateY(10px); }
-.lyuk:nth-child(6) { transform: rotate(300deg) translateX(40px) translateY(10px); }
+        .lyuk:nth-child(2) { transform: rotate(60deg) translateX(40px) translateY(10px); }
+        .lyuk:nth-child(3) { transform: rotate(120deg) translateX(40px) translateY(10px); }
+        .lyuk:nth-child(4) { transform: rotate(180deg) translateX(40px) translateY(10px); }
+        .lyuk:nth-child(5) { transform: rotate(240deg) translateX(40px) translateY(10px); }
+        .lyuk:nth-child(6) { transform: rotate(300deg) translateX(40px) translateY(10px); }
 
         .töltény-dob {
-     
-            background-color: yellow;
+            background-image: url("img/tölténny.png");
             border-radius: 100%;
-            width: 40px;
-            height: 40px;
+            width: 44px;
+            height: 45px;
             background-size: cover;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+        }
+
+        button {
+            background-color: #8B4513;
+            color: #FFD700;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: 2px solid #A0522D;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-family: 'Georgia', serif;
+
+        }
+
+        button:hover {
+            background-color: #A0522D;
+            color: #FFF8DC;
+            transform: scale(1.1);
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
         }
     </style>
 </head>
@@ -107,25 +127,38 @@
     </div>
 
     <script>
-        const töltény = document.getElementById('töltény');
-        const lyukok = document.querySelectorAll('.lyuk');
-        let töltények = 0;
 
-        töltény.addEventListener('click', () => {
-            if (töltények < 6) {
-          
-                for (let i = 0; i < lyukok.length; i++) {
-                    if (!lyukok[i].querySelector('.töltény-dob')) {
-                        const töltényElem = document.createElement('div');
-                        töltényElem.classList.add('töltény-dob');
-                        lyukok[i].appendChild(töltényElem);
-                        töltények++;
-                        break;
-                    }
+    const töltény = document.getElementById('töltény');
+    const lyukok = document.querySelectorAll('.lyuk');
+    var töltények = 0;
+
+    töltény.addEventListener('click', () => {
+        if (töltények < 6) {
+      
+            for (let i = 0; i < lyukok.length; i++) {
+                if (!lyukok[i].querySelector('.töltény-dob')) {
+                    const töltényElem = document.createElement('div');
+                    töltényElem.classList.add('töltény-dob');
+                    lyukok[i].appendChild(töltényElem);
+                    töltények++;
+                    break;
                 }
             }
-        });
+        }
+    });
+    
     </script>
+
+    <script src="revolver.json"></script>
+
+
+
+    
+    <div style="text-align: center; margin-top: -60px;">
+        <a href="menü.html">
+            <button>Vissza</button>
+        </a>
+    </div>
 
 </body>
 </html>
