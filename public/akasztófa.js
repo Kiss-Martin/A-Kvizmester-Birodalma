@@ -26,9 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     kartyak.forEach(kartya => {
         kartya.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
             megjelenitesDiv.style.display = "none";
-            const TemaId = kartya.id;
-            const kérdések = yield fetchWords();
-            const kategoriak = kérdések.filter(kérdés => kérdés.category === TemaId);
             const countdownDiv = document.createElement("div");
             countdownDiv.id = "countdown";
             countdownDiv.textContent = "3";
@@ -54,16 +51,36 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (count === 0) {
                     clearInterval(intervalId);
                     countdownDiv.remove();
-                    megjelenítBillentyuzetet();
+                    megjelenítBillentyuzetet(kartya);
+                    megjelenitesKilépés();
                 }
             }, 1000);
         }));
     });
 });
-function megjelenítBillentyuzetet() {
+function megjelenítBillentyuzetet(kartya) {
     return __awaiter(this, void 0, void 0, function* () {
         const abc = "aábcdeéfghiíjklmnoóöőpqrstuúüűvwxyz".split("");
         const keyboardContainer = document.createElement("div");
+        const TemaId = kartya.id;
+        const kérdések = yield fetchWords();
+        const kategoriak = kérdések.filter(kérdés => kérdés.category === TemaId);
+        console.log(kategoriak);
+        const szó = kategoriak[Math.floor(Math.random() * kategoriak.length)];
+        console.log(szó);
+        const divszó = document.createElement('div');
+        divszó.innerText = szó.word;
+        divszó.style.position = "absolute";
+        divszó.style.bottom = "500px"; // A billentyűzet felett jelenjen meg
+        divszó.style.left = "50%";
+        divszó.style.transform = "translateX(-50%)";
+        divszó.style.backgroundColor = "#8B4513"; // Azonos szín, mint a billentyűzet
+        divszó.style.color = "#FFD700"; // Kontrasztos betűszín
+        divszó.style.padding = "10px 20px";
+        divszó.style.borderRadius = "20px";
+        divszó.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.5)";
+        divszó.style.fontSize = "2rem";
+        divszó.style.fontWeight = "bold";
         keyboardContainer.style.display = "flex";
         keyboardContainer.style.flexWrap = "wrap";
         keyboardContainer.style.justifyContent = "center";
@@ -95,6 +112,40 @@ function megjelenítBillentyuzetet() {
             betuCard.style.fontSize = "xx-large";
             keyboardContainer.appendChild(betuCard);
         });
+        document.body.appendChild(divszó);
         document.body.appendChild(keyboardContainer);
     });
+}
+function megjelenitesKilépés() {
+    const kilepesButton = document.createElement("button");
+    kilepesButton.textContent = "Vissza";
+    kilepesButton.style.position = "absolute";
+    kilepesButton.style.bottom = "100px"; // Billentyűzet alatt
+    kilepesButton.style.left = "47.5%";
+    // kilepesButton.style.transform = "translateX(-100%)";
+    kilepesButton.style.backgroundColor = "#8B4513";
+    kilepesButton.style.color = "#FFD700";
+    kilepesButton.style.fontSize = "18px";
+    kilepesButton.style.padding = "10px 20px";
+    kilepesButton.style.border = "2px solid #A0522D";
+    kilepesButton.style.borderRadius = "5px";
+    kilepesButton.style.cursor = "pointer";
+    kilepesButton.style.boxShadow = "2px 2px 5px rgba(0, 0, 0, 0.5)";
+    kilepesButton.style.fontFamily = "'Georgia', serif";
+    kilepesButton.addEventListener("mouseover", () => {
+        kilepesButton.style.backgroundColor = "#A0522D";
+        kilepesButton.style.color = "#FFF8DC";
+        kilepesButton.style.transform = "scale(1.1)";
+        kilepesButton.style.boxShadow = "4px 4px 10px rgba(0, 0, 0, 0.7)";
+    });
+    kilepesButton.addEventListener("mouseout", () => {
+        kilepesButton.style.backgroundColor = "#8B4513";
+        kilepesButton.style.color = "#FFD700";
+        kilepesButton.style.transform = "scale(1)";
+        kilepesButton.style.boxShadow = "2px 2px 5px rgba(0, 0, 0, 0.5)";
+    });
+    kilepesButton.addEventListener("click", () => {
+        location.reload();
+    });
+    document.body.appendChild(kilepesButton);
 }

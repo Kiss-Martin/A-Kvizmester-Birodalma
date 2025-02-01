@@ -170,6 +170,7 @@
                         lyukok[i].appendChild(töltényElem);
                         töltények++;
 
+                        
                         break;
                     }
                 }
@@ -177,30 +178,35 @@
         });
 
         revolver.addEventListener('click', () => {
-            if(töltények == 0) {
-            alert("Hé! Üres tárral nem ér!")
-            if(töltények == 1) {
-
-            }
-            if(töltények == 2) {
-                
-            }
-            if(töltények == 3) {
-                
-            }
-            if(töltények == 4) {
-                
-            }
-            if(töltények == 5) {
-                
-            }
-            if(töltények == 6) {
+            if (töltények == 0) {
+                alert("Hé! Üres tárral nem ér!")               
+            } 
+            
+            else if (töltények == 6) {
+                alert("Meghaltál")
+            } 
+            
+            else if (töltények == 5) {
+                alert("Meghaltál")
+            } 
+            
+            else if (töltények == 4) {
+                alert("Meghaltál")
+            } 
+            
+            else if (töltények == 3) {
+                alert("Meghaltál")
+            } 
+            
+            else if (töltények == 2) {
+                alert("Meghaltál")
+            } 
+            
+            else if (töltények == 1) {
                 alert("Meghaltál")
             }
-
-        }
         })
-        
+
 
     </script>
 
