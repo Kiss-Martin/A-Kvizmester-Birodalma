@@ -57,6 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
+
 async function megjelenítBillentyuzetet(kartya: Element) {
     const abc = "aábcdeéfghiíjklmnoóöőpqrstuúüűvwxyz".split("");
     const keyboardContainer = document.createElement("div");
@@ -147,9 +149,7 @@ async function megjelenítBillentyuzetet(kartya: Element) {
                 livesDiv.textContent = `Életek: ${lives}`;
                 if (lives === 0) {
                     showLoseMessage();
-                } else {
-                    alert("Nincs ilyen betű a szóban!");
-                }
+                } 
             }
 
             betuCard.style.backgroundColor = "#A9A9A9";
@@ -166,6 +166,8 @@ async function megjelenítBillentyuzetet(kartya: Element) {
         if (guessedCorrectly) {
             divszó.remove();
             keyboardContainer.remove();
+            kilepesButton.remove();
+            
 
             const gratulalokDiv = document.createElement("div");
             gratulalokDiv.style.position = "absolute";
@@ -204,6 +206,8 @@ async function megjelenítBillentyuzetet(kartya: Element) {
     function showLoseMessage() {
         divszó.remove();
         keyboardContainer.remove();
+        kilepesButton.remove();
+       
 
         const vesztettDiv = document.createElement("div");
         vesztettDiv.style.position = "absolute";
@@ -244,7 +248,7 @@ function megjelenitesKilépés() {
     kilepesButton.textContent = "Vissza";
     kilepesButton.style.position = "absolute";
     kilepesButton.style.bottom = "100px";
-    kilepesButton.style.left = "47.5%";
+    kilepesButton.style.left = "50%";
     kilepesButton.style.backgroundColor = "#8B4513";
     kilepesButton.style.color = "#FFD700";
     kilepesButton.style.fontSize = "18px";

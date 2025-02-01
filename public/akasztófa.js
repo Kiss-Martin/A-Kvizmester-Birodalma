@@ -140,9 +140,6 @@ function megjelenítBillentyuzetet(kartya) {
                     if (lives === 0) {
                         showLoseMessage();
                     }
-                    else {
-                        alert("Nincs ilyen betű a szóban!");
-                    }
                 }
                 betuCard.style.backgroundColor = "#A9A9A9";
                 betuCard.style.cursor = "not-allowed";
