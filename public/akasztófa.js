@@ -152,6 +152,7 @@ function megjelenítBillentyuzetet(kartya) {
             if (guessedCorrectly) {
                 divszó.remove();
                 keyboardContainer.remove();
+                kilepesButton.remove();
                 const gratulalokDiv = document.createElement("div");
                 gratulalokDiv.style.position = "absolute";
                 gratulalokDiv.style.top = "50%";
@@ -185,6 +186,7 @@ function megjelenítBillentyuzetet(kartya) {
         function showLoseMessage() {
             divszó.remove();
             keyboardContainer.remove();
+            kilepesButton.remove();
             const vesztettDiv = document.createElement("div");
             vesztettDiv.style.position = "absolute";
             vesztettDiv.style.top = "50%";

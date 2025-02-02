@@ -248,7 +248,7 @@ function megjelenitesKilépés() {
     kilepesButton.textContent = "Vissza";
     kilepesButton.style.position = "absolute";
     kilepesButton.style.bottom = "100px";
-    kilepesButton.style.left = "50%";
+    kilepesButton.style.left = "47.5%";
     kilepesButton.style.backgroundColor = "#8B4513";
     kilepesButton.style.color = "#FFD700";
     kilepesButton.style.fontSize = "18px";
