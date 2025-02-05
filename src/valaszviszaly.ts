@@ -5,7 +5,7 @@ interface Question {
 
 async function fetchQuestions(): Promise<Question[]> {
     try {
-        const response = await fetch('http://localhost:3000/valaszok');
+        const response = await fetch('http://localhost:3002/valaszok');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
