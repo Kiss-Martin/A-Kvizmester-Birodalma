@@ -66,12 +66,12 @@ document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, vo
         const userAnswer = answerInput.value.trim().toLowerCase();
         const correctAnswers = questions[currentQuestionIndex].valaszok.map(v => v.toLowerCase());
         if (correctAnswers.includes(userAnswer)) {
-            feedback.textContent = "Helyes válasz!";
-            feedback.className = "text-success";
+            feedback.innerHTML = "<h2>Helyes válasz!</h2>";
+            feedback.classList.add('text-center title');
         }
         else {
-            feedback.textContent = `Helytelen! A helyes válaszok: ${questions[currentQuestionIndex].valaszok.join(', ')}`;
-            feedback.className = "text-danger";
+            feedback.innerHTML = `<h2>Helytelen! A helyes válaszok: ${questions[currentQuestionIndex].valaszok.join(', ')}</h2>`;
+            feedback.classList.add('text-center title');
         }
         currentQuestionIndex++;
         if (currentQuestionIndex < questions.length) {
@@ -88,41 +88,23 @@ document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, vo
     showQuestion();
 }));
 function reactionTime(event) {
-    let w = null;
-    let arrowup = null;
     const start = Date.now();
+    const answerContainer = document.getElementById("answer-container");
     if (event.key === "w" || event.key === "W") {
         let wstyle = document.getElementById("w");
         wstyle.style.marginTop = "10px";
-        setInterval(() => {
+        setTimeout(() => {
             wstyle.style.marginTop = "0px";
-        }, 100);
-        if (w === null) {
-            w = start;
-        }
+        }, 200);
+        answerContainer.classList.remove('d-none');
     }
     if (event.key === "ArrowUp") {
         let arrowupstyle = document.getElementById("arrowup");
         arrowupstyle.style.marginTop = "10px";
-        setInterval(() => {
+        setTimeout(() => {
             arrowupstyle.style.marginTop = "0px";
-        }, 100);
-        if (arrowup === null) {
-            arrowup = start;
-        }
-    }
-    if (w && arrowup) {
-        if (w < arrowup) {
-            console.log("w was pressed before arrowup");
-        }
-        else if (w > arrowup) {
-            console.log("arrowup was pressed before w");
-        }
-        else {
-            console.log("w and arrowup were pressed at the same time");
-        }
-        w = null;
-        arrowup = null;
+        }, 200);
+        answerContainer.classList.remove('d-none');
     }
 }
 document.addEventListener("keydown", reactionTime);
