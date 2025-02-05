@@ -104,6 +104,153 @@
       "incorrect_answers": ["Charles Simonyi", "Magyari Béla", "Siklósi András"],
       "category": "Történelem",
       "difficulty": "Nehéz"
+  },
+  {
+    "question": "Melyik város a legnagyobb Magyarországon?",
+    "correct_answer": "Budapest",
+    "incorrect_answers": ["Szeged", "Debrecen", "Pécs"],
+    "category": "Földrajz",
+    "difficulty": "Könnyű"
+  },
+  {
+    "question": "Ki írta a 'József és testvérei' című regényt?",
+    "correct_answer": "Márai Sándor",
+    "incorrect_answers": ["Mikszáth Kálmán", "Jókai Mór", "Kosztolányi Dezső"],
+    "category": "Irodalom",
+    "difficulty": "Nehéz"
+  },
+  {
+    "question": "Melyik évben alakult meg az első magyar királyság?",
+    "correct_answer": "1000",
+    "incorrect_answers": ["1066", "888", "920"],
+    "category": "Történelem",
+    "difficulty": "Nehéz"
+  },
+  {
+    "question": "Mi a víz forráspontja Celsius fokban?",
+    "correct_answer": "100",
+    "incorrect_answers": ["90", "80", "120"],
+    "category": "Tudomány",
+    "difficulty": "Könnyű"
+  },
+  {
+    "question": "Ki nyerte a 2020-as labdarúgó Európa-bajnokságot?",
+    "correct_answer": "Olaszország",
+    "incorrect_answers": ["Franciaország", "Németország", "Spanyolország"],
+    "category": "Sport",
+    "difficulty": "Könnyű"
+  },
+  {
+    "question": "Melyik hegycsúcs a legmagasabb a Földön?",
+    "correct_answer": "Mount Everest",
+    "incorrect_answers": ["Kilimandzsáró", "K2", "Mont Blanc"],
+    "category": "Földrajz",
+    "difficulty": "Könnyű"
+  },
+  {
+    "question": "Ki írta a 'Fahrenheit 451' című könyvet?",
+    "correct_answer": "Ray Bradbury",
+    "incorrect_answers": ["George Orwell", "Aldous Huxley", "Arthur C. Clarke"],
+    "category": "Irodalom",
+    "difficulty": "Közepes"
+  },
+  {
+    "question": "Ki volt az első magyar király?",
+    "correct_answer": "Szent István",
+    "incorrect_answers": ["II. András", "Károly Róbert", "Mátyás király"],
+    "category": "Történelem",
+    "difficulty": "Könnyű"
+  },
+  {
+    "question": "Mi a H2O kémiai neve?",
+    "correct_answer": "Víz",
+    "incorrect_answers": ["Ammónia", "Metán", "Hidrogén-peroxid"],
+    "category": "Tudomány",
+    "difficulty": "Könnyű"
+  },
+  {
+    "question": "Melyik sportágban versenyeztek a legutóbbi téli olimpián a magyar sportolók?",
+    "correct_answer": "Gyorskorcsolya",
+    "incorrect_answers": ["Sífutás", "Jégkorong", "Biatlon"],
+    "category": "Sport",
+    "difficulty": "Közepes"
+  },
+  {
+    "question": "Melyik ország fővárosa Prága?",
+    "correct_answer": "Csehország",
+    "incorrect_answers": ["Szlovákia", "Lengyelország", "Magyarország"],
+    "category": "Földrajz",
+    "difficulty": "Könnyű"
+  },
+  {
+    "question": "Ki írta a 'Harry Potter' sorozatot?",
+    "correct_answer": "J.K. Rowling",
+    "incorrect_answers": ["Stephen King", "Suzanne Collins", "J.R.R. Tolkien"],
+    "category": "Irodalom",
+    "difficulty": "Könnyű"
+  },
+  {
+    "question": "Melyik évben zajlott a második világháború vége?",
+    "correct_answer": "1945",
+    "incorrect_answers": ["1941", "1939", "1950"],
+    "category": "Történelem",
+    "difficulty": "Könnyű"
+  },
+  {
+    "question": "Melyik elem a legkönnyebb?",
+    "correct_answer": "Hidrogén",
+    "incorrect_answers": ["Hélium", "Litium", "Szén"],
+    "category": "Tudomány",
+    "difficulty": "Könnyű"
+  },
+  {
+    "question": "Ki nyerte az 1998-as Forma-1-es világbajnokságot?",
+    "correct_answer": "Mika Häkkinen",
+    "incorrect_answers": ["Michael Schumacher", "Ayrton Senna", "Jacques Villeneuve"],
+    "category": "Sport",
+    "difficulty": "Nehéz"
+  },
+  {
+    "question": "Melyik óceán határolja Ausztráliát?",
+    "correct_answer": "Csendes-óceán",
+    "incorrect_answers": ["Atlanti-óceán", "Indiai-óceán", "Jeges-tenger"],
+    "category": "Földrajz",
+    "difficulty": "Könnyű"
+  },
+  {
+    "question": "Mi a világ legnagyobb sivataga?",
+    "correct_answer": "Sahara",
+    "incorrect_answers": ["Kalahári", "Gobi", "Atacama"],
+    "category": "Földrajz",
+    "difficulty": "Könnyű"
+  },
+  {
+    "question": "Ki írta a 'Száz év magány' című könyvet?",
+    "correct_answer": "Gabriel García Márquez",
+    "incorrect_answers": ["Mario Vargas Llosa", "Isabel Allende", "Julio Cortázar"],
+    "category": "Irodalom",
+    "difficulty": "Nehéz"
+  },
+  {
+    "question": "Melyik háború során történt a normandiai partraszállás?",
+    "correct_answer": "Második világháború",
+    "incorrect_answers": ["Első világháború", "Koreai háború", "Vietnami háború"],
+    "category": "Történelem",
+    "difficulty": "Közepes"
+  },
+  {
+    "question": "Mi az állat, ami a koala?",
+    "correct_answer": "Emlős",
+    "incorrect_answers": ["Madár", "Hüllő", "Hal"],
+    "category": "Tudomány",
+    "difficulty": "Könnyű"
+  },
+  {
+    "question": "Ki nyerte a 2008-as Peking-i olimpián a férfi 100 méteres futást?",
+    "correct_answer": "Usain Bolt",
+    "incorrect_answers": ["Tyson Gay", "Asafa Powell", "Michael Johnson"],
+    "category": "Sport",
+    "difficulty": "Könnyű"
   }
 ]
 

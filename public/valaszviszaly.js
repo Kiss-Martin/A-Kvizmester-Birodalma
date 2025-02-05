@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 function fetchQuestions() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const response = yield fetch('http://localhost:3000/valaszok');
+            const response = yield fetch('http://localhost:3002/valaszok');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
