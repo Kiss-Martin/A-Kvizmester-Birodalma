@@ -359,3 +359,7 @@ h5 {
   width: 100px;
   height: 100px;
 }
+
+#submit-button {
+  margin-top: 10px;
+}
