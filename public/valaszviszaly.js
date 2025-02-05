@@ -87,3 +87,42 @@ document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, vo
     submitButton.addEventListener('click', checkAnswer);
     showQuestion();
 }));
+function reactionTime(event) {
+    let w = null;
+    let arrowup = null;
+    const start = Date.now();
+    if (event.key === "w" || event.key === "W") {
+        let wstyle = document.getElementById("w");
+        wstyle.style.marginTop = "10px";
+        setInterval(() => {
+            wstyle.style.marginTop = "0px";
+        }, 100);
+        if (w === null) {
+            w = start;
+        }
+    }
+    if (event.key === "ArrowUp") {
+        let arrowupstyle = document.getElementById("arrowup");
+        arrowupstyle.style.marginTop = "10px";
+        setInterval(() => {
+            arrowupstyle.style.marginTop = "0px";
+        }, 100);
+        if (arrowup === null) {
+            arrowup = start;
+        }
+    }
+    if (w && arrowup) {
+        if (w < arrowup) {
+            console.log("w was pressed before arrowup");
+        }
+        else if (w > arrowup) {
+            console.log("arrowup was pressed before w");
+        }
+        else {
+            console.log("w and arrowup were pressed at the same time");
+        }
+        w = null;
+        arrowup = null;
+    }
+}
+document.addEventListener("keydown", reactionTime);
