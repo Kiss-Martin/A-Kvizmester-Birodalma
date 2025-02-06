@@ -46,6 +46,12 @@ html {
   font-style: italic;
 }
 
+.gradient{
+  background: rgb(238,244,2);
+  background: linear-gradient(90deg, rgba(238,244,2,1) 0%, rgba(255,13,13,1) 50%, rgba(2,212,255,1) 100%);
+  color: white;
+}
+
 .title {
   font-family: 'NewpitchScript';
   color: purple;

@@ -33,14 +33,23 @@ function displayCategoryMenu(categories: string[]) {
             <div class="card-body">
                 <div class="d-grid gap-2">
                     ${categories.map(category => `
-                        <button class="btn btn-warning category-btn" data-category="${category}">
+                        <button id="${category}" class="btn btn-warning category-btn" data-category="${category}">
                             ${category}
                         </button>
                     `).join('')}
                 </div>
             </div>
+            <div class="text-center text-purple">
+                <h3>A legutóbb elért összpontszám: <span class="badge text-bg-secondary" style="background: rgb(255,13,13);
+background: linear-gradient(90deg, rgba(255,13,13,1) 0%, rgba(2,212,255,1) 70%);">${quizData.getTotalScore()}</span></h3>
+            </div>
         </div>
     `;
+
+    let mind = document.getElementById('Mind');
+    mind?.classList.add('gradient');
+    mind?.classList.remove('btn-warning');
+
     document.querySelectorAll('.category-btn').forEach(button => {
         button.addEventListener('click', (e) => {
             const selectedCategory = (e.target as HTMLButtonElement).dataset.category;
@@ -83,13 +92,14 @@ function displayQuestion() {
         showFinalScore();
         return;
     }
-
+    
     const question = questions[currentQuestionIndex];
     const allAnswers = shuffleArray([question.correct_answer, ...question.incorrect_answers]);
     
     const quizContainer = document.getElementById('quiz-container');
     if (!quizContainer) return;
-
+    
+    console.log(currentScore);
     quizContainer.innerHTML = `
         <div class="card bg-black">
             <div class="bg-dark card-header d-flex justify-content-between">
@@ -110,10 +120,10 @@ function displayQuestion() {
                 Pontszám: <span class="footerScore">${currentScore}</span> | Kérdés: <span class="footerScore">${currentQuestionIndex + 1}/${MAX_QUESTIONS}</span>
             </div>
         </div>
-        <button id="reload" type="button" class="btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+        <a style="color: white;" href="quiz.html"><button id="reload" type="button" class="btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
   <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
-</svg></button>
+</svg></button></a>
     `;
 
     let difficulty = document.getElementById('difficulty');
@@ -157,10 +167,10 @@ function handleAnswer(event: Event) {
   }, 1500);
 }
 
-const reloadButton = document.getElementById('reload');
-reloadButton?.addEventListener('click', () => {
-    window.location.reload();
-});
+// const reloadButton = document.getElementById('reload');
+// reloadButton?.addEventListener('click', () => {
+//     window.location.reload();
+// });
 
 
 function showFinalScore() {
@@ -187,5 +197,19 @@ function showError() {
     }
 }
 
+const finalScore = localStorage.getItem('quizScore');
+const quizData = {
+    totalScore: 0,
+    addScore(score: number) {
+        this.totalScore += score;
+    },
+    getTotalScore() {
+        return this.totalScore;
+    }
+};
+
+quizData.addScore(Number(localStorage.getItem('quizScore')));
+
+console.log('Quiz Results:', quizData.getTotalScore());
 
 window.addEventListener('load', loadCategories);
