@@ -1,0 +1,7 @@
+{
+    "choices": [
+      { "id": 1, "name": "kő" },
+      { "id": 2, "name": "papír" },
+      { "id": 3, "name": "olló" }
+    ]
+  }
