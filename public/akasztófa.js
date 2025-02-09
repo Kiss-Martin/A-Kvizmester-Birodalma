@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 function fetchWords() {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch("http://localhost:3000/szavak");
+        const response = yield fetch("http://localhost:3001/szavak");
         if (!response.ok) {
             throw new Error("Hiba van");
         }

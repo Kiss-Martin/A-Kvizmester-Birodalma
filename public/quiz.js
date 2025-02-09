@@ -11,11 +11,70 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 let currentScore = 0;
 let currentQuestionIndex = 0;
 let questions = [];
-function loadQuestions() {
+const MAX_QUESTIONS = 10;
+function loadCategories() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const response = yield fetch('http://localhost:3000/kérdések');
-            questions = yield response.json();
+            const allQuestions = yield response.json();
+            const categories = [...new Set(allQuestions.map((q) => q.category)), 'Mind'];
+            displayCategoryMenu(categories);
+        }
+        catch (error) {
+            console.error('Error loading categories:', error);
+            showError();
+        }
+    });
+}
+function displayCategoryMenu(categories) {
+    const quizContainer = document.getElementById('quiz-container');
+    if (!quizContainer)
+        return;
+    quizContainer.innerHTML = `
+        <div class="card bg-black">
+            <div class="card-header">
+                <h5 class="card-title text-center">Válassz kategóriát</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-2">
+                    ${categories.map(category => `
+                        <button id="${category}" class="btn btn-warning category-btn" data-category="${category}">
+                            ${category}
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+            <div class="text-center text-purple">
+                <h3>A legutóbb elért összpontszám: <span class="badge text-bg-secondary" style="background: rgb(255,13,13);
+background: linear-gradient(90deg, rgba(255,13,13,1) 0%, rgba(2,212,255,1) 70%);">${quizData.getTotalScore()}</span></h3>
+            </div>
+        </div>
+    `;
+    let mind = document.getElementById('Mind');
+    mind === null || mind === void 0 ? void 0 : mind.classList.add('gradient');
+    mind === null || mind === void 0 ? void 0 : mind.classList.remove('btn-warning');
+    document.querySelectorAll('.category-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const selectedCategory = e.target.dataset.category;
+            loadQuestions(selectedCategory);
+        });
+    });
+}
+document.querySelectorAll('.category-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const selectedCategory = e.target.dataset.category;
+        loadQuestions(selectedCategory);
+    });
+});
+function loadQuestions(selectedCategory) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const response = yield fetch('http://localhost:3000/kérdések');
+            let allQuestions = yield response.json();
+            if (selectedCategory && selectedCategory !== 'Mind') {
+                allQuestions = allQuestions.filter((q) => q.category === selectedCategory);
+            }
+            questions = shuffleArray(allQuestions).slice(0, MAX_QUESTIONS);
             displayQuestion();
         }
         catch (error) {
@@ -28,7 +87,7 @@ function shuffleArray(array) {
     return [...array].sort(() => Math.random() - 0.5);
 }
 function displayQuestion() {
-    if (currentQuestionIndex >= questions.length) {
+    if (currentQuestionIndex >= questions.length || currentQuestionIndex >= MAX_QUESTIONS) {
         localStorage.setItem('quizScore', currentScore.toString());
         showFinalScore();
         return;
@@ -38,28 +97,32 @@ function displayQuestion() {
     const quizContainer = document.getElementById('quiz-container');
     if (!quizContainer)
         return;
+    console.log(currentScore);
     quizContainer.innerHTML = `
-      
-      <div class="card bg-black">
-          <div class="bg-dark card-header d-flex justify-content-between">
-              <span class="badge text-bg-light">${question.category}</span>
-              <span id='difficulty' class="badge">${question.difficulty}</span>
-          </div>
-          <div class="card-body">
-              <h5 class="card-title mb-4">${question.question}</h5>
-              <div class="d-grid gap-2">
-                  ${allAnswers.map(answer => `
-                      <button class="btn btn-outline-warning answer-btn" data-answer="${answer}">
-                          <b>${answer}</b>
-                      </button>
-                  `).join('')}
-              </div>
-          </div>
-          <div class="card-footer">
-              Pontszám: <span class="footerScore">${currentScore}</span> | Kérdés: <span class="footerScore">${currentQuestionIndex + 1}/${questions.length}</span>
-          </div>
-      </div>
-  `;
+        <div class="card bg-black">
+            <div class="bg-dark card-header d-flex justify-content-between">
+                <span class="badge text-bg-light">${question.category}</span>
+                <span id='difficulty' class="badge">${question.difficulty}</span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title mb-4">${question.question}</h5>
+                <div class="d-grid gap-2">
+                    ${allAnswers.map(answer => `
+                        <button class="btn btn-outline-warning answer-btn" data-answer="${answer}">
+                            <b>${answer}</b>
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+            <div class="card-footer">
+                Pontszám: <span class="footerScore">${currentScore}</span> | Kérdés: <span class="footerScore">${currentQuestionIndex + 1}/${MAX_QUESTIONS}</span>
+            </div>
+        </div>
+        <a style="color: white;" href="quiz.html"><button id="reload" type="button" class="btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+  <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+</svg></button></a>
+    `;
     let difficulty = document.getElementById('difficulty');
     if (difficulty) {
         if (question.difficulty === 'Könnyű') {
@@ -98,6 +161,10 @@ function handleAnswer(event) {
         displayQuestion();
     }, 1500);
 }
+// const reloadButton = document.getElementById('reload');
+// reloadButton?.addEventListener('click', () => {
+//     window.location.reload();
+// });
 function showFinalScore() {
     const quizContainer = document.getElementById('quiz-container');
     if (!quizContainer)
@@ -120,4 +187,16 @@ function showError() {
         errorContainer.classList.remove('d-none');
     }
 }
-window.addEventListener('load', loadQuestions);
+const finalScore = localStorage.getItem('quizScore');
+const quizData = {
+    totalScore: 0,
+    addScore(score) {
+        this.totalScore += score;
+    },
+    getTotalScore() {
+        return this.totalScore;
+    }
+};
+quizData.addScore(Number(localStorage.getItem('quizScore')));
+console.log('Quiz Results:', quizData.getTotalScore());
+window.addEventListener('load', loadCategories);
