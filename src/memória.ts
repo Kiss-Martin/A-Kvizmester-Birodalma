@@ -58,7 +58,7 @@ function flipCard(card: GameCard, cardElement: HTMLElement) {
 
 
 function checkMatch() {
-    if (flippedCards.length === 2) { // Biztosítsd, hogy tényleg 2 van
+    if (flippedCards.length === 2) { 
         const [card1, card2] = flippedCards;
 
         if (card1.symbol === card2.symbol) {
