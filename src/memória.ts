@@ -45,7 +45,7 @@ function renderBoard() {
 }
 
 function flipCard(card: GameCard, cardElement: HTMLElement) {
-    if (flippedCards.length < 2 && !card.matched) {
+    if (flippedCards.length < 2 && !card.matched && !flippedCards.includes(card)) {
         cardElement.textContent = card.symbol;
         cardElement.classList.remove("hidden");
         flippedCards.push(card);
@@ -56,25 +56,29 @@ function flipCard(card: GameCard, cardElement: HTMLElement) {
     }
 }
 
-function checkMatch() {
-    if (flippedCards[0].symbol === flippedCards[1].symbol) {
-        flippedCards[0].matched = true;
-        flippedCards[1].matched = true;
-        matchCount++;
-        updateMatchCount();
-    } else {
-        document.querySelectorAll(".card").forEach((cardElement) => {
-            const element = cardElement as HTMLElement;
-            const id = parseInt(element.dataset.id as string);
-            if (!cards[id].matched) {
-                element.classList.add("hidden");
-                element.textContent = "";
-            }
-        });
-    }
-    flippedCards = [];
-}
 
+function checkMatch() {
+    if (flippedCards.length === 2) { // Biztosítsd, hogy tényleg 2 van
+        const [card1, card2] = flippedCards;
+
+        if (card1.symbol === card2.symbol) {
+            card1.matched = true;
+            card2.matched = true;
+        } else {
+            setTimeout(() => {
+                document.querySelectorAll(".card").forEach((cardElement) => {
+                    const element = cardElement as HTMLElement;
+                    const id = parseInt(element.dataset.id as string);
+                    if (!cards[id].matched) {
+                        element.classList.add("hidden");
+                        element.textContent = "";
+                    }
+                });
+            }, 500);
+        }
+        flippedCards = [];
+    }
+}
 function updateMatchCount() {
     const matchCountDisplay = document.getElementById("match-count")!;
     matchCountDisplay.textContent = `Egyezések: ${matchCount}`;

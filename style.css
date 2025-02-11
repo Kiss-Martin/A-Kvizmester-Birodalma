@@ -231,6 +231,12 @@ h1 {
   background-size: contain;
 }
 
+#játék6 {
+  background-image: url("img/memóriakártya.avif");
+  background-size: contain;
+}
+
+
 .styled-button {
   background: linear-gradient(90deg, #f39c12, #d35400);
   color: white;
