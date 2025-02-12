@@ -39,7 +39,7 @@
         }
 
         button {
-            background-color: rgba(0, 255, 255, 0.7);
+            background-color: rgba(0, 255, 255, 1);
             border: none;
             color: black;
             padding: 15px 30px;
@@ -47,11 +47,12 @@
             font-size: 1.5rem;
             cursor: pointer;
             border-radius: 8px;
-            transition: background-color 0.3s ease;
+            transition:  0.3s ease;
         }
 
         button:hover {
-            background-color: rgba(0, 255, 255, 1);
+            background-color: rgba(0, 255, 255, 0.7);
+            transform: translateY(-2px);
         }
 
         #result {
@@ -100,7 +101,7 @@
     <p id="score">Te: 0 | Gép: 0</p>
     <script src="/public/game.js"></script>
 
-    <div style="text-align: center; margin-top: 200px;">
+    <div style="text-align: center; margin-top: 100px;">
         <a href="menü.html">
             <button>Vissza</button>
         </a>
