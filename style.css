@@ -174,7 +174,7 @@ h1 {
   align-items: center;
   margin: auto;
   flex-wrap: wrap;
-  height: 500px;
+  height: 600px;
   max-width: 1000px;
   cursor: pointer;
 
@@ -183,7 +183,7 @@ h1 {
 .kártyák div { 
   margin: 10px; 
   width: 200px;
-  height: 400px;
+  height: 200px;
   border: black 1px solid;
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -225,6 +225,17 @@ h1 {
   background-image: url("img/revolver.webp");
   background-size: contain;
 }
+
+#játék5 {
+  background-image: url("img/kőpapírolló.jpg");
+  background-size: contain;
+}
+
+#játék6 {
+  background-image: url("img/memóriakártya.avif");
+  background-size: contain;
+}
+
 
 .styled-button {
   background: linear-gradient(90deg, #f39c12, #d35400);

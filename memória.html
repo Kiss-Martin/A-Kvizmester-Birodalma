@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memóriajáték</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #282c34;
+            color: white;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        #game-board {
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .card {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            color: black;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 10px;
+            user-select: none;
+        }
+
+        .hidden {
+            background-color: gray;
+            color: gray;
+        }
+
+        .back-button {
+            padding: 20px 25px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+
+        }
+
+        .back-button:active {
+            transform: translateY(2px);
+
+        }
+
+        .match-count {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Memóriajáték</h1>
+    <div id="game-board"></div>
+
+    <div id="match-count" class="match-count">Egyezések: 0</div>
+
+    <div style="text-align: center; margin-top: 25px;">
+        <a href="menü.html">
+            <button class="back-button">Vissza</button>
+        </a>
+    </div>
+
+
+    <script src="/public/memória.js"></script>
+</body>
+
+</html>
