@@ -13,9 +13,7 @@ const töltény = document.getElementById('töltény');
                             const töltényElem = document.createElement('div');
                             töltényElem.classList.add('töltény-dob');
                             lyukok[i].appendChild(töltényElem);
-                            töltények++;
-    
-                            
+                            töltények++;                            
                             break;
                         }
                     }
