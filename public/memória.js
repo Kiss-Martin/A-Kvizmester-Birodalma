@@ -39,7 +39,7 @@ function renderBoard() {
     });
 }
 function flipCard(card, cardElement) {
-    if (flippedCards.length < 2 && !card.matched) {
+    if (flippedCards.length < 2 && !card.matched && !flippedCards.includes(card)) {
         cardElement.textContent = card.symbol;
         cardElement.classList.remove("hidden");
         flippedCards.push(card);
@@ -49,23 +49,26 @@ function flipCard(card, cardElement) {
     }
 }
 function checkMatch() {
-    if (flippedCards[0].symbol === flippedCards[1].symbol) {
-        flippedCards[0].matched = true;
-        flippedCards[1].matched = true;
-        matchCount++;
-        updateMatchCount();
+    if (flippedCards.length === 2) {
+        const [card1, card2] = flippedCards;
+        if (card1.symbol === card2.symbol) {
+            card1.matched = true;
+            card2.matched = true;
+        }
+        else {
+            setTimeout(() => {
+                document.querySelectorAll(".card").forEach((cardElement) => {
+                    const element = cardElement;
+                    const id = parseInt(element.dataset.id);
+                    if (!cards[id].matched) {
+                        element.classList.add("hidden");
+                        element.textContent = "";
+                    }
+                });
+            }, 500);
+        }
+        flippedCards = [];
     }
-    else {
-        document.querySelectorAll(".card").forEach((cardElement) => {
-            const element = cardElement;
-            const id = parseInt(element.dataset.id);
-            if (!cards[id].matched) {
-                element.classList.add("hidden");
-                element.textContent = "";
-            }
-        });
-    }
-    flippedCards = [];
 }
 function updateMatchCount() {
     const matchCountDisplay = document.getElementById("match-count");
