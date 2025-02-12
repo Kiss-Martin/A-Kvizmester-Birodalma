@@ -134,3 +134,66 @@ function reactionTime(event) {
 }
 document.addEventListener("keydown", reactionTime);
 let isQuestionActive = false;
+// let currentPlayer: boolean | null = null; // true for W player, false for ArrowUp player
+// function reactionTime(event: KeyboardEvent): boolean | void {
+//     if (currentPlayer !== null) return;
+//     if (event.key === "w" || event.key === "W") {
+//         currentPlayer = true;
+//         let wstyle = document.getElementById("w");
+//         wstyle!.style.marginTop = "10px";
+//         setTimeout(() => {
+//             wstyle!.style.marginTop = "0px";
+//         }, 200);
+//         questionContainer!.classList.remove('d-none');
+//         answerContainer!.classList.remove('d-none');
+//     }
+//     else if (event.key === "ArrowUp") {
+//         currentPlayer = false;
+//         let arrowupstyle = document.getElementById("arrowup");
+//         arrowupstyle!.style.marginTop = "10px";
+//         setTimeout(() => {
+//             arrowupstyle!.style.marginTop = "0px";
+//         }, 200);
+//         questionContainer!.classList.remove('d-none');
+//         answerContainer!.classList.remove('d-none');
+//     }
+// }
+// function checkAnswer(): void {
+//     const userAnswer = (answerInput as HTMLInputElement).value.trim().toLowerCase();
+//     const correctAnswers = questions[currentQuestionIndex].valaszok.map(v => v.toLowerCase());
+//     const answerIndex = correctAnswers.indexOf(userAnswer);
+//     if (correctAnswers.includes(userAnswer) && !usedAnswers.includes(userAnswer)) {
+//         usedAnswers.push(userAnswer);
+//         const points = 5 - answerIndex;
+//         if (currentPlayer) {
+//             totalScoreW += Math.max(1, points);
+//             feedback!.innerHTML = `<h2>Helyes válasz! +${Math.max(1, points)} pont</h2>
+//                                     <h3>W játékos összpontszáma: ${totalScoreW}</h3>`;
+//         } else {
+//             totalScoreUp += Math.max(1, points);
+//             feedback!.innerHTML = `<h2>Helyes válasz! +${Math.max(1, points)} pont</h2>
+//                                     <h3>ArrowUp játékos összpontszáma: ${totalScoreUp}</h3>`;
+//         }
+//         // Switch players after correct answer
+//         currentPlayer = !currentPlayer;
+//         if (usedAnswers.length === correctAnswers.length) {
+//             currentQuestionIndex++;
+//             usedAnswers = [];
+//             currentPlayer = null; // Reset for next reaction time competition
+//             if (currentQuestionIndex < questions.length) {
+//                 setTimeout(showQuestion, 2000);
+//             } else {
+//                 setTimeout(() => {
+//                     gameContainer!.classList.add('d-none');
+//                     endMessage!.classList.remove('d-none');
+//                 }, 2000);
+//             }
+//         }
+//     } else if (usedAnswers.includes(userAnswer)) {
+//         feedback!.innerHTML = `<h2>Ez a válasz már el lett használva!</h2>`;
+//     } else {
+//         feedback!.innerHTML = `<h2>Helytelen! A másik játékos következik!</h2>`;
+//         currentPlayer = !currentPlayer; // Switch players after wrong answer
+//     }
+//     (answerInput as HTMLInputElement).value = '';
+// }
