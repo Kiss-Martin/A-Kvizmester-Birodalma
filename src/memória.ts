@@ -13,12 +13,12 @@ let flippedCards: GameCard[] = [];
 let board: HTMLElement;
 let matchCount: number = 0;
 
-    async function loadCards() {
-        const response = await fetch("memória.json");
-        if (!response.ok) {
-            throw new Error("Hiba van")
-        }
-        const data = await response.json();
+async function loadCards() {
+    const response = await fetch("memória.json");
+    if (!response.ok) {
+        throw new Error("Hiba van")
+    }
+    const data = await response.json();
 
 
     const symbols: string[] = data.cards.map((card: Card) => card.symbol).sort(() => Math.random() - 0.5);
@@ -58,7 +58,7 @@ function flipCard(card: GameCard, cardElement: HTMLElement) {
 
 
 function checkMatch() {
-    if (flippedCards.length === 2) { 
+    if (flippedCards.length === 2) {
         const [card1, card2] = flippedCards;
 
         if (card1.symbol === card2.symbol) {

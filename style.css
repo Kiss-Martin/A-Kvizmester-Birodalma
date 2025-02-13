@@ -232,8 +232,9 @@ h1 {
 }
 
 #játék6 {
-  background-image: url("img/memóriakártya.avif");
-  background-size: contain;
+  background-image: url("img/memóriakártya.jpg");
+  background-size: cover;
+  
 }
 
 
