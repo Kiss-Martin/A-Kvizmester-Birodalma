@@ -12,6 +12,7 @@ let cards: GameCard[] = [];
 let flippedCards: GameCard[] = [];
 let board: HTMLElement;
 let matchCount: number = 0;
+let totalPairs: number = 0;
 
 async function loadCards() {
     const response = await fetch("memória.json");
@@ -19,10 +20,7 @@ async function loadCards() {
         throw new Error("Hiba van")
     }
     const data = await response.json();
-
-
     const symbols: string[] = data.cards.map((card: Card) => card.symbol).sort(() => Math.random() - 0.5);
-
 
     cards = symbols.map((symbol, index) => ({
         id: index,
@@ -30,8 +28,14 @@ async function loadCards() {
         matched: false
     }));
 
+    totalPairs = cards.length / 2; 
+
+    alert("Üdvözöljük, ha kártyafordításnál hibába ütközik nuygodtan használja az - Új játék - gombot!");
+
     renderBoard();
 }
+
+
 
 function renderBoard() {
     board.innerHTML = "";
@@ -52,10 +56,9 @@ function flipCard(card: GameCard, cardElement: HTMLElement) {
     }
 
     if (flippedCards.length === 2) {
-        setTimeout(checkMatch, 1000);
+        setTimeout(checkMatch);
     }
 }
-
 
 function checkMatch() {
     if (flippedCards.length === 2) {
@@ -64,6 +67,16 @@ function checkMatch() {
         if (card1.symbol === card2.symbol) {
             card1.matched = true;
             card2.matched = true;
+            matchCount++;
+            updateMatchCount();
+
+            
+            if (matchCount === totalPairs) {
+                setTimeout(() => {
+                    alert("Gratulálunk, nyertél!");
+                    window.location.reload(); 
+                }, 500);
+            }
         } else {
             setTimeout(() => {
                 document.querySelectorAll(".card").forEach((cardElement) => {
@@ -79,12 +92,33 @@ function checkMatch() {
         flippedCards = [];
     }
 }
+
 function updateMatchCount() {
     const matchCountDisplay = document.getElementById("match-count")!;
     matchCountDisplay.textContent = `Egyezések: ${matchCount}`;
 }
 
+
+function restartGame() {
+    matchCount = 0;
+    flippedCards = [];
+    loadCards(); 
+    updateMatchCount();
+    document.querySelectorAll(".card").forEach((cardElement) => {
+        const element = cardElement as HTMLElement;
+        element.classList.add("hidden");
+        element.textContent = "";
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     board = document.getElementById("game-board")!;
     loadCards();
+
+
+    const restartButton = document.createElement("button");
+    restartButton.textContent = "Új játék";
+    restartButton.style.marginTop = "10px"
+    restartButton.addEventListener("click", restartGame);
+    document.body.appendChild(restartButton);
 });
