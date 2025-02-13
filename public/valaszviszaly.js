@@ -183,3 +183,24 @@ function reactionTime(event) {
 document.addEventListener("keydown", reactionTime);
 let isQuestionActive = false;
 let isPlayer1Turn = true;
+const viszalyData = {
+    player1TotalScore: 0,
+    player2TotalScore: 0,
+    addScores(_player1Score, _player2Score) {
+        this.player1TotalScore += player1.score;
+        this.player2TotalScore += player2.score;
+        localStorage.setItem('player1TotalScore', this.player1TotalScore.toString());
+        localStorage.setItem('player2TotalScore', this.player2TotalScore.toString());
+    },
+    getPlayer1Score() {
+        return this.player1TotalScore;
+    },
+    getPlayer2Score() {
+        return this.player2TotalScore;
+    }
+};
+viszalyData.addScores(Number(localStorage.getItem('viszalyScore')), 0);
+console.log('Eredmények:', {
+    'Player 1': viszalyData.getPlayer1Score(),
+    'Player 2': viszalyData.getPlayer2Score()
+});
