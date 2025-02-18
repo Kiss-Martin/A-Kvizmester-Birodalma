@@ -8,6 +8,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+let currentPlayer = null;
+const player1 = { name: "(W)", score: 0 };
+const player2 = { name: "(↑)", score: 0 };
+let showQuestion;
 function fetchQuestions() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -41,159 +45,162 @@ function valaszViszaly() {
 }
 document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, void 0, function* () {
     const questionContainer = document.getElementById('question-text');
+    const answerContainer = document.getElementById('answer-container');
     const answerInput = document.getElementById('answer-input');
     const submitButton = document.getElementById('submit-button');
     const feedback = document.getElementById('feedback');
     const endMessage = document.getElementById('end-message');
     const gameContainer = document.getElementById('game-container');
-    const questions = yield fetchQuestions();
     let currentQuestionIndex = 0;
-    let totalScoreW = 0;
-    let totalScoreUp = 0;
-    function showQuestion() {
-        const question = questions[currentQuestionIndex];
-        questionContainer.textContent = question.kerdes;
-        answerInput.value = '';
-        feedback.textContent = '';
-    }
     let usedAnswers = [];
-    function checkAnswer(ArrowUpOrW) {
-        const userAnswer = answerInput.value.trim().toLowerCase();
-        const correctAnswers = questions[currentQuestionIndex].valaszok.map(v => v.toLowerCase());
-        const answerIndex = correctAnswers.indexOf(userAnswer);
-        if (correctAnswers.includes(userAnswer) && !usedAnswers.includes(userAnswer)) {
-            usedAnswers.push(userAnswer);
-            const points = 5 - answerIndex;
-            if (ArrowUpOrW) {
-                totalScoreW += Math.max(1, points);
-                feedback.innerHTML = `<h2>Helyes válasz! +${Math.max(1, points)} pont</h2>
-                                        <h3>Összpontszám: ${totalScoreW}</h3>`;
+    try {
+        const questions = yield fetchQuestions();
+        showQuestion = () => {
+            if (!questionContainer || currentQuestionIndex >= questions.length)
+                return;
+            const question = questions[currentQuestionIndex];
+            questionContainer.textContent = question.kerdes;
+            answerInput.value = '';
+            if (feedback && currentPlayer) {
+                feedback.innerHTML = `<h3>Jelenlegi játékos: ${currentPlayer.name}</h3>`;
             }
-            else {
-                totalScoreUp += Math.max(1, points);
-                feedback.innerHTML = `<h2>Helyes válasz! +${Math.max(1, points)} pont</h2>
-                                        <h3>Összpontszám: ${totalScoreUp}</h3>`;
-            }
-            feedback.classList.add('text-center');
-            // Check if all answers have been used
-            if (usedAnswers.length === correctAnswers.length) {
-                currentQuestionIndex++;
-                usedAnswers = []; // Reset used answers
-                isQuestionActive = false; // Allow reaction time again
-                if (currentQuestionIndex < questions.length) {
-                    setTimeout(showQuestion, 2000);
+        };
+        function checkAnswer(isPlayerOne) {
+            currentPlayer = isPlayerOne ? player1 : player2;
+            const userAnswer = answerInput.value.trim().toLowerCase();
+            const correctAnswers = questions[currentQuestionIndex].valaszok.map(v => v.toLowerCase());
+            const answerIndex = correctAnswers.indexOf(userAnswer);
+            if (!feedback)
+                return;
+            if (correctAnswers.includes(userAnswer) && !usedAnswers.includes(userAnswer)) {
+                usedAnswers.push(userAnswer);
+                const points = 5 - answerIndex;
+                currentPlayer.score += Math.max(1, points);
+                feedback.innerHTML = `
+                    <h2>Helyes válasz! +<span class="footerScore">${Math.max(1, points)}</span> pont</h2>
+                    <h3>${player1.name}: <span class="footerScore">${player1.score}</span> pont</h3>
+                    <h3>${player2.name}: <span class="footerScore">${player2.score}</span> pont</h3>`;
+                // Switch turns
+                isPlayer1Turn = !isPlayer1Turn;
+                currentPlayer = isPlayer1Turn ? player1 : player2;
+                if (usedAnswers.length === correctAnswers.length) {
+                    handleNextQuestion();
                 }
                 else {
-                    setTimeout(() => {
-                        gameContainer.classList.add('d-none');
-                        endMessage.classList.remove('d-none');
-                    }, 2000);
+                    // Show whose turn is next
+                    feedback.innerHTML += `<h3>Következő játékos: ${currentPlayer.name}</h3>`;
                 }
             }
+            else {
+                handleIncorrectAnswer();
+                // Switch turns even on wrong answer
+                isPlayer1Turn = !isPlayer1Turn;
+                currentPlayer = isPlayer1Turn ? player1 : player2;
+                feedback.innerHTML += `<h3>Következő játékos: ${currentPlayer.name}</h3>`;
+            }
+            answerInput.value = '';
         }
-        else if (usedAnswers.includes(userAnswer)) {
-            feedback.innerHTML = `<h2>Ez a válasz már el lett használva!</h2>`;
-            feedback.classList.add('text-center');
+        function handleNextQuestion() {
+            currentQuestionIndex++;
+            usedAnswers = [];
+            isQuestionActive = false;
+            answerContainer === null || answerContainer === void 0 ? void 0 : answerContainer.classList.add('d-none');
+            questionContainer === null || questionContainer === void 0 ? void 0 : questionContainer.classList.add('d-none');
+            if (currentQuestionIndex < questions.length) {
+                setTimeout(showQuestion, 2000);
+                questionContainer === null || questionContainer === void 0 ? void 0 : questionContainer.classList.remove('d-none');
+            }
+            else {
+                setTimeout(() => {
+                    gameContainer === null || gameContainer === void 0 ? void 0 : gameContainer.classList.add('d-none');
+                    endMessage === null || endMessage === void 0 ? void 0 : endMessage.classList.remove('d-none');
+                    let winnerName = player1.score > player2.score ? player1.name : player2.name;
+                    const reactionTimeElement = document.getElementById('reactiontime');
+                    if (reactionTimeElement) {
+                        if (player1.score === player2.score) {
+                            reactionTimeElement.innerHTML = `<h2>Döntetlen.</h2>`;
+                        }
+                        else {
+                            reactionTimeElement.innerHTML = `<h2>A győztes: ${winnerName}</h2>`;
+                        }
+                    }
+                }, 2000);
+            }
         }
-        else {
-            feedback.innerHTML = `<h2>Helytelen! Próbáld újra!</h2>`;
-            feedback.classList.add('text-center');
+        function handleIncorrectAnswer() {
+            if (!feedback || !currentPlayer)
+                return;
+            const message = usedAnswers.includes(answerInput.value.trim().toLowerCase())
+                ? 'Ez a válasz már el lett használva!'
+                : 'Helytelen! Próbáld újra!';
+            feedback.innerHTML = `
+                <h2>${message}</h2>
+                <h3>${currentPlayer.name}</h3>
+            `;
         }
-        answerInput.value = '';
+        submitButton === null || submitButton === void 0 ? void 0 : submitButton.addEventListener('click', () => checkAnswer(currentPlayer === player1));
+        showQuestion();
     }
-    submitButton.addEventListener('click', () => checkAnswer(true));
-    showQuestion();
+    catch (error) {
+        console.error("Nem sikerült betölteni a játékot. Hiba:", error);
+    }
 }));
 function reactionTime(event) {
     if (isQuestionActive)
         return;
     const questionContainer = document.getElementById('question-container');
     const answerContainer = document.getElementById('answer-container');
-    if (event.key === "w" || event.key === "W") {
+    if (event.key.toLowerCase() === "w") {
         isQuestionActive = true;
-        let wstyle = document.getElementById("w");
-        wstyle.style.marginTop = "10px";
-        setTimeout(() => {
-            wstyle.style.marginTop = "0px";
-        }, 200);
-        questionContainer.classList.remove('d-none');
-        answerContainer.classList.remove('d-none');
-        return true;
+        currentPlayer = player1;
+        isPlayer1Turn = true;
+        const wstyle = document.getElementById("w");
+        if (wstyle) {
+            wstyle.style.marginTop = "10px";
+            setTimeout(() => {
+                wstyle.style.marginTop = "0px";
+            }, 200);
+        }
     }
     else if (event.key === "ArrowUp") {
         isQuestionActive = true;
-        let arrowupstyle = document.getElementById("arrowup");
-        arrowupstyle.style.marginTop = "10px";
-        setTimeout(() => {
-            arrowupstyle.style.marginTop = "0px";
-        }, 200);
-        questionContainer.classList.remove('d-none');
-        answerContainer.classList.remove('d-none');
-        return false;
+        currentPlayer = player2;
+        isPlayer1Turn = false;
+        const arrowupstyle = document.getElementById("arrowup");
+        if (arrowupstyle) {
+            arrowupstyle.style.marginTop = "10px";
+            setTimeout(() => {
+                arrowupstyle.style.marginTop = "0px";
+            }, 200);
+        }
+    }
+    if (isQuestionActive) {
+        questionContainer === null || questionContainer === void 0 ? void 0 : questionContainer.classList.remove('d-none');
+        answerContainer === null || answerContainer === void 0 ? void 0 : answerContainer.classList.remove('d-none');
+        showQuestion();
     }
 }
 document.addEventListener("keydown", reactionTime);
 let isQuestionActive = false;
-// let currentPlayer: boolean | null = null; // true for W player, false for ArrowUp player
-// function reactionTime(event: KeyboardEvent): boolean | void {
-//     if (currentPlayer !== null) return;
-//     if (event.key === "w" || event.key === "W") {
-//         currentPlayer = true;
-//         let wstyle = document.getElementById("w");
-//         wstyle!.style.marginTop = "10px";
-//         setTimeout(() => {
-//             wstyle!.style.marginTop = "0px";
-//         }, 200);
-//         questionContainer!.classList.remove('d-none');
-//         answerContainer!.classList.remove('d-none');
-//     }
-//     else if (event.key === "ArrowUp") {
-//         currentPlayer = false;
-//         let arrowupstyle = document.getElementById("arrowup");
-//         arrowupstyle!.style.marginTop = "10px";
-//         setTimeout(() => {
-//             arrowupstyle!.style.marginTop = "0px";
-//         }, 200);
-//         questionContainer!.classList.remove('d-none');
-//         answerContainer!.classList.remove('d-none');
-//     }
-// }
-// function checkAnswer(): void {
-//     const userAnswer = (answerInput as HTMLInputElement).value.trim().toLowerCase();
-//     const correctAnswers = questions[currentQuestionIndex].valaszok.map(v => v.toLowerCase());
-//     const answerIndex = correctAnswers.indexOf(userAnswer);
-//     if (correctAnswers.includes(userAnswer) && !usedAnswers.includes(userAnswer)) {
-//         usedAnswers.push(userAnswer);
-//         const points = 5 - answerIndex;
-//         if (currentPlayer) {
-//             totalScoreW += Math.max(1, points);
-//             feedback!.innerHTML = `<h2>Helyes válasz! +${Math.max(1, points)} pont</h2>
-//                                     <h3>W játékos összpontszáma: ${totalScoreW}</h3>`;
-//         } else {
-//             totalScoreUp += Math.max(1, points);
-//             feedback!.innerHTML = `<h2>Helyes válasz! +${Math.max(1, points)} pont</h2>
-//                                     <h3>ArrowUp játékos összpontszáma: ${totalScoreUp}</h3>`;
-//         }
-//         // Switch players after correct answer
-//         currentPlayer = !currentPlayer;
-//         if (usedAnswers.length === correctAnswers.length) {
-//             currentQuestionIndex++;
-//             usedAnswers = [];
-//             currentPlayer = null; // Reset for next reaction time competition
-//             if (currentQuestionIndex < questions.length) {
-//                 setTimeout(showQuestion, 2000);
-//             } else {
-//                 setTimeout(() => {
-//                     gameContainer!.classList.add('d-none');
-//                     endMessage!.classList.remove('d-none');
-//                 }, 2000);
-//             }
-//         }
-//     } else if (usedAnswers.includes(userAnswer)) {
-//         feedback!.innerHTML = `<h2>Ez a válasz már el lett használva!</h2>`;
-//     } else {
-//         feedback!.innerHTML = `<h2>Helytelen! A másik játékos következik!</h2>`;
-//         currentPlayer = !currentPlayer; // Switch players after wrong answer
-//     }
-//     (answerInput as HTMLInputElement).value = '';
-// }
+let isPlayer1Turn = true;
+const viszalyData = {
+    player1TotalScore: 0,
+    player2TotalScore: 0,
+    addScores(_player1Score, _player2Score) {
+        this.player1TotalScore += player1.score;
+        this.player2TotalScore += player2.score;
+        localStorage.setItem('player1TotalScore', this.player1TotalScore.toString());
+        localStorage.setItem('player2TotalScore', this.player2TotalScore.toString());
+    },
+    getPlayer1Score() {
+        return this.player1TotalScore;
+    },
+    getPlayer2Score() {
+        return this.player2TotalScore;
+    }
+};
+viszalyData.addScores(Number(localStorage.getItem('viszalyScore')), 0);
+console.log('Eredmények:', {
+    'Player 1': viszalyData.getPlayer1Score(),
+    'Player 2': viszalyData.getPlayer2Score()
+});

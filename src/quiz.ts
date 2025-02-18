@@ -164,7 +164,8 @@ function handleAnswer(event: Event) {
   setTimeout(() => {
       currentQuestionIndex++;
       displayQuestion();
-  }, 1500);
+  }, 150);
+  
 }
 
 // const reloadButton = document.getElementById('reload');
@@ -202,6 +203,7 @@ const quizData = {
     totalScore: 0,
     addScore(score: number) {
         this.totalScore += score;
+        localStorage.setItem('totalQuizScore', this.totalScore.toString());  // Save to localStorage
     },
     getTotalScore() {
         return this.totalScore;
