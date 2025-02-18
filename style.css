@@ -237,6 +237,11 @@ h1 {
   
 }
 
+.disabled {
+  background-color: #A9A9A9;
+  cursor: not-allowed;
+}
+
 
 .styled-button {
   background: linear-gradient(90deg, #f39c12, #d35400);

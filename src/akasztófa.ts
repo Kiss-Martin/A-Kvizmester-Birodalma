@@ -135,6 +135,10 @@ async function megjelenítBillentyuzetet(kartya: Element) {
         betuCard.style.fontSize = "xx-large";
 
         betuCard.addEventListener("click", () => {
+
+            if (betuCard.style.backgroundColor === "rgb(169, 169, 169)") {
+                return; 
+            }
             if (szó.word.includes(betu)) {
                 const regExp = new RegExp(betu, 'g');
                 divszó.innerText = divszó.innerText.split(' ').map((item, index) =>
@@ -151,6 +155,7 @@ async function megjelenítBillentyuzetet(kartya: Element) {
                     showLoseMessage();
                 } 
             }
+            
 
             betuCard.style.backgroundColor = "#A9A9A9";
             betuCard.style.cursor = "not-allowed";
@@ -181,7 +186,8 @@ async function megjelenítBillentyuzetet(kartya: Element) {
             gratulalokDiv.style.textAlign = "center";
             gratulalokDiv.style.fontSize = "2rem";
             gratulalokDiv.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.5)";
-            gratulalokDiv.textContent = "Gratulálunk!  ";
+            gratulalokDiv.textContent = `Gratulálunk!  A szó: ${szó.word}`;
+            gratulalokDiv.style.fontFamily = "'Georgia', serif";
             document.body.appendChild(gratulalokDiv);
 
             const ujrajatszasButton = document.createElement("button");
@@ -193,7 +199,8 @@ async function megjelenítBillentyuzetet(kartya: Element) {
             ujrajatszasButton.style.border = "2px solid #A0522D";
             ujrajatszasButton.style.borderRadius = "5px";
             ujrajatszasButton.style.cursor = "pointer";
-            ujrajatszasButton.style.marginTop = "20px";
+            ujrajatszasButton.style.marginTop = "15px";
+            ujrajatszasButton.style.marginLeft = "15px";
 
             ujrajatszasButton.addEventListener("click", () => {
                 location.reload();
@@ -221,7 +228,8 @@ async function megjelenítBillentyuzetet(kartya: Element) {
         vesztettDiv.style.textAlign = "center";
         vesztettDiv.style.fontSize = "2rem";
         vesztettDiv.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.5)";
-        vesztettDiv.textContent = "Vesztettél!  ";
+        vesztettDiv.textContent = `Vesztettél!  A szó: ${szó.word}`;
+        vesztettDiv.style.fontFamily = "'Georgia', serif";
         document.body.appendChild(vesztettDiv);
 
         const ujrajatszasButton = document.createElement("button");
@@ -234,6 +242,7 @@ async function megjelenítBillentyuzetet(kartya: Element) {
         ujrajatszasButton.style.borderRadius = "5px";
         ujrajatszasButton.style.cursor = "pointer";
         ujrajatszasButton.style.marginTop = "20px";
+        ujrajatszasButton.style.marginLeft = "15px";
 
         ujrajatszasButton.addEventListener("click", () => {
             location.reload();
