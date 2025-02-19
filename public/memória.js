@@ -15,7 +15,7 @@ let matchCount = 0;
 let totalPairs = 0;
 function loadCards() {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch("http://localhost:3000/cards");
+        const response = yield fetch("memória.json");
         if (!response.ok) {
             throw new Error("Hiba van");
         }
