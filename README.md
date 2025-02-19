@@ -17,6 +17,10 @@
 - Gyors Játékmenet
 ---
 
+### [Mini játékok)
+- Mini játékok
+- Ha nem akarsz nagy fába vágni fejszét ez számodra tökéletes lesz
+
 ## Technikai Részletek
 
 - [x] Reszponzivitás
