@@ -15,7 +15,7 @@ let matchCount: number = 0;
 let totalPairs: number = 0;
 
 async function loadCards() {
-    const response = await fetch("memória.json");
+    const response = await fetch("http://localhost:3000/cards");
     if (!response.ok) {
         throw new Error("Hiba van")
     }
