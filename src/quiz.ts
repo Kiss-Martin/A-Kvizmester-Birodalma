@@ -18,7 +18,7 @@ async function loadCategories() {
         const categories = [...new Set(allQuestions.map((q: Question) => q.category)), 'Mind'];
         displayCategoryMenu(categories);
     } catch (error) {
-        console.error('Error loading categories:', error);
+        console.error('Hiba a kategóriák betöltése során:', error);
         showError();
     }
 }

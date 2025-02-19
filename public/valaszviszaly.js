@@ -51,6 +51,10 @@ document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, vo
     const feedback = document.getElementById('feedback');
     const endMessage = document.getElementById('end-message');
     const gameContainer = document.getElementById('game-container');
+    const buttoncontainer = document.getElementById('buttoncontainer');
+    const reactionTime = document.getElementById('reactiontime');
+    const wimg = document.getElementById('w');
+    const upimg = document.getElementById('arrowup');
     let currentQuestionIndex = 0;
     let usedAnswers = [];
     try {
@@ -58,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, vo
         showQuestion = () => {
             if (!questionContainer || currentQuestionIndex >= questions.length)
                 return;
+            answerInput.focus();
             const question = questions[currentQuestionIndex];
             questionContainer.textContent = question.kerdes;
             answerInput.value = '';
@@ -80,20 +85,17 @@ document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, vo
                     <h2>Helyes válasz! +<span class="footerScore">${Math.max(1, points)}</span> pont</h2>
                     <h3>${player1.name}: <span class="footerScore">${player1.score}</span> pont</h3>
                     <h3>${player2.name}: <span class="footerScore">${player2.score}</span> pont</h3>`;
-                // Switch turns
                 isPlayer1Turn = !isPlayer1Turn;
                 currentPlayer = isPlayer1Turn ? player1 : player2;
                 if (usedAnswers.length === correctAnswers.length) {
                     handleNextQuestion();
                 }
                 else {
-                    // Show whose turn is next
                     feedback.innerHTML += `<h3>Következő játékos: ${currentPlayer.name}</h3>`;
                 }
             }
             else {
                 handleIncorrectAnswer();
-                // Switch turns even on wrong answer
                 isPlayer1Turn = !isPlayer1Turn;
                 currentPlayer = isPlayer1Turn ? player1 : player2;
                 feedback.innerHTML += `<h3>Következő játékos: ${currentPlayer.name}</h3>`;
@@ -109,6 +111,12 @@ document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, vo
             if (currentQuestionIndex < questions.length) {
                 setTimeout(showQuestion, 2000);
                 questionContainer === null || questionContainer === void 0 ? void 0 : questionContainer.classList.remove('d-none');
+                answerContainer === null || answerContainer === void 0 ? void 0 : answerContainer.classList.add('d-none');
+                buttoncontainer === null || buttoncontainer === void 0 ? void 0 : buttoncontainer.classList.remove('d-none');
+                reactionTime === null || reactionTime === void 0 ? void 0 : reactionTime.classList.remove('d-none');
+                wimg === null || wimg === void 0 ? void 0 : wimg.classList.remove('d-none');
+                upimg === null || upimg === void 0 ? void 0 : upimg.classList.remove('d-none');
+                feedback === null || feedback === void 0 ? void 0 : feedback.classList.add('d-none');
             }
             else {
                 setTimeout(() => {
@@ -139,6 +147,11 @@ document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, vo
             `;
         }
         submitButton === null || submitButton === void 0 ? void 0 : submitButton.addEventListener('click', () => checkAnswer(currentPlayer === player1));
+        answerInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                checkAnswer(currentPlayer === player1);
+            }
+        });
         showQuestion();
     }
     catch (error) {
@@ -150,33 +163,28 @@ function reactionTime(event) {
         return;
     const questionContainer = document.getElementById('question-container');
     const answerContainer = document.getElementById('answer-container');
+    const buttoncontainer = document.getElementById('buttoncontainer');
+    const reactionTime = document.getElementById('reactiontime');
+    const wimg = document.getElementById('w');
+    const upimg = document.getElementById('arrowup');
     if (event.key.toLowerCase() === "w") {
         isQuestionActive = true;
         currentPlayer = player1;
         isPlayer1Turn = true;
-        const wstyle = document.getElementById("w");
-        if (wstyle) {
-            wstyle.style.marginTop = "10px";
-            setTimeout(() => {
-                wstyle.style.marginTop = "0px";
-            }, 200);
-        }
     }
     else if (event.key === "ArrowUp") {
         isQuestionActive = true;
         currentPlayer = player2;
         isPlayer1Turn = false;
-        const arrowupstyle = document.getElementById("arrowup");
-        if (arrowupstyle) {
-            arrowupstyle.style.marginTop = "10px";
-            setTimeout(() => {
-                arrowupstyle.style.marginTop = "0px";
-            }, 200);
-        }
     }
+    wimg === null || wimg === void 0 ? void 0 : wimg.classList.add('d-none');
+    upimg === null || upimg === void 0 ? void 0 : upimg.classList.add('d-none');
     if (isQuestionActive) {
         questionContainer === null || questionContainer === void 0 ? void 0 : questionContainer.classList.remove('d-none');
         answerContainer === null || answerContainer === void 0 ? void 0 : answerContainer.classList.remove('d-none');
+        buttoncontainer === null || buttoncontainer === void 0 ? void 0 : buttoncontainer.classList.remove('d-none');
+        reactionTime === null || reactionTime === void 0 ? void 0 : reactionTime.classList.add('d-none');
+        answerContainer === null || answerContainer === void 0 ? void 0 : answerContainer.classList.add('d-flex');
         showQuestion();
     }
 }
