@@ -1,124 +1,119 @@
-interface Card {
-    symbol: string;
-}
 
-interface GameCard {
-    id: number;
-    symbol: string;
-    matched: boolean;
-}
+const cards = [
+    { symbol: "🍎" },
+    { symbol: "🍎" },
+    { symbol: "🍌" },
+    { symbol: "🍌" },
+    { symbol: "🍇" },
+    { symbol: "🍇" },
+    { symbol: "🍒" },
+    { symbol: "🍒" },
+    { symbol: "🌭" },
+    { symbol: "🌭" },
+    { symbol: "🍓" },
+    { symbol: "🍓" },
+    { symbol: "🍑" },
+    { symbol: "🍑" },
+    { symbol: "🍉" },
+    { symbol: "🍉" },
+    { symbol: "🥔" },
+    { symbol: "🥔" },
+    { symbol: "🍍" },
+    { symbol: "🍍" },
+];
 
-let cards: GameCard[] = [];
-let flippedCards: GameCard[] = [];
-let board: HTMLElement;
-let matchCount: number = 0;
-let totalPairs: number = 0;
+let flippedCards: HTMLElement[] = [];  
+let matchCount = 0;  
+let boardLocked = false;  
 
-async function loadCards() {
-    const response = await fetch("memória.json");
-    if (!response.ok) {
-        throw new Error("Hiba van")
-    }
-    const data = await response.json();
-    const symbols: string[] = data.cards.map((card: Card) => card.symbol).sort(() => Math.random() - 0.5);
-
-    cards = symbols.map((symbol, index) => ({
-        id: index,
-        symbol: symbol,
-        matched: false
-    }));
-
-    totalPairs = cards.length / 2; 
-
-    alert("Üdvözöljük, ha kártyafordításnál hibába ütközik nuygodtan használja az - Új játék - gombot!");
-
-    renderBoard();
-}
+const gameBoard = document.getElementById('game-board')!;
+const matchCountElement = document.getElementById('match-count')!;
 
 
+function setupGame() {
+    const shuffledCards = shuffle(cards);
+    gameBoard.innerHTML = '';  
 
-function renderBoard() {
-    board.innerHTML = "";
-    cards.forEach((card) => {
-        const cardElement = document.createElement("div") as HTMLElement;
-        cardElement.classList.add("card", "hidden");
-        cardElement.dataset.id = card.id.toString();
-        cardElement.addEventListener("click", () => flipCard(card, cardElement));
-        board.appendChild(cardElement);
+    shuffledCards.forEach((card, index) => {
+        const cardElement = document.createElement('div');
+        cardElement.classList.add('card', 'hidden');
+        cardElement.setAttribute('data-index', index.toString());
+        cardElement.addEventListener('click', handleCardClick);
+        gameBoard.appendChild(cardElement);
     });
 }
 
-function flipCard(card: GameCard, cardElement: HTMLElement) {
-    if (flippedCards.length < 2 && !card.matched && !flippedCards.includes(card)) {
-        cardElement.textContent = card.symbol;
-        cardElement.classList.remove("hidden");
-        flippedCards.push(card);
+
+function shuffle(array: any[]): any[] {
+    return array.sort(() => Math.random() - 0.5);
+}
+
+
+function handleCardClick(event: Event): void {
+    const cardElement = event.target as HTMLElement;
+
+    
+    if (cardElement.classList.contains('flipped') || boardLocked) {
+        return;
     }
 
+    const cardIndex = cardElement.getAttribute('data-index');
+    if (cardIndex === null) return;
+
+    
+    cardElement.textContent = cards[parseInt(cardIndex)].symbol;
+    cardElement.classList.remove('hidden');
+    cardElement.classList.add('flipped');
+    flippedCards.push(cardElement);
+
+    
     if (flippedCards.length === 2) {
-        setTimeout(checkMatch);
+        boardLocked = true;
+        checkMatch();
     }
 }
 
-function checkMatch() {
-    if (flippedCards.length === 2) {
-        const [card1, card2] = flippedCards;
+function checkMatch(): void {
+    const [firstCard, secondCard] = flippedCards;
 
-        if (card1.symbol === card2.symbol) {
-            card1.matched = true;
-            card2.matched = true;
-            matchCount++;
-            updateMatchCount();
+    const firstSymbol = firstCard.textContent;
+    const secondSymbol = secondCard.textContent;
 
-            
-            if (matchCount === totalPairs) {
-                setTimeout(() => {
-                    alert("Gratulálunk, nyertél!");
-                    window.location.reload(); 
-                }, 500);
-            }
-        } else {
-            setTimeout(() => {
-                document.querySelectorAll(".card").forEach((cardElement) => {
-                    const element = cardElement as HTMLElement;
-                    const id = parseInt(element.dataset.id as string);
-                    if (!cards[id].matched) {
-                        element.classList.add("hidden");
-                        element.textContent = "";
-                    }
-                });
-            }, 500);
-        }
+    if (firstSymbol === secondSymbol) {
+    
         flippedCards = [];
+        boardLocked = false;
+        updateMatchCount();
+    } else {
+      
+        setTimeout(() => {
+            firstCard.classList.remove('flipped');
+            secondCard.classList.remove('flipped');
+            firstCard.textContent = '';
+            secondCard.textContent = '';
+            firstCard.classList.add('hidden');  
+            secondCard.classList.add('hidden'); 
+            flippedCards = [];
+            boardLocked = false;
+        }, 1000);  
     }
 }
 
-function updateMatchCount() {
-    const matchCountDisplay = document.getElementById("match-count")!;
-    matchCountDisplay.textContent = `Egyezések: ${matchCount}`;
+
+
+function updateMatchCount(): void {
+    matchCount++;
+    matchCountElement.textContent = `Egyezések: ${matchCount}`;
 }
 
 
-function restartGame() {
+function restartGame(): void {
     matchCount = 0;
     flippedCards = [];
-    loadCards(); 
-    updateMatchCount();
-    document.querySelectorAll(".card").forEach((cardElement) => {
-        const element = cardElement as HTMLElement;
-        element.classList.add("hidden");
-        element.textContent = "";
-    });
+    boardLocked = false;
+    setupGame();
+    matchCountElement.textContent = `Egyezések: ${matchCount}`;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    board = document.getElementById("game-board")!;
-    loadCards();
 
-
-    const restartButton = document.createElement("button");
-    restartButton.textContent = "Új játék";
-    restartButton.style.marginTop = "10px"
-    restartButton.addEventListener("click", restartGame);
-    document.body.appendChild(restartButton);
-});
+setupGame();
