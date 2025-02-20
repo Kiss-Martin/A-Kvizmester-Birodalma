@@ -12,7 +12,7 @@ let playerWins = 0;
 let computerWins = 0;
 function fetchChoices() {
     return __awaiter(this, void 0, void 0, function* () {
-        const response = yield fetch("http://localhost:3000/choices");
+        const response = yield fetch('http://localhost:3000/choices');
         if (!response.ok) {
             throw new Error("Hiba van");
         }

@@ -7,7 +7,7 @@ let playerWins = 0;
 let computerWins = 0;
 
 async function fetchChoices(): Promise<{ choices: Ko[] }> {
-    const response = await fetch("http://localhost:3000/choices");
+    const response = await fetch('http://localhost:3000/choices');
     if (!response.ok) {
         throw new Error("Hiba van");
     }

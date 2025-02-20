@@ -15,7 +15,7 @@ let showQuestion;
 function fetchQuestions() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const response = yield fetch('http://localhost:3002/valaszok');
+            const response = yield fetch('http://localhost:3000/valaszok');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

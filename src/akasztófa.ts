@@ -4,7 +4,7 @@ interface Kérdések {
 }
 
 async function fetchWords(): Promise<Kérdések[]> {
-    const response = await fetch("http://localhost:3001/szavak")
+    const response = await fetch('http://localhost:3000/szavak');
     if (!response.ok) {
         throw new Error("Hiba van")
     } else {
