@@ -252,12 +252,249 @@
     "category": "Sport",
     "difficulty": "Könnyű"
   }
-]
+],
 
+"choices": [
+      { "id": 1, "name": "kő" },
+      { "id": 2, "name": "papír" },
+      { "id": 3, "name": "olló" }
+    ],
 
-}
-
-
-
-
-
+      "cards": [
+        { "symbol": "🍎" },
+        { "symbol": "🍎" },
+        { "symbol": "🍌" },
+        { "symbol": "🍌" },
+        { "symbol": "🍇" },
+        { "symbol": "🍇" },
+        { "symbol": "🍒" },
+        { "symbol": "🍒" },
+        { "symbol": "🌭" },
+        { "symbol": "🌭" },
+        { "symbol": "🍓" },
+        { "symbol": "🍓" },
+        { "symbol": "🍑" },
+        { "symbol": "🍑" },
+        { "symbol": "🍉" },
+        { "symbol": "🍉" },
+        { "symbol": "🥔" },
+        { "symbol": "🥔" },      
+        { "symbol": "🍍" },
+        { "symbol": "🍍" },
+        { "symbol": "🍊" },
+        { "symbol": "🍊" },
+        { "symbol": "🍋" },
+        { "symbol": "🍋" }      
+      ],
+      
+        "szavak": [
+        { "word": "rómaibirodalom", "category": "történelem" },
+        { "word": "másodikvilágháború", "category": "történelem" },
+        { "word": "szovjetunió", "category": "történelem" },
+        { "word": "franciaforradalom", "category": "történelem" },
+        { "word": "napóleon", "category": "történelem" },
+        { "word": "kemikáliaiháború", "category": "történelem" },
+        { "word": "indiaifüggetlenségi háború", "category": "történelem" },
+        { "word": "háborúsbűnök", "category": "történelem" },
+        { "word": "bécsikongresszus", "category": "történelem" },
+        { "word": "mezopotámia", "category": "történelem" },
+        { "word": "ancientEgypt", "category": "történelem" },
+        { "word": "mongolhódítás", "category": "történelem" },
+        { "word": "keresztesháborúk", "category": "történelem" },
+        { "word": "reformáció", "category": "történelem" },
+        { "word": "kolonizáció", "category": "történelem" },
+        { "word": "világimperium", "category": "történelem" },
+        { "word": "habsburgbirodalom", "category": "történelem" },
+        { "word": "babilonifogság", "category": "történelem" },
+        { "word": "amerikaipolgárháború", "category": "történelem" },
+        { "word": "párizsibékeszerződés", "category": "történelem" },
+    
+        { "word": "titanic", "category": "filmek" },
+        { "word": "avatar", "category": "filmek" },
+        { "word": "star wars", "category": "filmek" },
+        { "word": "harry potter", "category": "filmek" },
+        { "word": "matrix", "category": "filmek" },
+        { "word": "inception", "category": "filmek" },
+        { "word": "forrest gump", "category": "filmek" },
+        { "word": "jurassic park", "category": "filmek" },
+        { "word": "pulp fiction", "category": "filmek" },
+        { "word": "gladiátor", "category": "filmek" },
+        { "word": "shutter island", "category": "filmek" },
+        { "word": "fight club", "category": "filmek" },
+        { "word": "dunkirk", "category": "filmek" },
+        { "word": "the godfather", "category": "filmek" },
+        { "word": "the dark knight", "category": "filmek" },
+        { "word": "the lord of the rings", "category": "filmek" },
+        { "word": "schindler listája", "category": "filmek" },
+        { "word": "interstellar", "category": "filmek" },
+        { "word": "the revenant", "category": "filmek" },
+        { "word": "american beauty", "category": "filmek" },
+    
+        { "word": "magyarország", "category": "országok" },
+        { "word": "amerikai egyesült államok", "category": "országok" },
+        { "word": "franciaország", "category": "országok" },
+        { "word": "brazilia", "category": "országok" },
+        { "word": "japan", "category": "országok" },
+        { "word": "ausztrália", "category": "országok" },
+        { "word": "indonézia", "category": "országok" },
+        { "word": "kanada", "category": "országok" },
+        { "word": "németország", "category": "országok" },
+        { "word": "oroszország", "category": "országok" },
+        { "word": "spanyolország", "category": "országok" },
+        { "word": "kínai népköztársaság", "category": "országok" },
+        { "word": "indiá", "category": "országok" },
+        { "word": "törökország", "category": "országok" },
+        { "word": "olaszország", "category": "országok" },
+        { "word": "dél-afrikai köztársaság", "category": "országok" },
+        { "word": "egyesült királyság", "category": "országok" },
+        { "word": "mexikó", "category": "országok" },
+        { "word": "pakisztán", "category": "országok" },
+        { "word": "argentina", "category": "országok" },
+    
+        { "word": "tigris", "category": "állatok" },
+        { "word": "elefánt", "category": "állatok" },
+        { "word": "oroszlán", "category": "állatok" },
+        { "word": "pingvin", "category": "állatok" },
+        { "word": "zebra", "category": "állatok" },
+        { "word": "medve", "category": "állatok" },
+        { "word": "delfin", "category": "állatok" },
+        { "word": "krokodil", "category": "állatok" },
+        { "word": "varjú", "category": "állatok" },
+        { "word": "szarvas", "category": "állatok" },
+        { "word": "farkas", "category": "állatok" },
+        { "word": "kígyó", "category": "állatok" },
+        { "word": "bagoly", "category": "állatok" },
+        { "word": "panda", "category": "állatok" },
+        { "word": "nyúl", "category": "állatok" },
+        { "word": "tengerimalac", "category": "állatok" },
+        { "word": "kaméleon", "category": "állatok" },
+        { "word": "gólya", "category": "állatok" },
+        { "word": "tehén", "category": "állatok" },
+        { "word": "ló", "category": "állatok" },
+    
+        { "word": "budapest", "category": "fővárosok" },
+        { "word": "párizs", "category": "fővárosok" },
+        { "word": "london", "category": "fővárosok" },
+        { "word": "tokió", "category": "fővárosok" },
+        { "word": "washington", "category": "fővárosok" },
+        { "word": "berlín", "category": "fővárosok" },
+        { "word": "moszkva", "category": "fővárosok" },
+        { "word": "ottawa", "category": "fővárosok" },
+        { "word": "róma", "category": "fővárosok" },
+        { "word": "madrid", "category": "fővárosok" },
+        { "word": "buenos aires", "category": "fővárosok" },
+        { "word": "new delhi", "category": "fővárosok" },
+        { "word": "peking", "category": "fővárosok" },
+        { "word": "athén", "category": "fővárosok" },
+        { "word": "brasilia", "category": "fővárosok" },
+        { "word": "varsó", "category": "fővárosok" },
+        { "word": "sydney", "category": "fővárosok" },
+        { "word": "kairó", "category": "fővárosok" },
+        { "word": "amsterdam", "category": "fővárosok" },
+        { "word": "stockholm", "category": "fővárosok" },
+    
+        { "word": "piros", "category": "színek" },
+        { "word": "kék", "category": "színek" },
+        { "word": "zöld", "category": "színek" },
+        { "word": "sárga", "category": "színek" },
+        { "word": "fekete", "category": "színek" },
+        { "word": "fehér", "category": "színek" },
+        { "word": "narancssárga", "category": "színek" },
+        { "word": "lila", "category": "színek" },
+        { "word": "rózsaszín", "category": "színek" },
+        { "word": "barna", "category": "színek" },
+        { "word": "szürke", "category": "színek" },
+        { "word": "arany", "category": "színek" },
+        { "word": "ezüst", "category": "színek" },
+        { "word": "burgundi", "category": "színek" },
+        { "word": "olíva", "category": "színek" },
+        { "word": "világoskék", "category": "színek" },
+        { "word": "fukszia", "category": "színek" },
+        { "word": "bordó", "category": "színek" },
+        { "word": "mályva", "category": "színek" },
+        { "word": "mentazöld", "category": "színek" }
+        ],
+        
+        "valaszok": [
+          {
+              "kerdes": "Mi a legjobb nyári gyümölcs?",
+              "valaszok": ["dinnye", "eper", "barack", "szőlő"]
+          },
+          {
+              "kerdes": "Milyen sportot néznek a legtöbben?",
+              "valaszok": ["foci", "kosárlabda", "tenisz", "úszás"]
+          },
+          {
+              "kerdes": "Legjobb reggeli étel?",
+              "valaszok": ["tojás", "kenyér", "zabkása", "gyümölcs"]
+          },
+          {
+              "kerdes": "Preferált hétvégi program?",
+              "valaszok": ["pihenés", "kirándulás", "főzés", "filmenézés"]
+          },
+          {
+              "kerdes": "Ételek, amiről eszedbe jut a karácsony?",
+              "valaszok": ["halászlé", "bejgli", "töltött káposzta", "mézeskalács"]
+          },
+          {
+              "kerdes": "Elengedhetetlen tárgyak nyaraláshoz?",
+              "valaszok": ["ruha", "telefon", "naptej", "pénz"]
+          },
+          {
+              "kerdes": "Mi a legnépszerűbb gyorsétel?",
+              "valaszok": ["hamburger", "pizza", "hotdog", "kebab"]
+          },
+          {
+              "kerdes": "Elfoglaltságok a strandon?",
+              "valaszok": ["napozás", "úszás", "homokvár építés", "fagyizás"]
+          },
+          {
+              "kerdes": "Mi az, ami mindig van egy iskolatáskában?",
+              "valaszok": ["füzet", "ceruza", "tankönyv", "radír"]
+          },
+          {
+              "kerdes": "Milyen zöldséget használunk salátához?",
+              "valaszok": ["paradicsom", "uborka", "saláta", "hagyma"]
+          },
+          {
+              "kerdes": "Mi a legnépszerűbb üdítőital?",
+              "valaszok": ["kóla", "narancslé", "víz", "tea"]
+          },
+          {
+              "kerdes": "Mi az, amit télen viselünk?",
+              "valaszok": ["kabát", "sál", "sapka", "kesztyű"]
+          },
+          {
+              "kerdes": "Melyik szobában töltjük a legtöbb időt?",
+              "valaszok": ["nappali", "hálószoba", "konyha", "fürdőszoba"]
+          },
+          {
+              "kerdes": "Elengedhetetlen piknik kellékek?",
+              "valaszok": ["szendvics", "takaró", "gyümölcslé", "frizbi"]
+          },
+          {
+              "kerdes": "Melyik napot szeretjük a legjobban?",
+              "valaszok": ["szombat", "péntek", "vasárnap", "szerda"]
+          },
+          {
+              "kerdes": "Mi az, amit általában egy születésnapi partin látunk?",
+              "valaszok": ["torta", "lufi", "ajándék", "gyertya"]
+          },
+          {
+              "kerdes": "Mit nézünk a tévében?",
+              "valaszok": ["hírek", "film", "sorozat", "sport"]
+          },
+          {
+              "kerdes": "Mi az, amit egy koncerten hallunk?",
+              "valaszok": ["zene", "ének", "taps", "kiáltás"]
+          },
+          {
+              "kerdes": "Mi az, amit vacsorára készítünk?",
+              "valaszok": ["pörkölt", "tészta", "hal", "saláta"]
+          },
+          {
+              "kerdes": "Tevékenységek egy parkban?",
+              "valaszok": ["sétálás", "biciklizés", "kutya sétáltatás", "pihenés"]
+          }
+      ]
+    }
