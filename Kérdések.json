@@ -1,500 +1,1155 @@
 {
-    "kérdések": [
-  {
+  "kérdések": [
+    {
       "question": "Melyik magyar városban található a Halászbástya?",
       "correct_answer": "Budapest",
-      "incorrect_answers": ["Szeged", "Debrecen", "Pécs"],
+      "incorrect_answers": [
+        "Szeged",
+        "Debrecen",
+        "Pécs"
+      ],
       "category": "Földrajz",
       "difficulty": "Közepes"
-  },
-  {
+    },
+    {
       "question": "Ki írta a 'Toldi' trilógiát?",
       "correct_answer": "Arany János",
-      "incorrect_answers": ["Petőfi Sándor", "Mikszáth Kálmán", "Jókai Mór"],
+      "incorrect_answers": [
+        "Petőfi Sándor",
+        "Mikszáth Kálmán",
+        "Jókai Mór"
+      ],
       "category": "Irodalom",
       "difficulty": "Közepes"
-  },
-  {
+    },
+    {
       "question": "Melyik évben volt a nándorfehérvári diadal?",
       "correct_answer": "1456",
-      "incorrect_answers": ["1526", "1703", "1849"],
+      "incorrect_answers": [
+        "1526",
+        "1703",
+        "1849"
+      ],
       "category": "Történelem",
       "difficulty": "Nehéz"
-  },
-  {
+    },
+    {
       "question": "Melyik kémiai elem vegyjele az 'Hg'?",
       "correct_answer": "Higany",
-      "incorrect_answers": ["Hélium", "Hafnium", "Holmium"],
+      "incorrect_answers": [
+        "Hélium",
+        "Hafnium",
+        "Holmium"
+      ],
       "category": "Tudomány",
       "difficulty": "Közepes"
-  },
-  {
+    },
+    {
       "question": "Melyik sportágban ért el világhírt Puskás Ferenc?",
       "correct_answer": "Labdarúgás",
-      "incorrect_answers": ["Vízilabda", "Kézilabda", "Kajak-kenu"],
+      "incorrect_answers": [
+        "Vízilabda",
+        "Kézilabda",
+        "Kajak-kenu"
+      ],
       "category": "Sport",
       "difficulty": "Könnyű"
-  },
-  {
+    },
+    {
       "question": "Ki volt az első ember a Holdon?",
       "correct_answer": "Neil Armstrong",
-      "incorrect_answers": ["Buzz Aldrin", "Yuri Gagarin", "Alan Shepard"],
+      "incorrect_answers": [
+        "Buzz Aldrin",
+        "Yuri Gagarin",
+        "Alan Shepard"
+      ],
       "category": "Történelem",
       "difficulty": "Könnyű"
-  },
-  {
+    },
+    {
       "question": "Melyik évben történt az első atombomba ledobása?",
       "correct_answer": "1945",
-      "incorrect_answers": ["1939", "1951", "1962"],
+      "incorrect_answers": [
+        "1939",
+        "1951",
+        "1962"
+      ],
       "category": "Történelem",
       "difficulty": "Nehéz"
-  },
-  {
+    },
+    {
       "question": "Melyik országban található Machu Picchu?",
       "correct_answer": "Peru",
-      "incorrect_answers": ["Mexikó", "Brazília", "Chile"],
+      "incorrect_answers": [
+        "Mexikó",
+        "Brazília",
+        "Chile"
+      ],
       "category": "Földrajz",
       "difficulty": "Közepes"
-  },
-  {
+    },
+    {
       "question": "Melyik magyar tudós fejlesztette ki a számítógép egyik alapelvét?",
       "correct_answer": "Neumann János",
-      "incorrect_answers": ["Jedlik Ányos", "Bolyai János", "Eötvös Loránd"],
+      "incorrect_answers": [
+        "Jedlik Ányos",
+        "Bolyai János",
+        "Eötvös Loránd"
+      ],
       "category": "Tudomány",
       "difficulty": "Nehéz"
-  },
-  {
+    },
+    {
       "question": "Ki írta a 'Pál utcai fiúk' című regényt?",
       "correct_answer": "Molnár Ferenc",
-      "incorrect_answers": ["Mikszáth Kálmán", "Jókai Mór", "Gárdonyi Géza"],
+      "incorrect_answers": [
+        "Mikszáth Kálmán",
+        "Jókai Mór",
+        "Gárdonyi Géza"
+      ],
       "category": "Irodalom",
       "difficulty": "Közepes"
-  },
-  {
+    },
+    {
       "question": "Melyik folyó szeli ketté Budapestet?",
       "correct_answer": "Duna",
-      "incorrect_answers": ["Tisza", "Dráva", "Rába"],
+      "incorrect_answers": [
+        "Tisza",
+        "Dráva",
+        "Rába"
+      ],
       "category": "Földrajz",
       "difficulty": "Könnyű"
-  },
-  {
+    },
+    {
       "question": "Melyik évben alapították az első modern olimpiai játékokat?",
       "correct_answer": "1896",
-      "incorrect_answers": ["1900", "1888", "1924"],
+      "incorrect_answers": [
+        "1900",
+        "1888",
+        "1924"
+      ],
       "category": "Sport",
       "difficulty": "Közepes"
-  },
-  {
+    },
+    {
       "question": "Melyik magyar találmány segíti a vakok olvasását?",
       "correct_answer": "Braille-írás",
-      "incorrect_answers": ["Golyóstoll", "Dinamó", "Rubik-kocka"],
+      "incorrect_answers": [
+        "Golyóstoll",
+        "Dinamó",
+        "Rubik-kocka"
+      ],
       "category": "Tudomány",
       "difficulty": "Közepes"
-  },
-  {
+    },
+    {
       "question": "Melyik csillag a Naprendszer központi csillaga?",
       "correct_answer": "Nap",
-      "incorrect_answers": ["Sirius", "Polaris", "Betelgeuse"],
+      "incorrect_answers": [
+        "Sirius",
+        "Polaris",
+        "Betelgeuse"
+      ],
       "category": "Tudomány",
       "difficulty": "Könnyű"
-  },
-  {
+    },
+    {
       "question": "Ki volt az első magyar űrhajós?",
       "correct_answer": "Farkas Bertalan",
-      "incorrect_answers": ["Charles Simonyi", "Magyari Béla", "Siklósi András"],
+      "incorrect_answers": [
+        "Charles Simonyi",
+        "Magyari Béla",
+        "Siklósi András"
+      ],
       "category": "Történelem",
       "difficulty": "Nehéz"
-  },
-  {
-    "question": "Melyik város a legnagyobb Magyarországon?",
-    "correct_answer": "Budapest",
-    "incorrect_answers": ["Szeged", "Debrecen", "Pécs"],
-    "category": "Földrajz",
-    "difficulty": "Könnyű"
-  },
-  {
-    "question": "Ki írta a 'József és testvérei' című regényt?",
-    "correct_answer": "Márai Sándor",
-    "incorrect_answers": ["Mikszáth Kálmán", "Jókai Mór", "Kosztolányi Dezső"],
-    "category": "Irodalom",
-    "difficulty": "Nehéz"
-  },
-  {
-    "question": "Melyik évben alakult meg az első magyar királyság?",
-    "correct_answer": "1000",
-    "incorrect_answers": ["1066", "888", "920"],
-    "category": "Történelem",
-    "difficulty": "Nehéz"
-  },
-  {
-    "question": "Mi a víz forráspontja Celsius fokban?",
-    "correct_answer": "100",
-    "incorrect_answers": ["90", "80", "120"],
-    "category": "Tudomány",
-    "difficulty": "Könnyű"
-  },
-  {
-    "question": "Ki nyerte a 2020-as labdarúgó Európa-bajnokságot?",
-    "correct_answer": "Olaszország",
-    "incorrect_answers": ["Franciaország", "Németország", "Spanyolország"],
-    "category": "Sport",
-    "difficulty": "Könnyű"
-  },
-  {
-    "question": "Melyik hegycsúcs a legmagasabb a Földön?",
-    "correct_answer": "Mount Everest",
-    "incorrect_answers": ["Kilimandzsáró", "K2", "Mont Blanc"],
-    "category": "Földrajz",
-    "difficulty": "Könnyű"
-  },
-  {
-    "question": "Ki írta a 'Fahrenheit 451' című könyvet?",
-    "correct_answer": "Ray Bradbury",
-    "incorrect_answers": ["George Orwell", "Aldous Huxley", "Arthur C. Clarke"],
-    "category": "Irodalom",
-    "difficulty": "Közepes"
-  },
-  {
-    "question": "Ki volt az első magyar király?",
-    "correct_answer": "Szent István",
-    "incorrect_answers": ["II. András", "Károly Róbert", "Mátyás király"],
-    "category": "Történelem",
-    "difficulty": "Könnyű"
-  },
-  {
-    "question": "Mi a H2O kémiai neve?",
-    "correct_answer": "Víz",
-    "incorrect_answers": ["Ammónia", "Metán", "Hidrogén-peroxid"],
-    "category": "Tudomány",
-    "difficulty": "Könnyű"
-  },
-  {
-    "question": "Melyik sportágban versenyeztek a legutóbbi téli olimpián a magyar sportolók?",
-    "correct_answer": "Gyorskorcsolya",
-    "incorrect_answers": ["Sífutás", "Jégkorong", "Biatlon"],
-    "category": "Sport",
-    "difficulty": "Közepes"
-  },
-  {
-    "question": "Melyik ország fővárosa Prága?",
-    "correct_answer": "Csehország",
-    "incorrect_answers": ["Szlovákia", "Lengyelország", "Magyarország"],
-    "category": "Földrajz",
-    "difficulty": "Könnyű"
-  },
-  {
-    "question": "Ki írta a 'Harry Potter' sorozatot?",
-    "correct_answer": "J.K. Rowling",
-    "incorrect_answers": ["Stephen King", "Suzanne Collins", "J.R.R. Tolkien"],
-    "category": "Irodalom",
-    "difficulty": "Könnyű"
-  },
-  {
-    "question": "Melyik évben zajlott a második világháború vége?",
-    "correct_answer": "1945",
-    "incorrect_answers": ["1941", "1939", "1950"],
-    "category": "Történelem",
-    "difficulty": "Könnyű"
-  },
-  {
-    "question": "Melyik elem a legkönnyebb?",
-    "correct_answer": "Hidrogén",
-    "incorrect_answers": ["Hélium", "Litium", "Szén"],
-    "category": "Tudomány",
-    "difficulty": "Könnyű"
-  },
-  {
-    "question": "Ki nyerte az 1998-as Forma-1-es világbajnokságot?",
-    "correct_answer": "Mika Häkkinen",
-    "incorrect_answers": ["Michael Schumacher", "Ayrton Senna", "Jacques Villeneuve"],
-    "category": "Sport",
-    "difficulty": "Nehéz"
-  },
-  {
-    "question": "Melyik óceán határolja Ausztráliát?",
-    "correct_answer": "Csendes-óceán",
-    "incorrect_answers": ["Atlanti-óceán", "Indiai-óceán", "Jeges-tenger"],
-    "category": "Földrajz",
-    "difficulty": "Könnyű"
-  },
-  {
-    "question": "Mi a világ legnagyobb sivataga?",
-    "correct_answer": "Sahara",
-    "incorrect_answers": ["Kalahári", "Gobi", "Atacama"],
-    "category": "Földrajz",
-    "difficulty": "Könnyű"
-  },
-  {
-    "question": "Ki írta a 'Száz év magány' című könyvet?",
-    "correct_answer": "Gabriel García Márquez",
-    "incorrect_answers": ["Mario Vargas Llosa", "Isabel Allende", "Julio Cortázar"],
-    "category": "Irodalom",
-    "difficulty": "Nehéz"
-  },
-  {
-    "question": "Melyik háború során történt a normandiai partraszállás?",
-    "correct_answer": "Második világháború",
-    "incorrect_answers": ["Első világháború", "Koreai háború", "Vietnami háború"],
-    "category": "Történelem",
-    "difficulty": "Közepes"
-  },
-  {
-    "question": "Mi az állat, ami a koala?",
-    "correct_answer": "Emlős",
-    "incorrect_answers": ["Madár", "Hüllő", "Hal"],
-    "category": "Tudomány",
-    "difficulty": "Könnyű"
-  },
-  {
-    "question": "Ki nyerte a 2008-as Peking-i olimpián a férfi 100 méteres futást?",
-    "correct_answer": "Usain Bolt",
-    "incorrect_answers": ["Tyson Gay", "Asafa Powell", "Michael Johnson"],
-    "category": "Sport",
-    "difficulty": "Könnyű"
-  }
-],
-
-"choices": [
-      { "id": 1, "name": "kő" },
-      { "id": 2, "name": "papír" },
-      { "id": 3, "name": "olló" }
-    ],
-
-      "cards": [
-        { "symbol": "🍎" },
-        { "symbol": "🍎" },
-        { "symbol": "🍌" },
-        { "symbol": "🍌" },
-        { "symbol": "🍇" },
-        { "symbol": "🍇" },
-        { "symbol": "🍒" },
-        { "symbol": "🍒" },
-        { "symbol": "🌭" },
-        { "symbol": "🌭" },
-        { "symbol": "🍓" },
-        { "symbol": "🍓" },
-        { "symbol": "🍑" },
-        { "symbol": "🍑" },
-        { "symbol": "🍉" },
-        { "symbol": "🍉" },
-        { "symbol": "🥔" },
-        { "symbol": "🥔" },      
-        { "symbol": "🍍" },
-        { "symbol": "🍍" },
-        { "symbol": "🍊" },
-        { "symbol": "🍊" },
-        { "symbol": "🍋" },
-        { "symbol": "🍋" }      
+    },
+    {
+      "question": "Melyik város a legnagyobb Magyarországon?",
+      "correct_answer": "Budapest",
+      "incorrect_answers": [
+        "Szeged",
+        "Debrecen",
+        "Pécs"
       ],
-      
-        "szavak": [
-        { "word": "rómaibirodalom", "category": "történelem" },
-        { "word": "másodikvilágháború", "category": "történelem" },
-        { "word": "szovjetunió", "category": "történelem" },
-        { "word": "franciaforradalom", "category": "történelem" },
-        { "word": "napóleon", "category": "történelem" },
-        { "word": "kemikáliaiháború", "category": "történelem" },
-        { "word": "indiaifüggetlenségi háború", "category": "történelem" },
-        { "word": "háborúsbűnök", "category": "történelem" },
-        { "word": "bécsikongresszus", "category": "történelem" },
-        { "word": "mezopotámia", "category": "történelem" },
-        { "word": "ancientEgypt", "category": "történelem" },
-        { "word": "mongolhódítás", "category": "történelem" },
-        { "word": "keresztesháborúk", "category": "történelem" },
-        { "word": "reformáció", "category": "történelem" },
-        { "word": "kolonizáció", "category": "történelem" },
-        { "word": "világimperium", "category": "történelem" },
-        { "word": "habsburgbirodalom", "category": "történelem" },
-        { "word": "babilonifogság", "category": "történelem" },
-        { "word": "amerikaipolgárháború", "category": "történelem" },
-        { "word": "párizsibékeszerződés", "category": "történelem" },
-    
-        { "word": "titanic", "category": "filmek" },
-        { "word": "avatar", "category": "filmek" },
-        { "word": "star wars", "category": "filmek" },
-        { "word": "harry potter", "category": "filmek" },
-        { "word": "matrix", "category": "filmek" },
-        { "word": "inception", "category": "filmek" },
-        { "word": "forrest gump", "category": "filmek" },
-        { "word": "jurassic park", "category": "filmek" },
-        { "word": "pulp fiction", "category": "filmek" },
-        { "word": "gladiátor", "category": "filmek" },
-        { "word": "shutter island", "category": "filmek" },
-        { "word": "fight club", "category": "filmek" },
-        { "word": "dunkirk", "category": "filmek" },
-        { "word": "the godfather", "category": "filmek" },
-        { "word": "the dark knight", "category": "filmek" },
-        { "word": "the lord of the rings", "category": "filmek" },
-        { "word": "schindler listája", "category": "filmek" },
-        { "word": "interstellar", "category": "filmek" },
-        { "word": "the revenant", "category": "filmek" },
-        { "word": "american beauty", "category": "filmek" },
-    
-        { "word": "magyarország", "category": "országok" },
-        { "word": "amerikai egyesült államok", "category": "országok" },
-        { "word": "franciaország", "category": "országok" },
-        { "word": "brazilia", "category": "országok" },
-        { "word": "japan", "category": "országok" },
-        { "word": "ausztrália", "category": "országok" },
-        { "word": "indonézia", "category": "országok" },
-        { "word": "kanada", "category": "országok" },
-        { "word": "németország", "category": "országok" },
-        { "word": "oroszország", "category": "országok" },
-        { "word": "spanyolország", "category": "országok" },
-        { "word": "kínai népköztársaság", "category": "országok" },
-        { "word": "indiá", "category": "országok" },
-        { "word": "törökország", "category": "országok" },
-        { "word": "olaszország", "category": "országok" },
-        { "word": "dél-afrikai köztársaság", "category": "országok" },
-        { "word": "egyesült királyság", "category": "országok" },
-        { "word": "mexikó", "category": "országok" },
-        { "word": "pakisztán", "category": "országok" },
-        { "word": "argentina", "category": "országok" },
-    
-        { "word": "tigris", "category": "állatok" },
-        { "word": "elefánt", "category": "állatok" },
-        { "word": "oroszlán", "category": "állatok" },
-        { "word": "pingvin", "category": "állatok" },
-        { "word": "zebra", "category": "állatok" },
-        { "word": "medve", "category": "állatok" },
-        { "word": "delfin", "category": "állatok" },
-        { "word": "krokodil", "category": "állatok" },
-        { "word": "varjú", "category": "állatok" },
-        { "word": "szarvas", "category": "állatok" },
-        { "word": "farkas", "category": "állatok" },
-        { "word": "kígyó", "category": "állatok" },
-        { "word": "bagoly", "category": "állatok" },
-        { "word": "panda", "category": "állatok" },
-        { "word": "nyúl", "category": "állatok" },
-        { "word": "tengerimalac", "category": "állatok" },
-        { "word": "kaméleon", "category": "állatok" },
-        { "word": "gólya", "category": "állatok" },
-        { "word": "tehén", "category": "állatok" },
-        { "word": "ló", "category": "állatok" },
-    
-        { "word": "budapest", "category": "fővárosok" },
-        { "word": "párizs", "category": "fővárosok" },
-        { "word": "london", "category": "fővárosok" },
-        { "word": "tokió", "category": "fővárosok" },
-        { "word": "washington", "category": "fővárosok" },
-        { "word": "berlín", "category": "fővárosok" },
-        { "word": "moszkva", "category": "fővárosok" },
-        { "word": "ottawa", "category": "fővárosok" },
-        { "word": "róma", "category": "fővárosok" },
-        { "word": "madrid", "category": "fővárosok" },
-        { "word": "buenos aires", "category": "fővárosok" },
-        { "word": "new delhi", "category": "fővárosok" },
-        { "word": "peking", "category": "fővárosok" },
-        { "word": "athén", "category": "fővárosok" },
-        { "word": "brasilia", "category": "fővárosok" },
-        { "word": "varsó", "category": "fővárosok" },
-        { "word": "sydney", "category": "fővárosok" },
-        { "word": "kairó", "category": "fővárosok" },
-        { "word": "amsterdam", "category": "fővárosok" },
-        { "word": "stockholm", "category": "fővárosok" },
-    
-        { "word": "piros", "category": "színek" },
-        { "word": "kék", "category": "színek" },
-        { "word": "zöld", "category": "színek" },
-        { "word": "sárga", "category": "színek" },
-        { "word": "fekete", "category": "színek" },
-        { "word": "fehér", "category": "színek" },
-        { "word": "narancssárga", "category": "színek" },
-        { "word": "lila", "category": "színek" },
-        { "word": "rózsaszín", "category": "színek" },
-        { "word": "barna", "category": "színek" },
-        { "word": "szürke", "category": "színek" },
-        { "word": "arany", "category": "színek" },
-        { "word": "ezüst", "category": "színek" },
-        { "word": "burgundi", "category": "színek" },
-        { "word": "olíva", "category": "színek" },
-        { "word": "világoskék", "category": "színek" },
-        { "word": "fukszia", "category": "színek" },
-        { "word": "bordó", "category": "színek" },
-        { "word": "mályva", "category": "színek" },
-        { "word": "mentazöld", "category": "színek" }
-        ],
-        
-        "valaszok": [
-          {
-              "kerdes": "Mi a legjobb nyári gyümölcs?",
-              "valaszok": ["dinnye", "eper", "barack", "szőlő"]
-          },
-          {
-              "kerdes": "Milyen sportot néznek a legtöbben?",
-              "valaszok": ["foci", "kosárlabda", "tenisz", "úszás"]
-          },
-          {
-              "kerdes": "Legjobb reggeli étel?",
-              "valaszok": ["tojás", "kenyér", "zabkása", "gyümölcs"]
-          },
-          {
-              "kerdes": "Preferált hétvégi program?",
-              "valaszok": ["pihenés", "kirándulás", "főzés", "filmenézés"]
-          },
-          {
-              "kerdes": "Ételek, amiről eszedbe jut a karácsony?",
-              "valaszok": ["halászlé", "bejgli", "töltött káposzta", "mézeskalács"]
-          },
-          {
-              "kerdes": "Elengedhetetlen tárgyak nyaraláshoz?",
-              "valaszok": ["ruha", "telefon", "naptej", "pénz"]
-          },
-          {
-              "kerdes": "Mi a legnépszerűbb gyorsétel?",
-              "valaszok": ["hamburger", "pizza", "hotdog", "kebab"]
-          },
-          {
-              "kerdes": "Elfoglaltságok a strandon?",
-              "valaszok": ["napozás", "úszás", "homokvár építés", "fagyizás"]
-          },
-          {
-              "kerdes": "Mi az, ami mindig van egy iskolatáskában?",
-              "valaszok": ["füzet", "ceruza", "tankönyv", "radír"]
-          },
-          {
-              "kerdes": "Milyen zöldséget használunk salátához?",
-              "valaszok": ["paradicsom", "uborka", "saláta", "hagyma"]
-          },
-          {
-              "kerdes": "Mi a legnépszerűbb üdítőital?",
-              "valaszok": ["kóla", "narancslé", "víz", "tea"]
-          },
-          {
-              "kerdes": "Mi az, amit télen viselünk?",
-              "valaszok": ["kabát", "sál", "sapka", "kesztyű"]
-          },
-          {
-              "kerdes": "Melyik szobában töltjük a legtöbb időt?",
-              "valaszok": ["nappali", "hálószoba", "konyha", "fürdőszoba"]
-          },
-          {
-              "kerdes": "Elengedhetetlen piknik kellékek?",
-              "valaszok": ["szendvics", "takaró", "gyümölcslé", "frizbi"]
-          },
-          {
-              "kerdes": "Melyik napot szeretjük a legjobban?",
-              "valaszok": ["szombat", "péntek", "vasárnap", "szerda"]
-          },
-          {
-              "kerdes": "Mi az, amit általában egy születésnapi partin látunk?",
-              "valaszok": ["torta", "lufi", "ajándék", "gyertya"]
-          },
-          {
-              "kerdes": "Mit nézünk a tévében?",
-              "valaszok": ["hírek", "film", "sorozat", "sport"]
-          },
-          {
-              "kerdes": "Mi az, amit egy koncerten hallunk?",
-              "valaszok": ["zene", "ének", "taps", "kiáltás"]
-          },
-          {
-              "kerdes": "Mi az, amit vacsorára készítünk?",
-              "valaszok": ["pörkölt", "tészta", "hal", "saláta"]
-          },
-          {
-              "kerdes": "Tevékenységek egy parkban?",
-              "valaszok": ["sétálás", "biciklizés", "kutya sétáltatás", "pihenés"]
-          }
+      "category": "Földrajz",
+      "difficulty": "Könnyű"
+    },
+    {
+      "question": "Ki írta a 'József és testvérei' című regényt?",
+      "correct_answer": "Márai Sándor",
+      "incorrect_answers": [
+        "Mikszáth Kálmán",
+        "Jókai Mór",
+        "Kosztolányi Dezső"
+      ],
+      "category": "Irodalom",
+      "difficulty": "Nehéz"
+    },
+    {
+      "question": "Melyik évben alakult meg az első magyar királyság?",
+      "correct_answer": "1000",
+      "incorrect_answers": [
+        "1066",
+        "888",
+        "920"
+      ],
+      "category": "Történelem",
+      "difficulty": "Nehéz"
+    },
+    {
+      "question": "Mi a víz forráspontja Celsius fokban?",
+      "correct_answer": "100",
+      "incorrect_answers": [
+        "90",
+        "80",
+        "120"
+      ],
+      "category": "Tudomány",
+      "difficulty": "Könnyű"
+    },
+    {
+      "question": "Ki nyerte a 2020-as labdarúgó Európa-bajnokságot?",
+      "correct_answer": "Olaszország",
+      "incorrect_answers": [
+        "Franciaország",
+        "Németország",
+        "Spanyolország"
+      ],
+      "category": "Sport",
+      "difficulty": "Könnyű"
+    },
+    {
+      "question": "Melyik hegycsúcs a legmagasabb a Földön?",
+      "correct_answer": "Mount Everest",
+      "incorrect_answers": [
+        "Kilimandzsáró",
+        "K2",
+        "Mont Blanc"
+      ],
+      "category": "Földrajz",
+      "difficulty": "Könnyű"
+    },
+    {
+      "question": "Ki írta a 'Fahrenheit 451' című könyvet?",
+      "correct_answer": "Ray Bradbury",
+      "incorrect_answers": [
+        "George Orwell",
+        "Aldous Huxley",
+        "Arthur C. Clarke"
+      ],
+      "category": "Irodalom",
+      "difficulty": "Közepes"
+    },
+    {
+      "question": "Ki volt az első magyar király?",
+      "correct_answer": "Szent István",
+      "incorrect_answers": [
+        "II. András",
+        "Károly Róbert",
+        "Mátyás király"
+      ],
+      "category": "Történelem",
+      "difficulty": "Könnyű"
+    },
+    {
+      "question": "Mi a H2O kémiai neve?",
+      "correct_answer": "Víz",
+      "incorrect_answers": [
+        "Ammónia",
+        "Metán",
+        "Hidrogén-peroxid"
+      ],
+      "category": "Tudomány",
+      "difficulty": "Könnyű"
+    },
+    {
+      "question": "Melyik sportágban versenyeztek a legutóbbi téli olimpián a magyar sportolók?",
+      "correct_answer": "Gyorskorcsolya",
+      "incorrect_answers": [
+        "Sífutás",
+        "Jégkorong",
+        "Biatlon"
+      ],
+      "category": "Sport",
+      "difficulty": "Közepes"
+    },
+    {
+      "question": "Melyik ország fővárosa Prága?",
+      "correct_answer": "Csehország",
+      "incorrect_answers": [
+        "Szlovákia",
+        "Lengyelország",
+        "Magyarország"
+      ],
+      "category": "Földrajz",
+      "difficulty": "Könnyű"
+    },
+    {
+      "question": "Ki írta a 'Harry Potter' sorozatot?",
+      "correct_answer": "J.K. Rowling",
+      "incorrect_answers": [
+        "Stephen King",
+        "Suzanne Collins",
+        "J.R.R. Tolkien"
+      ],
+      "category": "Irodalom",
+      "difficulty": "Könnyű"
+    },
+    {
+      "question": "Melyik évben zajlott a második világháború vége?",
+      "correct_answer": "1945",
+      "incorrect_answers": [
+        "1941",
+        "1939",
+        "1950"
+      ],
+      "category": "Történelem",
+      "difficulty": "Könnyű"
+    },
+    {
+      "question": "Melyik elem a legkönnyebb?",
+      "correct_answer": "Hidrogén",
+      "incorrect_answers": [
+        "Hélium",
+        "Litium",
+        "Szén"
+      ],
+      "category": "Tudomány",
+      "difficulty": "Könnyű"
+    },
+    {
+      "question": "Ki nyerte az 1998-as Forma-1-es világbajnokságot?",
+      "correct_answer": "Mika Häkkinen",
+      "incorrect_answers": [
+        "Michael Schumacher",
+        "Ayrton Senna",
+        "Jacques Villeneuve"
+      ],
+      "category": "Sport",
+      "difficulty": "Nehéz"
+    },
+    {
+      "question": "Melyik óceán határolja Ausztráliát?",
+      "correct_answer": "Csendes-óceán",
+      "incorrect_answers": [
+        "Atlanti-óceán",
+        "Indiai-óceán",
+        "Jeges-tenger"
+      ],
+      "category": "Földrajz",
+      "difficulty": "Könnyű"
+    },
+    {
+      "question": "Mi a világ legnagyobb sivataga?",
+      "correct_answer": "Sahara",
+      "incorrect_answers": [
+        "Kalahári",
+        "Gobi",
+        "Atacama"
+      ],
+      "category": "Földrajz",
+      "difficulty": "Könnyű"
+    },
+    {
+      "question": "Ki írta a 'Száz év magány' című könyvet?",
+      "correct_answer": "Gabriel García Márquez",
+      "incorrect_answers": [
+        "Mario Vargas Llosa",
+        "Isabel Allende",
+        "Julio Cortázar"
+      ],
+      "category": "Irodalom",
+      "difficulty": "Nehéz"
+    },
+    {
+      "question": "Melyik háború során történt a normandiai partraszállás?",
+      "correct_answer": "Második világháború",
+      "incorrect_answers": [
+        "Első világháború",
+        "Koreai háború",
+        "Vietnami háború"
+      ],
+      "category": "Történelem",
+      "difficulty": "Közepes"
+    },
+    {
+      "question": "Mi az állat, ami a koala?",
+      "correct_answer": "Emlős",
+      "incorrect_answers": [
+        "Madár",
+        "Hüllő",
+        "Hal"
+      ],
+      "category": "Tudomány",
+      "difficulty": "Könnyű"
+    },
+    {
+      "question": "Ki nyerte a 2008-as Peking-i olimpián a férfi 100 méteres futást?",
+      "correct_answer": "Usain Bolt",
+      "incorrect_answers": [
+        "Tyson Gay",
+        "Asafa Powell",
+        "Michael Johnson"
+      ],
+      "category": "Sport",
+      "difficulty": "Könnyű"
+    }
+  ],
+  "choices": [
+    {
+      "id": 1,
+      "name": "kő"
+    },
+    {
+      "id": 2,
+      "name": "papír"
+    },
+    {
+      "id": 3,
+      "name": "olló"
+    }
+  ],
+  "cards": [
+    {
+      "symbol": "🍎"
+    },
+    {
+      "symbol": "🍎"
+    },
+    {
+      "symbol": "🍌"
+    },
+    {
+      "symbol": "🍌"
+    },
+    {
+      "symbol": "🍇"
+    },
+    {
+      "symbol": "🍇"
+    },
+    {
+      "symbol": "🍒"
+    },
+    {
+      "symbol": "🍒"
+    },
+    {
+      "symbol": "🌭"
+    },
+    {
+      "symbol": "🌭"
+    },
+    {
+      "symbol": "🍓"
+    },
+    {
+      "symbol": "🍓"
+    },
+    {
+      "symbol": "🍑"
+    },
+    {
+      "symbol": "🍑"
+    },
+    {
+      "symbol": "🍉"
+    },
+    {
+      "symbol": "🍉"
+    },
+    {
+      "symbol": "🥔"
+    },
+    {
+      "symbol": "🥔"
+    },
+    {
+      "symbol": "🍍"
+    },
+    {
+      "symbol": "🍍"
+    },
+    {
+      "symbol": "🍊"
+    },
+    {
+      "symbol": "🍊"
+    },
+    {
+      "symbol": "🍋"
+    },
+    {
+      "symbol": "🍋"
+    }
+  ],
+  "szavak": [
+    {
+      "word": "rómaibirodalom",
+      "category": "történelem"
+    },
+    {
+      "word": "másodikvilágháború",
+      "category": "történelem"
+    },
+    {
+      "word": "szovjetunió",
+      "category": "történelem"
+    },
+    {
+      "word": "franciaforradalom",
+      "category": "történelem"
+    },
+    {
+      "word": "napóleon",
+      "category": "történelem"
+    },
+    {
+      "word": "kemikáliaiháború",
+      "category": "történelem"
+    },
+    {
+      "word": "indiaifüggetlenségi háború",
+      "category": "történelem"
+    },
+    {
+      "word": "háborúsbűnök",
+      "category": "történelem"
+    },
+    {
+      "word": "bécsikongresszus",
+      "category": "történelem"
+    },
+    {
+      "word": "mezopotámia",
+      "category": "történelem"
+    },
+    {
+      "word": "ancientEgypt",
+      "category": "történelem"
+    },
+    {
+      "word": "mongolhódítás",
+      "category": "történelem"
+    },
+    {
+      "word": "keresztesháborúk",
+      "category": "történelem"
+    },
+    {
+      "word": "reformáció",
+      "category": "történelem"
+    },
+    {
+      "word": "kolonizáció",
+      "category": "történelem"
+    },
+    {
+      "word": "világimperium",
+      "category": "történelem"
+    },
+    {
+      "word": "habsburgbirodalom",
+      "category": "történelem"
+    },
+    {
+      "word": "babilonifogság",
+      "category": "történelem"
+    },
+    {
+      "word": "amerikaipolgárháború",
+      "category": "történelem"
+    },
+    {
+      "word": "párizsibékeszerződés",
+      "category": "történelem"
+    },
+    {
+      "word": "titanic",
+      "category": "filmek"
+    },
+    {
+      "word": "avatar",
+      "category": "filmek"
+    },
+    {
+      "word": "star wars",
+      "category": "filmek"
+    },
+    {
+      "word": "harry potter",
+      "category": "filmek"
+    },
+    {
+      "word": "matrix",
+      "category": "filmek"
+    },
+    {
+      "word": "inception",
+      "category": "filmek"
+    },
+    {
+      "word": "forrest gump",
+      "category": "filmek"
+    },
+    {
+      "word": "jurassic park",
+      "category": "filmek"
+    },
+    {
+      "word": "pulp fiction",
+      "category": "filmek"
+    },
+    {
+      "word": "gladiátor",
+      "category": "filmek"
+    },
+    {
+      "word": "shutter island",
+      "category": "filmek"
+    },
+    {
+      "word": "fight club",
+      "category": "filmek"
+    },
+    {
+      "word": "dunkirk",
+      "category": "filmek"
+    },
+    {
+      "word": "the godfather",
+      "category": "filmek"
+    },
+    {
+      "word": "the dark knight",
+      "category": "filmek"
+    },
+    {
+      "word": "the lord of the rings",
+      "category": "filmek"
+    },
+    {
+      "word": "schindler listája",
+      "category": "filmek"
+    },
+    {
+      "word": "interstellar",
+      "category": "filmek"
+    },
+    {
+      "word": "the revenant",
+      "category": "filmek"
+    },
+    {
+      "word": "american beauty",
+      "category": "filmek"
+    },
+    {
+      "word": "magyarország",
+      "category": "országok"
+    },
+    {
+      "word": "amerikai egyesült államok",
+      "category": "országok"
+    },
+    {
+      "word": "franciaország",
+      "category": "országok"
+    },
+    {
+      "word": "brazilia",
+      "category": "országok"
+    },
+    {
+      "word": "japan",
+      "category": "országok"
+    },
+    {
+      "word": "ausztrália",
+      "category": "országok"
+    },
+    {
+      "word": "indonézia",
+      "category": "országok"
+    },
+    {
+      "word": "kanada",
+      "category": "országok"
+    },
+    {
+      "word": "németország",
+      "category": "országok"
+    },
+    {
+      "word": "oroszország",
+      "category": "országok"
+    },
+    {
+      "word": "spanyolország",
+      "category": "országok"
+    },
+    {
+      "word": "kínai népköztársaság",
+      "category": "országok"
+    },
+    {
+      "word": "indiá",
+      "category": "országok"
+    },
+    {
+      "word": "törökország",
+      "category": "országok"
+    },
+    {
+      "word": "olaszország",
+      "category": "országok"
+    },
+    {
+      "word": "dél-afrikai köztársaság",
+      "category": "országok"
+    },
+    {
+      "word": "egyesült királyság",
+      "category": "országok"
+    },
+    {
+      "word": "mexikó",
+      "category": "országok"
+    },
+    {
+      "word": "pakisztán",
+      "category": "országok"
+    },
+    {
+      "word": "argentina",
+      "category": "országok"
+    },
+    {
+      "word": "tigris",
+      "category": "állatok"
+    },
+    {
+      "word": "elefánt",
+      "category": "állatok"
+    },
+    {
+      "word": "oroszlán",
+      "category": "állatok"
+    },
+    {
+      "word": "pingvin",
+      "category": "állatok"
+    },
+    {
+      "word": "zebra",
+      "category": "állatok"
+    },
+    {
+      "word": "medve",
+      "category": "állatok"
+    },
+    {
+      "word": "delfin",
+      "category": "állatok"
+    },
+    {
+      "word": "krokodil",
+      "category": "állatok"
+    },
+    {
+      "word": "varjú",
+      "category": "állatok"
+    },
+    {
+      "word": "szarvas",
+      "category": "állatok"
+    },
+    {
+      "word": "farkas",
+      "category": "állatok"
+    },
+    {
+      "word": "kígyó",
+      "category": "állatok"
+    },
+    {
+      "word": "bagoly",
+      "category": "állatok"
+    },
+    {
+      "word": "panda",
+      "category": "állatok"
+    },
+    {
+      "word": "nyúl",
+      "category": "állatok"
+    },
+    {
+      "word": "tengerimalac",
+      "category": "állatok"
+    },
+    {
+      "word": "kaméleon",
+      "category": "állatok"
+    },
+    {
+      "word": "gólya",
+      "category": "állatok"
+    },
+    {
+      "word": "tehén",
+      "category": "állatok"
+    },
+    {
+      "word": "ló",
+      "category": "állatok"
+    },
+    {
+      "word": "budapest",
+      "category": "fővárosok"
+    },
+    {
+      "word": "párizs",
+      "category": "fővárosok"
+    },
+    {
+      "word": "london",
+      "category": "fővárosok"
+    },
+    {
+      "word": "tokió",
+      "category": "fővárosok"
+    },
+    {
+      "word": "washington",
+      "category": "fővárosok"
+    },
+    {
+      "word": "berlín",
+      "category": "fővárosok"
+    },
+    {
+      "word": "moszkva",
+      "category": "fővárosok"
+    },
+    {
+      "word": "ottawa",
+      "category": "fővárosok"
+    },
+    {
+      "word": "róma",
+      "category": "fővárosok"
+    },
+    {
+      "word": "madrid",
+      "category": "fővárosok"
+    },
+    {
+      "word": "buenos aires",
+      "category": "fővárosok"
+    },
+    {
+      "word": "new delhi",
+      "category": "fővárosok"
+    },
+    {
+      "word": "peking",
+      "category": "fővárosok"
+    },
+    {
+      "word": "athén",
+      "category": "fővárosok"
+    },
+    {
+      "word": "brasilia",
+      "category": "fővárosok"
+    },
+    {
+      "word": "varsó",
+      "category": "fővárosok"
+    },
+    {
+      "word": "sydney",
+      "category": "fővárosok"
+    },
+    {
+      "word": "kairó",
+      "category": "fővárosok"
+    },
+    {
+      "word": "amsterdam",
+      "category": "fővárosok"
+    },
+    {
+      "word": "stockholm",
+      "category": "fővárosok"
+    },
+    {
+      "word": "piros",
+      "category": "színek"
+    },
+    {
+      "word": "kék",
+      "category": "színek"
+    },
+    {
+      "word": "zöld",
+      "category": "színek"
+    },
+    {
+      "word": "sárga",
+      "category": "színek"
+    },
+    {
+      "word": "fekete",
+      "category": "színek"
+    },
+    {
+      "word": "fehér",
+      "category": "színek"
+    },
+    {
+      "word": "narancssárga",
+      "category": "színek"
+    },
+    {
+      "word": "lila",
+      "category": "színek"
+    },
+    {
+      "word": "rózsaszín",
+      "category": "színek"
+    },
+    {
+      "word": "barna",
+      "category": "színek"
+    },
+    {
+      "word": "szürke",
+      "category": "színek"
+    },
+    {
+      "word": "arany",
+      "category": "színek"
+    },
+    {
+      "word": "ezüst",
+      "category": "színek"
+    },
+    {
+      "word": "burgundi",
+      "category": "színek"
+    },
+    {
+      "word": "olíva",
+      "category": "színek"
+    },
+    {
+      "word": "világoskék",
+      "category": "színek"
+    },
+    {
+      "word": "fukszia",
+      "category": "színek"
+    },
+    {
+      "word": "bordó",
+      "category": "színek"
+    },
+    {
+      "word": "mályva",
+      "category": "színek"
+    },
+    {
+      "word": "mentazöld",
+      "category": "színek"
+    }
+  ],
+  "valaszok": [
+    {
+      "kerdes": "Mi a legjobb nyári gyümölcs?",
+      "valaszok": [
+        "dinnye",
+        "eper",
+        "barack",
+        "szőlő"
+      ]
+    },
+    {
+      "kerdes": "Milyen sportot néznek a legtöbben?",
+      "valaszok": [
+        "foci",
+        "kosárlabda",
+        "tenisz",
+        "úszás"
+      ]
+    },
+    {
+      "kerdes": "Legjobb reggeli étel?",
+      "valaszok": [
+        "tojás",
+        "kenyér",
+        "zabkása",
+        "gyümölcs"
+      ]
+    },
+    {
+      "kerdes": "Preferált hétvégi program?",
+      "valaszok": [
+        "pihenés",
+        "kirándulás",
+        "főzés",
+        "filmenézés"
+      ]
+    },
+    {
+      "kerdes": "Ételek, amiről eszedbe jut a karácsony?",
+      "valaszok": [
+        "halászlé",
+        "bejgli",
+        "töltött káposzta",
+        "mézeskalács"
+      ]
+    },
+    {
+      "kerdes": "Elengedhetetlen tárgyak nyaraláshoz?",
+      "valaszok": [
+        "ruha",
+        "telefon",
+        "naptej",
+        "pénz"
+      ]
+    },
+    {
+      "kerdes": "Mi a legnépszerűbb gyorsétel?",
+      "valaszok": [
+        "hamburger",
+        "pizza",
+        "hotdog",
+        "kebab"
+      ]
+    },
+    {
+      "kerdes": "Elfoglaltságok a strandon?",
+      "valaszok": [
+        "napozás",
+        "úszás",
+        "homokvár építés",
+        "fagyizás"
+      ]
+    },
+    {
+      "kerdes": "Mi az, ami mindig van egy iskolatáskában?",
+      "valaszok": [
+        "füzet",
+        "ceruza",
+        "tankönyv",
+        "radír"
+      ]
+    },
+    {
+      "kerdes": "Milyen zöldséget használunk salátához?",
+      "valaszok": [
+        "paradicsom",
+        "uborka",
+        "saláta",
+        "hagyma"
+      ]
+    },
+    {
+      "kerdes": "Mi a legnépszerűbb üdítőital?",
+      "valaszok": [
+        "kóla",
+        "narancslé",
+        "víz",
+        "tea"
+      ]
+    },
+    {
+      "kerdes": "Mi az, amit télen viselünk?",
+      "valaszok": [
+        "kabát",
+        "sál",
+        "sapka",
+        "kesztyű"
+      ]
+    },
+    {
+      "kerdes": "Melyik szobában töltjük a legtöbb időt?",
+      "valaszok": [
+        "nappali",
+        "hálószoba",
+        "konyha",
+        "fürdőszoba"
+      ]
+    },
+    {
+      "kerdes": "Elengedhetetlen piknik kellékek?",
+      "valaszok": [
+        "szendvics",
+        "takaró",
+        "gyümölcslé",
+        "frizbi"
+      ]
+    },
+    {
+      "kerdes": "Melyik napot szeretjük a legjobban?",
+      "valaszok": [
+        "szombat",
+        "péntek",
+        "vasárnap",
+        "szerda"
+      ]
+    },
+    {
+      "kerdes": "Mi az, amit általában egy születésnapi partin látunk?",
+      "valaszok": [
+        "torta",
+        "lufi",
+        "ajándék",
+        "gyertya"
+      ]
+    },
+    {
+      "kerdes": "Mit nézünk a tévében?",
+      "valaszok": [
+        "hírek",
+        "film",
+        "sorozat",
+        "sport"
+      ]
+    },
+    {
+      "kerdes": "Mi az, amit egy koncerten hallunk?",
+      "valaszok": [
+        "zene",
+        "ének",
+        "taps",
+        "kiáltás"
+      ]
+    },
+    {
+      "kerdes": "Mi az, amit vacsorára készítünk?",
+      "valaszok": [
+        "pörkölt",
+        "tészta",
+        "hal",
+        "saláta"
+      ]
+    },
+    {
+      "kerdes": "Tevékenységek egy parkban?",
+      "valaszok": [
+        "sétálás",
+        "biciklizés",
+        "kutya sétáltatás",
+        "pihenés"
       ]
     }
+  ],
+  "eredmények": [
+    {}
+  ]
+}
