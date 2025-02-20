@@ -21,7 +21,7 @@ function loadCategories() {
             displayCategoryMenu(categories);
         }
         catch (error) {
-            console.error('Error loading categories:', error);
+            console.error('Hiba a kategóriák betöltése során:', error);
             showError();
         }
     });
