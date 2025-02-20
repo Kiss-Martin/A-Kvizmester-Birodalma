@@ -1,38 +1,32 @@
+interface Card {
+    symbol: string;
+}
 
-const cards = [
-    { symbol: "🍎" },
-    { symbol: "🍎" },
-    { symbol: "🍌" },
-    { symbol: "🍌" },
-    { symbol: "🍇" },
-    { symbol: "🍇" },
-    { symbol: "🍒" },
-    { symbol: "🍒" },
-    { symbol: "🌭" },
-    { symbol: "🌭" },
-    { symbol: "🍓" },
-    { symbol: "🍓" },
-    { symbol: "🍑" },
-    { symbol: "🍑" },
-    { symbol: "🍉" },
-    { symbol: "🍉" },
-    { symbol: "🥔" },
-    { symbol: "🥔" },
-    { symbol: "🍍" },
-    { symbol: "🍍" },
-];
-
-let flippedCards: HTMLElement[] = [];  
-let matchCount = 0;  
-let boardLocked = false;  
+let cards: Card[] = [];
+let flippedCards: HTMLElement[] = [];
+let matchCount = 0;
+let boardLocked = false;
 
 const gameBoard = document.getElementById('game-board')!;
 const matchCountElement = document.getElementById('match-count')!;
 
+async function fetchcards(): Promise<Card[]> {
+    const response = await fetch("http://localhost:3000/cards");
+    if (!response.ok) {
+        throw new Error("Hiba van");
+    } else {
+        const data = await response.json();
+        console.log("Fetched cards:", data);  
+        return data;
+    }
+}
 
-function setupGame() {
+async function setupGame() {
+    cards = await fetchcards();
+    console.log("Cards array after setup:", cards);  
+
     const shuffledCards = shuffle(cards);
-    gameBoard.innerHTML = '';  
+    gameBoard.innerHTML = '';
 
     shuffledCards.forEach((card, index) => {
         const cardElement = document.createElement('div');
@@ -43,16 +37,13 @@ function setupGame() {
     });
 }
 
-
 function shuffle(array: any[]): any[] {
     return array.sort(() => Math.random() - 0.5);
 }
 
-
 function handleCardClick(event: Event): void {
     const cardElement = event.target as HTMLElement;
 
-    
     if (cardElement.classList.contains('flipped') || boardLocked) {
         return;
     }
@@ -60,13 +51,20 @@ function handleCardClick(event: Event): void {
     const cardIndex = cardElement.getAttribute('data-index');
     if (cardIndex === null) return;
 
-    
-    cardElement.textContent = cards[parseInt(cardIndex)].symbol;
+    const card = cards[parseInt(cardIndex)];  
+
+    if (!card) {
+        console.error(`Card at index ${cardIndex} is undefined!`);
+        return;
+    }
+
+    console.log(`Card clicked:`, card); 
+
+    cardElement.textContent = card.symbol;
     cardElement.classList.remove('hidden');
     cardElement.classList.add('flipped');
     flippedCards.push(cardElement);
 
-    
     if (flippedCards.length === 2) {
         boardLocked = true;
         checkMatch();
@@ -80,32 +78,27 @@ function checkMatch(): void {
     const secondSymbol = secondCard.textContent;
 
     if (firstSymbol === secondSymbol) {
-    
         flippedCards = [];
         boardLocked = false;
         updateMatchCount();
     } else {
-      
         setTimeout(() => {
             firstCard.classList.remove('flipped');
             secondCard.classList.remove('flipped');
             firstCard.textContent = '';
             secondCard.textContent = '';
-            firstCard.classList.add('hidden');  
-            secondCard.classList.add('hidden'); 
+            firstCard.classList.add('hidden');
+            secondCard.classList.add('hidden');
             flippedCards = [];
             boardLocked = false;
-        }, 1000);  
+        }, 1000);
     }
 }
-
-
 
 function updateMatchCount(): void {
     matchCount++;
     matchCountElement.textContent = `Egyezések: ${matchCount}`;
 }
-
 
 function restartGame(): void {
     matchCount = 0;
@@ -114,6 +107,5 @@ function restartGame(): void {
     setupGame();
     matchCountElement.textContent = `Egyezések: ${matchCount}`;
 }
-
 
 setupGame();

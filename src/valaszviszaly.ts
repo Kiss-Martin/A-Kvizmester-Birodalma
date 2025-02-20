@@ -153,6 +153,7 @@ function reactionTime(event: KeyboardEvent): void {
     const answerContainer = document.getElementById('answer-container');
     const buttoncontainer = document.getElementById('buttoncontainer');
     const reactionTime =  document.getElementById('reactiontime');
+    const feedback = document.getElementById('feedback');
     const wimg = document.getElementById('w');
     const upimg = document.getElementById('arrowup');
     if (event.key.toLowerCase() === "w") {
@@ -172,6 +173,7 @@ function reactionTime(event: KeyboardEvent): void {
         buttoncontainer?.classList.remove('d-none');
         reactionTime?.classList.add('d-none');
         answerContainer?.classList.add('d-flex');
+        feedback?.classList.remove('d-none');
         showQuestion();
     }
 }

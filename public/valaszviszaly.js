@@ -165,6 +165,7 @@ function reactionTime(event) {
     const answerContainer = document.getElementById('answer-container');
     const buttoncontainer = document.getElementById('buttoncontainer');
     const reactionTime = document.getElementById('reactiontime');
+    const feedback = document.getElementById('feedback');
     const wimg = document.getElementById('w');
     const upimg = document.getElementById('arrowup');
     if (event.key.toLowerCase() === "w") {
@@ -185,6 +186,7 @@ function reactionTime(event) {
         buttoncontainer === null || buttoncontainer === void 0 ? void 0 : buttoncontainer.classList.remove('d-none');
         reactionTime === null || reactionTime === void 0 ? void 0 : reactionTime.classList.add('d-none');
         answerContainer === null || answerContainer === void 0 ? void 0 : answerContainer.classList.add('d-flex');
+        feedback === null || feedback === void 0 ? void 0 : feedback.classList.remove('d-none');
         showQuestion();
     }
 }
