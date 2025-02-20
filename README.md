@@ -15,18 +15,21 @@
 - A TV Műsorból is Jól Ismert
 - Leggyakoribb Válasz Játékmód
 - Gyors Játékmenet
+
+### [Mini játékok](https://kiss-martin.github.io/A-Kvizmester-Birodalma/menu.html)
+- Ha nem akarod nagy fába vágni a fejszéd, ezek a kisebb játékok tökéletesek lesznek
+- Több egyszerűbb játék, mint pédául
+  - Orosz rulett
+  - Memóriajáték
+  - Kő - Papír - Olló
+    
 ---
 
-### [Mini játékok)
-- Mini játékok
-- Ha nem akarsz nagy fába vágni fejszét ez számodra tökéletes lesz
-
 ## Technikai Részletek
-
 - [x] Reszponzivitás
 - [x] Json szerver használata
 - [x] Egységes design
-
+      
 ### A Weboldal Készítői
 ```javascript
 const Alkotók = ["Kapocsi Hunor", "Kiss Martin", "Szemethy Levente"];
