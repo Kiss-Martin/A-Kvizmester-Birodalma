@@ -109,3 +109,27 @@ function restartGame(): void {
 }
 
 setupGame();
+
+let memoryScore = 0;
+
+function updateScore(matches: number) {
+    memoryScore = matches * 100; // 100 points per match
+    const scoreElement = document.getElementById('score');
+    if (scoreElement) {
+        scoreElement.textContent = `Pontszám: ${memoryScore}`;
+    }
+}
+
+function gameOver() {
+    saveScore('memoria', memoryScore);
+    // Display game over message
+    const gameOverElement = document.createElement('div');
+    gameOverElement.textContent = `Játék vége! Végső pontszám: ${memoryScore}`;
+    gameBoard.appendChild(gameOverElement);
+}
+
+<div id="score">Pontszám: 0</div>
+<div id="high-scores">
+    <h3>Legjobb eredmények</h3>
+    <ul id="high-scores-list"></ul>
+</div>

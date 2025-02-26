@@ -102,3 +102,18 @@ function restartGame() {
     matchCountElement.textContent = `Egyezések: ${matchCount}`;
 }
 setupGame();
+let memoryScore = 0;
+function updateScore(matches) {
+    memoryScore = matches * 100; // 100 points per match
+    const scoreElement = document.getElementById('score');
+    if (scoreElement) {
+        scoreElement.textContent = `Pontszám: ${memoryScore}`;
+    }
+}
+function gameOver() {
+    saveScore('memoria', memoryScore);
+    // Display game over message
+    const gameOverElement = document.createElement('div');
+    gameOverElement.textContent = `Játék vége! Végső pontszám: ${memoryScore}`;
+    gameBoard.appendChild(gameOverElement);
+}
