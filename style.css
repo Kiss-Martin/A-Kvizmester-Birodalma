@@ -246,6 +246,12 @@ h1 {
   
 }
 
+#játék7 {
+  background-image: url("img/ház.jpg");
+  background-size: cover;
+  
+}
+
 .disabled {
   background-color: #A9A9A9;
   cursor: not-allowed;
