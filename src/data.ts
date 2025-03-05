@@ -1,28 +1,42 @@
 interface GameScore {
-    gameName: string;
     playerName: string;
+    game: string;
     score: number;
     date: string;
 }
 
-function saveScore(gameName: string, score: number) {
+interface ScoreData {
+    scores: GameScore[];
+    highScores: {
+        hangman: number;
+        memory: number;
+        rps: number;
+    };
+}
+
+export async function saveScore(gameName: string, score: number, playerName: string) {
     const newScore: GameScore = {
-        gameName,
-        playerName: "Player", // Can be modified to accept player names
-        score,
+        playerName,
+        game: gameName,
+        score: score,
         date: new Date().toISOString()
     };
 
-    fetch('http://localhost:3000/eredmenyek', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newScore)
-    });
+    try {
+        const response = await fetch('http://localhost:3000/scores', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newScore)
+        });
+        return await response.json();
+    } catch (error) {
+        console.error('Error saving score:', error);
+    }
 }
 
-function getHighScores(gameName: string): Promise<GameScore[]> {
-    return fetch(`http://localhost:3000/eredmenyek?gameName=${gameName}`)
-        .then(response => response.json());
+export async function getHighScores(): Promise<ScoreData> {
+    const response = await fetch('http://localhost:3000/scores');
+    return await response.json();
 }

@@ -156,6 +156,7 @@ function megjelenítBillentyuzetet(kartya) {
                 divszó.remove();
                 keyboardContainer.remove();
                 kilepesButton.remove();
+                const score = calculateHangmanScore(lives, szó.word.length);
                 const gratulalokDiv = document.createElement("div");
                 gratulalokDiv.style.position = "absolute";
                 gratulalokDiv.style.top = "50%";
@@ -256,4 +257,9 @@ function megjelenitesKilépés() {
         location.reload();
     });
     document.body.appendChild(kilepesButton);
+}
+let hangmanScore = 0;
+function calculateHangmanScore(lives, wordLength) {
+    // Base score: 100 points per remaining life + 50 points per letter
+    return (lives * 100) + (wordLength * 50);
 }

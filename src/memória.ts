@@ -120,16 +120,7 @@ function updateScore(matches: number) {
     }
 }
 
-function gameOver() {
-    saveScore('memoria', memoryScore);
-    // Display game over message
-    const gameOverElement = document.createElement('div');
-    gameOverElement.textContent = `Játék vége! Végső pontszám: ${memoryScore}`;
-    gameBoard.appendChild(gameOverElement);
+function calculateMemoryScore(matches: number, attempts: number): number {
+    // Base score: matches * 100, minus penalty for attempts
+    return (matches * 100) - ((attempts - matches) * 20);
 }
-
-<div id="score">Pontszám: 0</div>
-<div id="high-scores">
-    <h3>Legjobb eredmények</h3>
-    <ul id="high-scores-list"></ul>
-</div>

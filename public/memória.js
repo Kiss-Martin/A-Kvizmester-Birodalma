@@ -110,10 +110,7 @@ function updateScore(matches) {
         scoreElement.textContent = `Pontszám: ${memoryScore}`;
     }
 }
-function gameOver() {
-    saveScore('memoria', memoryScore);
-    // Display game over message
-    const gameOverElement = document.createElement('div');
-    gameOverElement.textContent = `Játék vége! Végső pontszám: ${memoryScore}`;
-    gameBoard.appendChild(gameOverElement);
+function calculateMemoryScore(matches, attempts) {
+    // Base score: matches * 100, minus penalty for attempts
+    return (matches * 100) - ((attempts - matches) * 20);
 }
