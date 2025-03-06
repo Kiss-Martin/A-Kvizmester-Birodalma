@@ -109,3 +109,18 @@ function restartGame(): void {
 }
 
 setupGame();
+
+let memoryScore = 0;
+
+function updateScore(matches: number) {
+    memoryScore = matches * 100; // 100 points per match
+    const scoreElement = document.getElementById('score');
+    if (scoreElement) {
+        scoreElement.textContent = `Pontszám: ${memoryScore}`;
+    }
+}
+
+function calculateMemoryScore(matches: number, attempts: number): number {
+    // Base score: matches * 100, minus penalty for attempts
+    return (matches * 100) - ((attempts - matches) * 20);
+}

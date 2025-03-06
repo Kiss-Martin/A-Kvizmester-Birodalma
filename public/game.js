@@ -55,6 +55,7 @@ function playGame(playerChoice) {
             resultElement.innerHTML += "<br>Vesztettél!";
             computerWins++;
         }
+        const gameScore = calculateRPSScore(playerWins, computerWins);
         scoreElement.innerHTML = `Te: ${playerWins} | Gép: ${computerWins}`;
     });
 }
@@ -63,3 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
         button.addEventListener("click", () => playGame(button.id));
     });
 });
+function calculateRPSScore(playerWins, computerWins) {
+    // Win = 100 points, Loss = -50 points
+    return (playerWins * 100) - (computerWins * 50);
+}
