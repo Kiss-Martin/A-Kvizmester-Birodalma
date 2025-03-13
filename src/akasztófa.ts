@@ -13,10 +13,11 @@ async function fetchWords(): Promise<Kérdések[]> {
     }
 }
 
+let hangmanScore = 0;
 document.addEventListener("DOMContentLoaded", () => {
     const megjelenitesDiv = document.getElementById("megjelenítés")!;
     const kartyak = document.querySelectorAll(".flex-container div");
-
+    updateScoreDisplay();
     kartyak.forEach(kartya => {
         kartya.addEventListener("click", async () => {
             megjelenitesDiv.style.display = "none";
@@ -123,136 +124,151 @@ async function megjelenítBillentyuzetet(kartya: Element) {
         const betuCard = document.createElement("div");
         betuCard.textContent = betu;
         betuCard.style.backgroundColor = "#FFD700";
-        betuCard.style.color = "#8B4513";
-        betuCard.style.display = "flex";
-        betuCard.style.justifyContent = "center";
-        betuCard.style.alignItems = "center";
-        betuCard.style.width = "50px";
-        betuCard.style.height = "50px";
-        betuCard.style.borderRadius = "10px";
-        betuCard.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.3)";
-        betuCard.style.cursor = "pointer";
-        betuCard.style.fontSize = "xx-large";
+                betuCard.style.color = "#8B4513";
+                betuCard.style.display = "flex";
+                betuCard.style.justifyContent = "center";
+                betuCard.style.alignItems = "center";
+                betuCard.style.width = "50px";
+                betuCard.style.height = "50px";
+                betuCard.style.borderRadius = "10px";
+                betuCard.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.3)";
+                betuCard.style.cursor = "pointer";
+                betuCard.style.fontSize = "xx-large";
 
-        betuCard.addEventListener("click", () => {
+                betuCard.addEventListener("click", () => {
 
-            if (betuCard.style.backgroundColor === "rgb(169, 169, 169)") {
-                return; 
-            }
-            if (szó.word.includes(betu)) {
-                const regExp = new RegExp(betu, 'g');
-                divszó.innerText = divszó.innerText.split(' ').map((item, index) =>
-                    item === "_" && szó.word[index] === betu ? betu : item).join(' ');
+                    if (betuCard.style.backgroundColor === "rgb(169, 169, 169)") {
+                        return; 
+                    }
+                    if (szó.word.includes(betu)) {
+                        const regExp = new RegExp(betu, 'g');
+                        divszó.innerText = divszó.innerText.split(' ').map((item, index) =>
+                            item === "_" && szó.word[index] === betu ? betu : item).join(' ');
 
-                if (!divszó.innerText.includes("_")) {
-                    guessedCorrectly = true;
-                    showVictoryMessage();
-                }
-            } else {
-                lives--; 
-                livesDiv.textContent = `Életek: ${lives}`;
-                if (lives === 0) {
-                    showLoseMessage();
-                } 
-            }
+                        if (!divszó.innerText.includes("_")) {
+                            guessedCorrectly = true;
+                            showVictoryMessage();
+                        }
+                    } else {
+                        lives--; 
+                        livesDiv.textContent = `Életek: ${lives}`;
+                        if (lives === 0) {
+                            showLoseMessage();
+                        } 
+                    }
             
 
-            betuCard.style.backgroundColor = "#A9A9A9";
-            betuCard.style.cursor = "not-allowed";
-        });
+                    betuCard.style.backgroundColor = "#A9A9A9";
+                    betuCard.style.cursor = "not-allowed";
+                    });
 
-        keyboardContainer.appendChild(betuCard);
-    });
+                    keyboardContainer.appendChild(betuCard);
+                });
 
-    document.body.appendChild(divszó);
-    document.body.appendChild(keyboardContainer);
+                document.body.appendChild(divszó);
+                document.body.appendChild(keyboardContainer);
+        
+                let hangmanScore = 0;
+                let hangmanHighScore = parseInt(localStorage.getItem('hangmanHighScore') || '0');
 
-    function showVictoryMessage() {
-        if (guessedCorrectly) {
-            divszó.remove();
-            keyboardContainer.remove();
-            kilepesButton.remove();
+                function showVictoryMessage() {
+                    if (guessedCorrectly) {
+                        divszó.remove();
+                        keyboardContainer.remove();
+                        kilepesButton.remove();
+                
+                        updateScoreDisplay();
+                        const score = calculateHangmanScore(lives, szó.word.length);
+                        hangmanScore += score;
 
-            const score = calculateHangmanScore(lives, szó.word.length);
+                        // Update high score if current score is higher
+                        if (hangmanScore > hangmanHighScore) {
+                            hangmanHighScore = hangmanScore;
+                            localStorage.setItem('hangmanHighScore', hangmanHighScore.toString());
+                        }
 
-            const gratulalokDiv = document.createElement("div");
-            gratulalokDiv.style.position = "absolute";
-            gratulalokDiv.style.top = "50%";
-            gratulalokDiv.style.left = "50%";
-            gratulalokDiv.style.transform = "translate(-50%, -50%)";
-            gratulalokDiv.style.backgroundColor = "#8B4513";
-            gratulalokDiv.style.color = "#FFD700";
-            gratulalokDiv.style.padding = "30px 40px";
-            gratulalokDiv.style.borderRadius = "20px";
-            gratulalokDiv.style.textAlign = "center";
-            gratulalokDiv.style.fontSize = "2rem";
-            gratulalokDiv.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.5)";
-            gratulalokDiv.textContent = `Gratulálunk!  A szó: ${szó.word}`;
-            gratulalokDiv.style.fontFamily = "'Georgia', serif";
-            document.body.appendChild(gratulalokDiv);
+                        localStorage.setItem('hangmanScore', hangmanScore.toString());
 
-            const ujrajatszasButton = document.createElement("button");
-            ujrajatszasButton.textContent = "Újrajátszás";
-            ujrajatszasButton.style.backgroundColor = "#FFD700";
-            ujrajatszasButton.style.color = "#8B4513";
-            ujrajatszasButton.style.fontSize = "18px";
-            ujrajatszasButton.style.padding = "10px 20px";
-            ujrajatszasButton.style.border = "2px solid #A0522D";
-            ujrajatszasButton.style.borderRadius = "5px";
-            ujrajatszasButton.style.cursor = "pointer";
-            ujrajatszasButton.style.marginTop = "15px";
-            ujrajatszasButton.style.marginLeft = "15px";
+                        const gratulalokDiv = document.createElement("div");
+                        gratulalokDiv.style.position = "absolute";
+                        gratulalokDiv.style.top = "50%";
+                        gratulalokDiv.style.left = "50%";
+                        gratulalokDiv.style.transform = "translate(-50%, -50%)";
+                        gratulalokDiv.style.backgroundColor = "#8B4513";
+                        gratulalokDiv.style.color = "#FFD700";
+                        gratulalokDiv.style.padding = "30px 40px";
+                        gratulalokDiv.style.borderRadius = "20px";
+                        gratulalokDiv.style.textAlign = "center";
+                        gratulalokDiv.style.fontSize = "2rem";
+                        gratulalokDiv.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.5)";
+                        gratulalokDiv.textContent = `Gratulálunk! A szó: ${szó.word}\nPontszám: ${score}\nÖsszpontszám: ${hangmanScore}\nLegmagasabb pontszám: ${hangmanHighScore}`;
+                        gratulalokDiv.style.fontFamily = "'Georgia', serif";
+                        document.body.appendChild(gratulalokDiv);
 
-            ujrajatszasButton.addEventListener("click", () => {
-                location.reload();
-            });
+                        const ujrajatszasButton = document.createElement("button");
+                        ujrajatszasButton.textContent = "Újrajátszás";
+                        ujrajatszasButton.style.backgroundColor = "#FFD700";
+                        ujrajatszasButton.style.color = "#8B4513";
+                        ujrajatszasButton.style.fontSize = "18px";
+                        ujrajatszasButton.style.padding = "10px 20px";
+                        ujrajatszasButton.style.border = "2px solid #A0522D";
+                        ujrajatszasButton.style.borderRadius = "5px";
+                        ujrajatszasButton.style.cursor = "pointer";
+                        ujrajatszasButton.style.marginTop = "15px";
+                        ujrajatszasButton.style.marginLeft = "15px";
 
-            gratulalokDiv.appendChild(ujrajatszasButton);
-        }
-    }
+                        ujrajatszasButton.addEventListener("click", () => {
+                            location.reload();
+                        });
 
-    function showLoseMessage() {
-        divszó.remove();
-        keyboardContainer.remove();
-        kilepesButton.remove();
-       
+                        gratulalokDiv.appendChild(ujrajatszasButton);
+                    }
+                }
 
-        const vesztettDiv = document.createElement("div");
-        vesztettDiv.style.position = "absolute";
-        vesztettDiv.style.top = "50%";
-        vesztettDiv.style.left = "50%";
-        vesztettDiv.style.transform = "translate(-50%, -50%)";
-        vesztettDiv.style.backgroundColor = "#8B4513";
-        vesztettDiv.style.color = "#FFD700";
-        vesztettDiv.style.padding = "30px 40px";
-        vesztettDiv.style.borderRadius = "20px";
-        vesztettDiv.style.textAlign = "center";
-        vesztettDiv.style.fontSize = "2rem";
-        vesztettDiv.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.5)";
-        vesztettDiv.textContent = `Vesztettél!  A szó: ${szó.word}`;
-        vesztettDiv.style.fontFamily = "'Georgia', serif";
-        document.body.appendChild(vesztettDiv);
+                function showLoseMessage() {
+                    divszó.remove();
+                    keyboardContainer.remove();
+                    kilepesButton.remove();
 
-        const ujrajatszasButton = document.createElement("button");
-        ujrajatszasButton.textContent = "Újrajátszás";
-        ujrajatszasButton.style.backgroundColor = "#FFD700";
-        ujrajatszasButton.style.color = "#8B4513";
-        ujrajatszasButton.style.fontSize = "18px";
-        ujrajatszasButton.style.padding = "10px 20px";
-        ujrajatszasButton.style.border = "2px solid #A0522D";
-        ujrajatszasButton.style.borderRadius = "5px";
-        ujrajatszasButton.style.cursor = "pointer";
-        ujrajatszasButton.style.marginTop = "20px";
-        ujrajatszasButton.style.marginLeft = "15px";
+                    hangmanScore = 0;
+                    localStorage.setItem('hangmanScore', '0');
 
-        ujrajatszasButton.addEventListener("click", () => {
-            location.reload();
-        });
+                    const vesztettDiv = document.createElement("div");
+                    vesztettDiv.style.position = "absolute";
+                    vesztettDiv.style.top = "50%";
+                    vesztettDiv.style.left = "50%";
+                    vesztettDiv.style.transform = "translate(-50%, -50%)";
+                    vesztettDiv.style.backgroundColor = "#8B4513";
+                    vesztettDiv.style.color = "#FFD700";
+                    vesztettDiv.style.padding = "30px 40px";
+                    vesztettDiv.style.borderRadius = "20px";
+                    vesztettDiv.style.textAlign = "center";
+                    vesztettDiv.style.fontSize = "2rem";
+                    vesztettDiv.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.5)";
+                    vesztettDiv.textContent = `Vesztettél! A szó: ${szó.word}\nPontszám: 0`;
+                    vesztettDiv.style.fontFamily = "'Georgia', serif";
+                    document.body.appendChild(vesztettDiv);
 
-        vesztettDiv.appendChild(ujrajatszasButton);
-    }
+                    const ujrajatszasButton = document.createElement("button");
+                    ujrajatszasButton.textContent = "Újrajátszás";
+                    ujrajatszasButton.style.backgroundColor = "#FFD700";
+                    ujrajatszasButton.style.color = "#8B4513";
+                    ujrajatszasButton.style.fontSize = "18px";
+                    ujrajatszasButton.style.padding = "10px 20px";
+                    ujrajatszasButton.style.border = "2px solid #A0522D";
+                    ujrajatszasButton.style.borderRadius = "5px";
+                    ujrajatszasButton.style.cursor = "pointer";
+                    ujrajatszasButton.style.marginTop = "20px";
+                    ujrajatszasButton.style.marginLeft = "15px";
+                    updateScoreDisplay();
+            
+                    ujrajatszasButton.addEventListener("click", () => {
+                        location.reload();
+                    });
+
+                    vesztettDiv.appendChild(ujrajatszasButton);
+                }
 }
-
 const kilepesButton = document.createElement("button");
 function megjelenitesKilépés() {
     kilepesButton.textContent = "Vissza";
@@ -290,9 +306,26 @@ function megjelenitesKilépés() {
     document.body.appendChild(kilepesButton);
 }
 
-let hangmanScore = 0;
+
+function updateScoreDisplay() {
+    const pontszamDiv = document.getElementById('pontszám');
+    if (pontszamDiv) {
+        pontszamDiv.innerHTML = `
+            <div style="text-align: center; margin-top: 20px;">
+                <div style="background-color: #8B4513; 
+                           color: #FFD700;
+                           padding: 15px;
+                           border-radius: 10px;
+                           display: inline-block;
+                           font-size: 1.5rem;
+                           font-family: 'Georgia', serif;">
+                    Pontszám: ${hangmanScore}
+                </div>
+            </div>`;
+    }
+}
+
 
 function calculateHangmanScore(lives: number, wordLength: number): number {
-    // Base score: 100 points per remaining life + 50 points per letter
     return (lives * 100) + (wordLength * 50);
 }

@@ -20,9 +20,11 @@ function fetchWords() {
         }
     });
 }
+let hangmanScore = 0;
 document.addEventListener("DOMContentLoaded", () => {
     const megjelenitesDiv = document.getElementById("megjelenítés");
     const kartyak = document.querySelectorAll(".flex-container div");
+    updateScoreDisplay();
     kartyak.forEach(kartya => {
         kartya.addEventListener("click", () => __awaiter(void 0, void 0, void 0, function* () {
             megjelenitesDiv.style.display = "none";
@@ -151,12 +153,22 @@ function megjelenítBillentyuzetet(kartya) {
         });
         document.body.appendChild(divszó);
         document.body.appendChild(keyboardContainer);
+        let hangmanScore = 0;
+        let hangmanHighScore = parseInt(localStorage.getItem('hangmanHighScore') || '0');
         function showVictoryMessage() {
             if (guessedCorrectly) {
                 divszó.remove();
                 keyboardContainer.remove();
                 kilepesButton.remove();
+                updateScoreDisplay();
                 const score = calculateHangmanScore(lives, szó.word.length);
+                hangmanScore += score;
+                // Update high score if current score is higher
+                if (hangmanScore > hangmanHighScore) {
+                    hangmanHighScore = hangmanScore;
+                    localStorage.setItem('hangmanHighScore', hangmanHighScore.toString());
+                }
+                localStorage.setItem('hangmanScore', hangmanScore.toString());
                 const gratulalokDiv = document.createElement("div");
                 gratulalokDiv.style.position = "absolute";
                 gratulalokDiv.style.top = "50%";
@@ -169,7 +181,7 @@ function megjelenítBillentyuzetet(kartya) {
                 gratulalokDiv.style.textAlign = "center";
                 gratulalokDiv.style.fontSize = "2rem";
                 gratulalokDiv.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.5)";
-                gratulalokDiv.textContent = `Gratulálunk!  A szó: ${szó.word}`;
+                gratulalokDiv.textContent = `Gratulálunk! A szó: ${szó.word}\nPontszám: ${score}\nÖsszpontszám: ${hangmanScore}\nLegmagasabb pontszám: ${hangmanHighScore}`;
                 gratulalokDiv.style.fontFamily = "'Georgia', serif";
                 document.body.appendChild(gratulalokDiv);
                 const ujrajatszasButton = document.createElement("button");
@@ -193,6 +205,8 @@ function megjelenítBillentyuzetet(kartya) {
             divszó.remove();
             keyboardContainer.remove();
             kilepesButton.remove();
+            hangmanScore = 0;
+            localStorage.setItem('hangmanScore', '0');
             const vesztettDiv = document.createElement("div");
             vesztettDiv.style.position = "absolute";
             vesztettDiv.style.top = "50%";
@@ -205,7 +219,7 @@ function megjelenítBillentyuzetet(kartya) {
             vesztettDiv.style.textAlign = "center";
             vesztettDiv.style.fontSize = "2rem";
             vesztettDiv.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.5)";
-            vesztettDiv.textContent = `Vesztettél!  A szó: ${szó.word}`;
+            vesztettDiv.textContent = `Vesztettél! A szó: ${szó.word}\nPontszám: 0`;
             vesztettDiv.style.fontFamily = "'Georgia', serif";
             document.body.appendChild(vesztettDiv);
             const ujrajatszasButton = document.createElement("button");
@@ -219,6 +233,7 @@ function megjelenítBillentyuzetet(kartya) {
             ujrajatszasButton.style.cursor = "pointer";
             ujrajatszasButton.style.marginTop = "20px";
             ujrajatszasButton.style.marginLeft = "15px";
+            updateScoreDisplay();
             ujrajatszasButton.addEventListener("click", () => {
                 location.reload();
             });
@@ -258,8 +273,23 @@ function megjelenitesKilépés() {
     });
     document.body.appendChild(kilepesButton);
 }
-let hangmanScore = 0;
+function updateScoreDisplay() {
+    const pontszamDiv = document.getElementById('pontszám');
+    if (pontszamDiv) {
+        pontszamDiv.innerHTML = `
+            <div style="text-align: center; margin-top: 20px;">
+                <div style="background-color: #8B4513; 
+                           color: #FFD700;
+                           padding: 15px;
+                           border-radius: 10px;
+                           display: inline-block;
+                           font-size: 1.5rem;
+                           font-family: 'Georgia', serif;">
+                    Pontszám: ${hangmanScore}
+                </div>
+            </div>`;
+    }
+}
 function calculateHangmanScore(lives, wordLength) {
-    // Base score: 100 points per remaining life + 50 points per letter
     return (lives * 100) + (wordLength * 50);
 }
