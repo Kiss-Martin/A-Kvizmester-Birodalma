@@ -1,8 +1,10 @@
 "use strict";
-document.addEventListener('DOMContentLoaded', () => {
+function updateScoreDisplays() {
     const quizScoreElement = document.getElementById('quizTimeScore');
-    const totalScore = localStorage.getItem('totalQuizScore') || '0';
     if (quizScoreElement) {
-        quizScoreElement.textContent = totalScore;
+        const totalQuizScore = localStorage.getItem('totalQuizScore') || '0';
+        quizScoreElement.textContent = totalQuizScore;
     }
-});
+}
+updateScoreDisplays();
+window.addEventListener('storage', updateScoreDisplays);

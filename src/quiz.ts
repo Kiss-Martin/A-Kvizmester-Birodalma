@@ -40,7 +40,7 @@ function displayCategoryMenu(categories: string[]) {
                 </div>
             </div>
             <div class="text-center text-purple">
-                <h3>A legutóbb elért összpontszám: <span class="badge text-bg-secondary" style="background: rgb(255,13,13);
+                <h3>Az eddig összesen elért összpontszámod: <span class="badge text-bg-secondary" style="background: rgb(255,13,13);
 background: linear-gradient(90deg, rgba(255,13,13,1) 0%, rgba(2,212,255,1) 70%);">${quizData.getTotalScore()}</span></h3>
             </div>
         </div>
@@ -178,6 +178,9 @@ function showFinalScore() {
   const quizContainer = document.getElementById('quiz-container');
   if (!quizContainer) return;
 
+  quizData.addScore(currentScore);
+    window.dispatchEvent(new Event('storage'))
+
   quizContainer.innerHTML = `
       <div class="card bg-black text-center">
           <div class="card-body">
@@ -200,17 +203,15 @@ function showError() {
 
 const finalScore = localStorage.getItem('quizScore');
 const quizData = {
-    totalScore: 0,
+    totalScore: Number(localStorage.getItem('totalQuizScore')) || 0,
     addScore(score: number) {
         this.totalScore += score;
-        localStorage.setItem('totalQuizScore', this.totalScore.toString());  // Save to localStorage
+        localStorage.setItem('totalQuizScore', this.totalScore.toString());
     },
     getTotalScore() {
         return this.totalScore;
     }
 };
-
-quizData.addScore(Number(localStorage.getItem('quizScore')));
 
 console.log('Quiz Results:', quizData.getTotalScore());
 
