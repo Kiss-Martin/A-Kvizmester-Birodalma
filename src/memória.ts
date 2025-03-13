@@ -98,6 +98,13 @@ function checkMatch(): void {
 function updateMatchCount(): void {
     matchCount++;
     matchCountElement.textContent = `Egyezések: ${matchCount}`;
+
+    if (matchCount === cards.length / 2) { 
+        setTimeout(() => {
+            alert("Gratulálunk! Új játék indul.");
+            restartGame();
+        }, 500);
+    }
 }
 
 function restartGame(): void {
