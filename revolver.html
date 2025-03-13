@@ -106,7 +106,8 @@
             background-image: url("img/tölténny.png");
             border-radius: 100%;
             width: 44px;
-            height: 45px;;
+            height: 45px;
+            ;
             background-size: cover;
             position: absolute;
             top: 50%;
@@ -133,6 +134,20 @@
             color: #FFF8DC;
             transform: scale(1.1);
             box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #dob.spin {
+            animation: spin 1s ease-in-out;
         }
     </style>
 </head>

@@ -222,7 +222,7 @@ h1 {
 
 #játék2 {
   background-image: url("img/hangman.jpg");
-  background-size: contain;
+  background-size: cover;
 }
 
 #játék3 {
