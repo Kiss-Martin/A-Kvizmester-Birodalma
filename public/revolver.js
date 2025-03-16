@@ -12,24 +12,31 @@ function removeAllTöltények() {
     });
 }
 function handleShoot() {
+    if (töltények === 0) {
+        alert('Nincs töltény a revolverben!');
+        return;
+    }
     const halálEsély = töltények / 6;
     const lövésEredmény = Math.random() < halálEsély;
-    if (lövésEredmény) {
-        alert('Meghaltál!');
-    }
-    else {
-        alert('Túlélted!');
-    }
-    removeAllTöltények();
-    töltények = 0;
+    revolver.classList.add('spin');
+    setTimeout(() => {
+        revolver.classList.remove('spin');
+        removeAllTöltények();
+        töltények = 0;
+        if (lövésEredmény) {
+            revolver.classList.add('pulse');
+            setTimeout(() => {
+                revolver.classList.remove('pulse');
+                alert('Meghaltál!');
+            }, 500);
+        }
+        else {
+            alert('Túlélted!');
+        }
+    }, 1000);
 }
 function shootIfHasAmmo() {
-    if (töltények > 0) {
-        handleShoot();
-    }
-    else {
-        alert('Nincs töltény a revolverben!');
-    }
+    handleShoot();
 }
 töltény === null || töltény === void 0 ? void 0 : töltény.addEventListener('click', () => {
     if (töltények < 6) {

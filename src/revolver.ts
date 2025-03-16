@@ -4,7 +4,6 @@ const revolver = document.getElementById('revolver');
 
 let töltények = 0;
 
-
 function removeAllTöltények() {
     lyukok.forEach(lyuk => {
         const töltényElem = lyuk.querySelector('.töltény-dob');
@@ -14,37 +13,44 @@ function removeAllTöltények() {
     });
 }
 
-
 function handleShoot() {
+    if (töltények === 0) {
+        alert('Nincs töltény a revolverben!');
+        return;
+    }
+
     const halálEsély = töltények / 6;
     const lövésEredmény = Math.random() < halálEsély;
 
-    if (lövésEredmény) {
-        alert('Meghaltál!');
-    } else {
-        alert('Túlélted!');
-    }
+    revolver!.classList.add('spin');
 
+    setTimeout(() => {
+        revolver!.classList.remove('spin');
 
-    removeAllTöltények();
+       
+        removeAllTöltények();
+        töltények = 0;
 
+        if (lövésEredmény) {
+            
+            revolver!.classList.add('pulse');
 
-    töltények = 0;
+            setTimeout(() => {
+                revolver!.classList.remove('pulse');
+                alert('Meghaltál!');
+            }, 500);
+        } else {
+            alert('Túlélted!');
+        }
+    }, 1000); 
 }
-
 
 function shootIfHasAmmo() {
-    if (töltények > 0) {
-        handleShoot();
-    } else {
-        alert('Nincs töltény a revolverben!');
-    }
+    handleShoot();
 }
-
 
 töltény?.addEventListener('click', () => {
     if (töltények < 6) {
-
         for (let i = 0; i < lyukok.length; i++) {
             if (!lyukok[i].querySelector('.töltény-dob')) {
                 const töltényElem = document.createElement('div');

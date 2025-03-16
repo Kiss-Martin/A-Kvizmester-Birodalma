@@ -149,6 +149,26 @@
         #dob.spin {
             animation: spin 1s ease-in-out;
         }
+
+        @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+#revolver.spin {
+    animation: spin 1s ease-in-out;
+}
+
+#revolver.pulse {
+    animation: pulse 0.5s ease-in-out;
+}
+
     </style>
 </head>
 
