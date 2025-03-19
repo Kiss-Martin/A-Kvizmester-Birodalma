@@ -20,13 +20,21 @@ function fetchQuestions() {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = yield response.json();
-            return data;
+            return shuffleArray(data).slice(0, 10);
         }
         catch (error) {
             console.error("Hiba történt a kérdések betöltése során:", error);
             throw error;
         }
     });
+}
+function shuffleArray(array) {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
 }
 function valaszViszaly() {
     return __awaiter(this, void 0, void 0, function* () {
