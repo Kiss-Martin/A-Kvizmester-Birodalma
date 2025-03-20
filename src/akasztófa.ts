@@ -284,6 +284,7 @@ function megjelenitesKilépés() {
     kilepesButton.style.cursor = "pointer";
     kilepesButton.style.boxShadow = "2px 2px 5px rgba(0, 0, 0, 0.5)";
     kilepesButton.style.fontFamily = "'Georgia', serif";
+    
 
     kilepesButton.addEventListener("mouseover", () => {
         kilepesButton.style.backgroundColor = "#A0522D";
@@ -311,13 +312,15 @@ function updateScoreDisplay() {
     const pontszamDiv = document.getElementById('pontszám');
     if (pontszamDiv) {
         pontszamDiv.innerHTML = `
-            <div style="text-align: center; margin-top: 20px;">
+            <div style="text-align: center; margin-top: -4px;">
                 <div style="background-color: #8B4513; 
                            color: #FFD700;
-                           padding: 15px;
+                           width: 300px;
+                           padding: 10px;
                            border-radius: 10px;
                            display: inline-block;
                            font-size: 1.5rem;
+                           
                            font-family: 'Georgia', serif;">
                     Pontszám: ${hangmanScore}
                 </div>

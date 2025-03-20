@@ -14,7 +14,7 @@ let matchCount = 0;
 let boardLocked = false;
 const gameBoard = document.getElementById('game-board');
 const matchCountElement = document.getElementById('match-count');
-const gameOverElement = document.getElementById('game-over'); // The element to show the message and button
+const gameOverElement = document.getElementById('game-over');
 function fetchcards() {
     return __awaiter(this, void 0, void 0, function* () {
         const response = yield fetch("http://localhost:3000/cards");
