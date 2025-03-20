@@ -74,7 +74,7 @@ function loadQuestions(selectedCategory) {
             if (selectedCategory && selectedCategory !== 'Mind') {
                 allQuestions = allQuestions.filter((q) => q.category === selectedCategory);
             }
-            questions = shuffleArray(allQuestions).slice(0, MAX_QUESTIONS);
+            questions = shuffleArrayQuiz(allQuestions).slice(0, MAX_QUESTIONS);
             displayQuestion();
         }
         catch (error) {
@@ -83,7 +83,7 @@ function loadQuestions(selectedCategory) {
         }
     });
 }
-function shuffleArray(array) {
+function shuffleArrayQuiz(array) {
     return [...array].sort(() => Math.random() - 0.5);
 }
 function displayQuestion() {

@@ -75,14 +75,14 @@ async function loadQuestions(selectedCategory: string | undefined) {
             allQuestions = allQuestions.filter((q: Question) => q.category === selectedCategory);
         }
         
-        questions = shuffleArray(allQuestions).slice(0, MAX_QUESTIONS);
+        questions = shuffleArrayQuiz(allQuestions).slice(0, MAX_QUESTIONS);
         displayQuestion();
     } catch (error) {
         console.error('Error loading questions:', error);
         showError();
     }
 }
-function shuffleArray<T>(array: T[]): T[] {
+function shuffleArrayQuiz<T>(array: T[]): T[] {
     return [...array].sort(() => Math.random() - 0.5);
 }
 

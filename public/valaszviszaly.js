@@ -20,7 +20,7 @@ function fetchQuestions() {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = yield response.json();
-            return shuffleArray(data).slice(0, 10);
+            return shuffleArray(data).slice(0, 1);
         }
         catch (error) {
             console.error("Hiba történt a kérdések betöltése során:", error);
@@ -52,6 +52,9 @@ function valaszViszaly() {
     });
 }
 document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, void 0, function* () {
+    // Initialize total scores from localStorage first
+    viszalyData.player1TotalScore = Number(localStorage.getItem('player1TotalScore')) || 0;
+    viszalyData.player2TotalScore = Number(localStorage.getItem('player2TotalScore')) || 0;
     const questionContainer = document.getElementById('question-text');
     const answerContainer = document.getElementById('answer-container');
     const answerInput = document.getElementById('answer-input');
@@ -117,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, vo
             answerContainer === null || answerContainer === void 0 ? void 0 : answerContainer.classList.add('d-none');
             questionContainer === null || questionContainer === void 0 ? void 0 : questionContainer.classList.add('d-none');
             if (currentQuestionIndex < questions.length) {
-                setTimeout(showQuestion, 2000);
+                setTimeout(showQuestion, 200);
                 questionContainer === null || questionContainer === void 0 ? void 0 : questionContainer.classList.remove('d-none');
                 answerContainer === null || answerContainer === void 0 ? void 0 : answerContainer.classList.add('d-none');
                 buttoncontainer === null || buttoncontainer === void 0 ? void 0 : buttoncontainer.classList.remove('d-none');
@@ -128,6 +131,11 @@ document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, vo
             }
             else {
                 setTimeout(() => {
+                    // Save the scores when the game ends
+                    localStorage.setItem('player1Score', player1.score.toString());
+                    localStorage.setItem('player2Score', player2.score.toString());
+                    // Update total scores
+                    viszalyData.addScores(player1.score, player2.score);
                     gameContainer === null || gameContainer === void 0 ? void 0 : gameContainer.classList.add('d-none');
                     endMessage === null || endMessage === void 0 ? void 0 : endMessage.classList.remove('d-none');
                     let winnerName = player1.score > player2.score ? player1.name : player2.name;
@@ -204,9 +212,9 @@ let isPlayer1Turn = true;
 const viszalyData = {
     player1TotalScore: 0,
     player2TotalScore: 0,
-    addScores(_player1Score, _player2Score) {
-        this.player1TotalScore += player1.score;
-        this.player2TotalScore += player2.score;
+    addScores(player1Score, player2Score) {
+        this.player1TotalScore += player1Score;
+        this.player2TotalScore += player2Score;
         localStorage.setItem('player1TotalScore', this.player1TotalScore.toString());
         localStorage.setItem('player2TotalScore', this.player2TotalScore.toString());
     },
