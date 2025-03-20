@@ -9,6 +9,7 @@ let boardLocked = false;
 
 const gameBoard = document.getElementById('game-board')!;
 const matchCountElement = document.getElementById('match-count')!;
+const gameOverElement = document.getElementById('game-over')!; // The element to show the message and button
 
 async function fetchcards(): Promise<Card[]> {
     const response = await fetch("http://localhost:3000/cards");
@@ -101,9 +102,26 @@ function updateMatchCount(): void {
 
     if (matchCount === cards.length / 2) { 
         setTimeout(() => {
-            alert("Gratulálunk! Új játék indul.");
-            restartGame();
-        }, 500);
+            showGameOverMessage();
+        }, 3000); 
+    }
+}
+
+function showGameOverMessage(): void {
+    gameBoard.innerHTML = ''; 
+
+   
+    gameOverElement.innerHTML = `
+        <div class="game-over-message">
+            <h2>Gratulálunk! Nyertél!</h2>
+            <button id="play-again-btn" class="back-button">Újrajátszás</button>
+        </div>
+    `;
+    
+    
+    const playAgainButton = document.getElementById('play-again-btn');
+    if (playAgainButton) {
+        playAgainButton.addEventListener('click', restartGame);
     }
 }
 
@@ -111,6 +129,7 @@ function restartGame(): void {
     matchCount = 0;
     flippedCards = [];
     boardLocked = false;
+    gameOverElement.innerHTML = ''; 
     setupGame();
     matchCountElement.textContent = `Egyezések: ${matchCount}`;
 }
