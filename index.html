@@ -40,10 +40,32 @@
                 <h5 class="card-title text-pink">Rekordjaid</h5>
                 <p class="card-text text-purple">Itt találhatod a játékokban elért eredményeid.</p>
                 <ul class="list-group text-purple">
-                    <li class="list-group-item list-group-item-dark">Quiz-Time: <span id="quizTimeScore" class="badge bg-success rounded-pill float-end"></span></li>
-                    <li class="list-group-item list-group-item-dark">Akasztófa: <span id="hangmanScore" class="badge bg-warning rounded-pill float-end"></span></li>
-                    <li class="list-group-item list-group-item-dark">??? <span id="familyFreudScore" class="badge bg-info rounded-pill float-end"></span></li>
+                    <li class="list-group-item list-group-item-dark" 
+                        data-bs-toggle="popover" 
+                        data-bs-placement="right" 
+                        data-bs-custom-class="custom-popover"
+                        data-bs-title="Quiz-Time Rekord" 
+                        data-bs-content="A pontszám az eddig játszott játékokban elért eredményeid összegét mutatja.">
+                        Quiz-Time: <span id="quizTimeScore" class="badge bg-success rounded-pill float-end"></span>
+                    </li>
+                    <li class="list-group-item list-group-item-dark" 
+                        data-bs-toggle="popover" 
+                        data-bs-placement="right" 
+                        data-bs-custom-class="custom-popover"
+                        data-bs-title="Akasztófa Rekord" 
+                        data-bs-content="Itt láthatod az Akasztófa játékban elért legjobb pontszámodat.">
+                        Akasztófa: <span id="hangmanScore" class="badge bg-warning rounded-pill float-end"></span>
+                    </li>
+                    <li class="list-group-item list-group-item-dark" 
+                        data-bs-toggle="popover" 
+                        data-bs-placement="right" 
+                        data-bs-custom-class="custom-popover"
+                        data-bs-title="Válasz-Viszály Rekord" 
+                        data-bs-content="Itt láthatod a Válasz-Viszály játékban elért legjobb pontszámodat. Gyűjtsd a pontokat!">
+                        ??? <span id="familyFreudScore" class="badge bg-info rounded-pill float-end"></span>
+                    </li>
                   </ul>
+                  
             </div>
         </div>
         </div>
@@ -70,10 +92,42 @@
 
     <audio src="Gameshow-[AudioTrimmer.com].mp3" autoplay loop></audio>
     
-
+    <!-- Add custom styles for popovers -->
+    <style>
+        .custom-popover {
+            --bs-popover-max-width: 300px;
+            --bs-popover-border-color: purple;
+            --bs-popover-header-bg: purple;
+            --bs-popover-header-color: var(--bs-white);
+            --bs-popover-body-padding-x: 1rem;
+            --bs-popover-body-padding-y: 0.75rem;
+            --bs-popover-bg: #000000;
+            --bs-popover-body-color: #ddd;
+        }
+        
+        .list-group-item {
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .list-group-item:hover {
+            background-color: #444 !important;
+        }
+    </style>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
+        // Initialize all popovers
+        document.addEventListener('DOMContentLoaded', function() {
+            const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+            const popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl, {
+                    trigger: 'hover focus', // Show on hover or focus
+                    html: true // Allow HTML in the popover content
+                });
+            });
+        });
+        
         // function startInfiniteConfetti() {
         //     setInterval(() => {
         //         confetti({

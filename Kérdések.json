@@ -970,183 +970,131 @@
   "valaszok": [
     {
       "kerdes": "Mi a legjobb nyári gyümölcs?",
-      "valaszok": [
-        "dinnye",
-        "eper",
-        "barack",
-        "szőlő"
-      ]
+      "valaszok": ["dinnye", "eper", "barack", "szőlő"]
     },
     {
       "kerdes": "Milyen sportot néznek a legtöbben?",
-      "valaszok": [
-        "foci",
-        "kosárlabda",
-        "tenisz",
-        "úszás"
-      ]
+      "valaszok": ["foci", "kosárlabda", "tenisz", "úszás"]
     },
     {
       "kerdes": "Legjobb reggeli étel?",
-      "valaszok": [
-        "tojás",
-        "kenyér",
-        "zabkása",
-        "gyümölcs"
-      ]
+      "valaszok": ["tojás", "kenyér", "zabkása", "gyümölcs"]
     },
     {
       "kerdes": "Preferált hétvégi program?",
-      "valaszok": [
-        "pihenés",
-        "kirándulás",
-        "főzés",
-        "filmenézés"
-      ]
+      "valaszok": ["pihenés", "kirándulás", "főzés", "filmenézés"]
     },
     {
       "kerdes": "Ételek, amiről eszedbe jut a karácsony?",
-      "valaszok": [
-        "halászlé",
-        "bejgli",
-        "töltött káposzta",
-        "mézeskalács"
-      ]
+      "valaszok": ["halászlé", "bejgli", "töltött káposzta", "mézeskalács"]
     },
     {
       "kerdes": "Elengedhetetlen tárgyak nyaraláshoz?",
-      "valaszok": [
-        "ruha",
-        "telefon",
-        "naptej",
-        "pénz"
-      ]
+      "valaszok": ["ruha", "telefon", "naptej", "pénz"]
     },
     {
       "kerdes": "Mi a legnépszerűbb gyorsétel?",
-      "valaszok": [
-        "hamburger",
-        "pizza",
-        "hotdog",
-        "kebab"
-      ]
+      "valaszok": ["hamburger", "pizza", "hotdog", "kebab"]
     },
     {
       "kerdes": "Elfoglaltságok a strandon?",
-      "valaszok": [
-        "napozás",
-        "úszás",
-        "homokvár építés",
-        "fagyizás"
-      ]
+      "valaszok": ["napozás", "úszás", "homokvár építés", "fagyizás"]
     },
     {
       "kerdes": "Mi az, ami mindig van egy iskolatáskában?",
-      "valaszok": [
-        "füzet",
-        "ceruza",
-        "tankönyv",
-        "radír"
-      ]
+      "valaszok": ["füzet", "ceruza", "tankönyv", "radír"]
     },
     {
       "kerdes": "Milyen zöldséget használunk salátához?",
-      "valaszok": [
-        "paradicsom",
-        "uborka",
-        "saláta",
-        "hagyma"
-      ]
+      "valaszok": ["paradicsom", "uborka", "saláta", "hagyma"]
     },
     {
       "kerdes": "Mi a legnépszerűbb üdítőital?",
-      "valaszok": [
-        "kóla",
-        "narancslé",
-        "víz",
-        "tea"
-      ]
+      "valaszok": ["kóla", "narancslé", "víz", "tea"]
     },
     {
       "kerdes": "Mi az, amit télen viselünk?",
-      "valaszok": [
-        "kabát",
-        "sál",
-        "sapka",
-        "kesztyű"
-      ]
+      "valaszok": ["kabát", "sál", "sapka", "kesztyű"]
     },
     {
       "kerdes": "Melyik szobában töltjük a legtöbb időt?",
-      "valaszok": [
-        "nappali",
-        "hálószoba",
-        "konyha",
-        "fürdőszoba"
-      ]
+      "valaszok": ["nappali", "hálószoba", "konyha", "fürdőszoba"]
     },
     {
       "kerdes": "Elengedhetetlen piknik kellékek?",
-      "valaszok": [
-        "szendvics",
-        "takaró",
-        "gyümölcslé",
-        "frizbi"
-      ]
+      "valaszok": ["szendvics", "takaró", "gyümölcslé", "frizbi"]
     },
     {
       "kerdes": "Melyik napot szeretjük a legjobban?",
-      "valaszok": [
-        "szombat",
-        "péntek",
-        "vasárnap",
-        "szerda"
-      ]
+      "valaszok": ["szombat", "péntek", "vasárnap", "szerda"]
     },
     {
       "kerdes": "Mi az, amit általában egy születésnapi partin látunk?",
-      "valaszok": [
-        "torta",
-        "lufi",
-        "ajándék",
-        "gyertya"
-      ]
+      "valaszok": ["torta", "lufi", "ajándék", "gyertya"]
     },
     {
       "kerdes": "Mit nézünk a tévében?",
-      "valaszok": [
-        "hírek",
-        "film",
-        "sorozat",
-        "sport"
-      ]
+      "valaszok": ["hírek", "film", "sorozat", "sport"]
     },
     {
       "kerdes": "Mi az, amit egy koncerten hallunk?",
-      "valaszok": [
-        "zene",
-        "ének",
-        "taps",
-        "kiáltás"
-      ]
+      "valaszok": ["zene", "ének", "taps", "kiáltás"]
     },
     {
       "kerdes": "Mi az, amit vacsorára készítünk?",
-      "valaszok": [
-        "pörkölt",
-        "tészta",
-        "hal",
-        "saláta"
-      ]
+      "valaszok": ["pörkölt", "tészta", "hal", "saláta"]
     },
     {
       "kerdes": "Tevékenységek egy parkban?",
-      "valaszok": [
-        "sétálás",
-        "biciklizés",
-        "kutya sétáltatás",
-        "pihenés"
-      ]
+      "valaszok": ["sétálás", "biciklizés", "kutya sétáltatás", "pihenés"]
+    },
+    {
+      "kerdes": "Milyen állat él az erdőben?",
+      "valaszok": ["róka", "vaddisznó", "szarvas", "nyúl"]
+    },
+    {
+      "kerdes": "Mi az, amit egy repülőtéren látunk?",
+      "valaszok": ["repülő", "bőrönd", "biztonsági ellenőrzés", "utazók"]
+    },
+    {
+      "kerdes": "Esküvői tevékenységek?",
+      "valaszok": ["táncolás", "ünneplés", "ajándékadás", "tortázás"]
+    },
+    {
+      "kerdes": "Milyen eseményen van tűzijáték?",
+      "valaszok": ["szilveszter", "nemzeti ünnep", "fesztivál", "esküvő"]
+    },
+    {
+      "kerdes": "Mi az, ami egy konyhában található?",
+      "valaszok": ["hűtő", "sütő", "serpenyő", "evőeszköz"]
+    },
+    {
+      "kerdes": "Mit veszünk egy boltban?",
+      "valaszok": ["kenyér", "tej", "zöldség", "hús"]
+    },
+    {
+      "kerdes": "Milyen háziállatok népszerűek?",
+      "valaszok": ["kutya", "macska", "hörcsög", "papagáj"]
+    },
+    {
+      "kerdes": "Milyen járművet használunk városban?",
+      "valaszok": ["busz", "villamos", "autó", "kerékpár"]
+    },
+    {
+      "kerdes": "Mit viselünk nyáron?",
+      "valaszok": ["rövidnadrág", "póló", "papucs", "kalap"]
+    },
+    {
+      "kerdes": "Mi a legjobb téli sport?",
+      "valaszok": ["síelés", "korcsolyázás", "szánkózás", "hódeszkázás"]
+    },
+    {
+      "kerdes": "Mit látunk az égen éjszaka?",
+      "valaszok": ["csillagok", "hold", "felhők", "repülő"]
+    },
+    {
+      "kerdes": "Milyen ital melegít fel télen?",
+      "valaszok": ["forró csoki", "tea", "forralt bor", "kávé"]
     }
   ]
 }

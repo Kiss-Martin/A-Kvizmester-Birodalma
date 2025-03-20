@@ -20,11 +20,20 @@ async function fetchQuestions(): Promise<Question[]> {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data: Question[] = await response.json();
-        return data;
+        return shuffleArray(data).slice(0, 10);
     } catch (error) {
         console.error("Hiba történt a kérdések betöltése során:", error);
         throw error;
     }
+}
+
+function shuffleArray<T>(array: T[]): T[] {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
 }
 
 async function valaszViszaly() {
