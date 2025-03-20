@@ -20,7 +20,7 @@ function fetchQuestions() {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = yield response.json();
-            return shuffleArray(data).slice(0, 1);
+            return shuffleArray(data).slice(0, 10);
         }
         catch (error) {
             console.error("Hiba történt a kérdések betöltése során:", error);

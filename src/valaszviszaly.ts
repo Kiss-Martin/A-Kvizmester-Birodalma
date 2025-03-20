@@ -20,7 +20,7 @@ async function fetchQuestions(): Promise<Question[]> {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data: Question[] = await response.json();
-        return shuffleArray(data).slice(0, 1);
+        return shuffleArray(data).slice(0, 10);
     } catch (error) {
         console.error("Hiba történt a kérdések betöltése során:", error);
         throw error;
