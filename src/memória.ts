@@ -9,7 +9,7 @@ let boardLocked = false;
 
 const gameBoard = document.getElementById('game-board')!;
 const matchCountElement = document.getElementById('match-count')!;
-const gameOverElement = document.getElementById('game-over')!; // The element to show the message and button
+const gameOverElement = document.getElementById('game-over')!; 
 
 async function fetchcards(): Promise<Card[]> {
     const response = await fetch("http://localhost:3000/cards");
