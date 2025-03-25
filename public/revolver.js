@@ -2,6 +2,7 @@
 const töltény = document.getElementById('töltény');
 const lyukok = document.querySelectorAll('.lyuk');
 const revolver = document.getElementById('revolver');
+const body = document.body;
 let töltények = 0;
 function removeAllTöltények() {
     lyukok.forEach(lyuk => {
@@ -10,6 +11,14 @@ function removeAllTöltények() {
             lyuk.removeChild(töltényElem);
         }
     });
+}
+function showEndScreen(message, color) {
+    body.innerHTML = `
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background-color: black; color: ${color}; font-size: 48px;">
+            <p>${message}</p>
+            <button onclick="window.location.reload()" style="background-color: ${color}; color: white; font-size: 24px; padding: 10px 20px; border: none; cursor: pointer;">Újra</button>
+        </div>
+    `;
 }
 function handleShoot() {
     if (töltények === 0) {
@@ -24,14 +33,10 @@ function handleShoot() {
         removeAllTöltények();
         töltények = 0;
         if (lövésEredmény) {
-            revolver.classList.add('pulse');
-            setTimeout(() => {
-                revolver.classList.remove('pulse');
-                alert('Meghaltál!');
-            }, 500);
+            showEndScreen('Meghaltál!', 'red');
         }
         else {
-            alert('Túlélted!');
+            showEndScreen('Túlélted!', 'green');
         }
     }, 1000);
 }
