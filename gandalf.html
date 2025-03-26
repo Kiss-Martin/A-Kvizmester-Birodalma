@@ -21,7 +21,7 @@
             position: relative;
         }
 
-        .game-board {
+        /* .game-board {
             width: 80%;
             max-width: 1500px;
             height: 80%;
@@ -31,7 +31,7 @@
             background-color: black;
             opacity: 90%;
             position: relative;
-        }
+        } */
 
         .image-container {
             position: absolute;
@@ -51,7 +51,7 @@
             opacity: 100% !important;
         }
 
-        .back-button {
+        .back-button {            
             padding: 20px 25px;
             background-color: brown;
             color: white;
@@ -69,22 +69,73 @@
             transform: translateY(-2px);
 
         }
+
+        .game-board {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            max-width: 1500px;
+            height: 80%;
+            border: 1px solid;
+            border-radius: 20px;
+            background-color: black;
+            opacity: 90%;
+            position: relative;
+        }
+
+        .card {
+            width: 300px;
+            height: 100px;
+            background-color: #fff;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            display: inline-block;
+            cursor: pointer;
+            border: none;
+        }
+
+        .card.highlight {
+            background-color: red;
+        }
+
+        #game-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #message {
+            height: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            font-size: x-large;
+            
+        }
     </style>
 </head>
 
 <body>
 
     <div class="game-board">
+        <div id="message" class="hidden"></div>
+        <div id="game-container"></div>
 
 
         
-        <div style="text-align: center; margin-top: 650px;">
+        <div style="text-align: center; margin-top: 50px;">
             <a href="menü.html">
                 <button class="back-button">Vissza</button>
             </a>
         </div>
     </div>
-    
+
+
     <div class="image-container">
         <img src="img/gandalf.png" alt="Gandalf Image">
     </div>
