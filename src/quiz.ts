@@ -94,7 +94,7 @@ function displayQuestion() {
     }
     
     const question = questions[currentQuestionIndex];
-    const allAnswers = shuffleArray([question.correct_answer, ...question.incorrect_answers]);
+    const allAnswers = shuffleArrayQuiz([question.correct_answer, ...question.incorrect_answers]);
     
     const quizContainer = document.getElementById('quiz-container');
     if (!quizContainer) return;
