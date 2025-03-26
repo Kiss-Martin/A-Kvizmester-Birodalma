@@ -84,11 +84,11 @@ h1 {
 
 @keyframes secretglow {
   0% {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px silver, 0 0 30px white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px #87c3d7, 0 0 30px #87c3d7;
   }
 
   100% {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px silver, 0 0 50px white;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px #87c3d7, 0 0 50px #87c3d7;
   }
 }
 
@@ -403,7 +403,7 @@ h5 {
 }
 
 .secrettitle {
-  color: tan;
+  color: #3c6684;
   -webkit-text-stroke: 1px white;
   animation: secretglow 1.5s ease-in-out infinite alternate;
 }
