@@ -49,7 +49,6 @@ async function valaszViszaly() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    // Initialize total scores from localStorage first
     viszalyData.player1TotalScore = Number(localStorage.getItem('player1TotalScore')) || 0;
     viszalyData.player2TotalScore = Number(localStorage.getItem('player2TotalScore')) || 0;
     
@@ -124,13 +123,9 @@ document.addEventListener("DOMContentLoaded", async () => {
                 feedback?.classList.add('d-none');
             } else {
                 setTimeout(() => {
-                    // Save the scores when the game ends
                     localStorage.setItem('player1Score', player1.score.toString());
                     localStorage.setItem('player2Score', player2.score.toString());
-                    
-                    // Update total scores
                     viszalyData.addScores(player1.score, player2.score);
-                    
                     gameContainer?.classList.add('d-none');
                     endMessage?.classList.remove('d-none');
                     let winnerName = player1.score > player2.score ? player1.name : player2.name;
@@ -177,16 +172,20 @@ function reactionTime(event: KeyboardEvent): void {
     const wimg = document.getElementById('w');
     const upimg = document.getElementById('arrowup');
     if (event.key.toLowerCase() === "w") {
+        event.preventDefault();
         isQuestionActive = true;
         currentPlayer = player1;
         isPlayer1Turn = true;
+        wimg?.classList.add('d-none');
+        upimg?.classList.add('d-none');
     } else if (event.key === "ArrowUp") {
+        event.preventDefault();
         isQuestionActive = true;
         currentPlayer = player2;
         isPlayer1Turn = false;
+        wimg?.classList.add('d-none');
+        upimg?.classList.add('d-none');
     }
-    wimg?.classList.add('d-none');
-    upimg?.classList.add('d-none');
     if (isQuestionActive) {
         questionContainer?.classList.remove('d-none');
         answerContainer?.classList.remove('d-none');

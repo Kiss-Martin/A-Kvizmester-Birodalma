@@ -52,7 +52,6 @@ function valaszViszaly() {
     });
 }
 document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, void 0, function* () {
-    // Initialize total scores from localStorage first
     viszalyData.player1TotalScore = Number(localStorage.getItem('player1TotalScore')) || 0;
     viszalyData.player2TotalScore = Number(localStorage.getItem('player2TotalScore')) || 0;
     const questionContainer = document.getElementById('question-text');
@@ -131,10 +130,8 @@ document.addEventListener("DOMContentLoaded", () => __awaiter(void 0, void 0, vo
             }
             else {
                 setTimeout(() => {
-                    // Save the scores when the game ends
                     localStorage.setItem('player1Score', player1.score.toString());
                     localStorage.setItem('player2Score', player2.score.toString());
-                    // Update total scores
                     viszalyData.addScores(player1.score, player2.score);
                     gameContainer === null || gameContainer === void 0 ? void 0 : gameContainer.classList.add('d-none');
                     endMessage === null || endMessage === void 0 ? void 0 : endMessage.classList.remove('d-none');
@@ -185,17 +182,21 @@ function reactionTime(event) {
     const wimg = document.getElementById('w');
     const upimg = document.getElementById('arrowup');
     if (event.key.toLowerCase() === "w") {
+        event.preventDefault();
         isQuestionActive = true;
         currentPlayer = player1;
         isPlayer1Turn = true;
+        wimg === null || wimg === void 0 ? void 0 : wimg.classList.add('d-none');
+        upimg === null || upimg === void 0 ? void 0 : upimg.classList.add('d-none');
     }
     else if (event.key === "ArrowUp") {
+        event.preventDefault();
         isQuestionActive = true;
         currentPlayer = player2;
         isPlayer1Turn = false;
+        wimg === null || wimg === void 0 ? void 0 : wimg.classList.add('d-none');
+        upimg === null || upimg === void 0 ? void 0 : upimg.classList.add('d-none');
     }
-    wimg === null || wimg === void 0 ? void 0 : wimg.classList.add('d-none');
-    upimg === null || upimg === void 0 ? void 0 : upimg.classList.add('d-none');
     if (isQuestionActive) {
         questionContainer === null || questionContainer === void 0 ? void 0 : questionContainer.classList.remove('d-none');
         answerContainer === null || answerContainer === void 0 ? void 0 : answerContainer.classList.remove('d-none');
