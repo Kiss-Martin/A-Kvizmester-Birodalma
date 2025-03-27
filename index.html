@@ -26,8 +26,8 @@
             <div class="card h-100 bg-black" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title text-pink">Üdvözlünk!</h5>
-                    <p class="card-text text-purple">A portálon belépve kiválaszthatod a 3 játék egyikét!</p>
-                    <p class="card-text text-purple">A Játékokkártyák a következő sorrendben vannak: Quiz-Time, Akasztófa, Válasz-Viszály</p>
+                    <p class="card-text text-purple">A portálon belépve kiválaszthatod a 7 játék egyikét!</p>
+                    <p class="card-text text-purple overflow-auto">A Játékkártyák képére kattintva léphetsz be a játékokba!</p>
                     <p class="card-text text-purple">Jó szórakozást kívánunk!</p>
                     
                 </div>
@@ -123,31 +123,31 @@
             const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
             const popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
                 return new bootstrap.Popover(popoverTriggerEl, {
-                    trigger: 'hover focus', // Show on hover or focus
-                    html: true // Allow HTML in the popover content
+                    trigger: 'hover focus', 
+                    html: true
                 });
             });
         });
-        
-        // function startInfiniteConfetti() {
-        //     setInterval(() => {
-        //         confetti({
-        //             particleCount: 30,
-        //             angle: 60,
-        //             spread: 100,
-        //             origin: { x: 0 }, 
-        //         });
-        //         confetti({
-        //             particleCount: 30,
-        //             angle: 120,
-        //             spread: 100,
-        //             origin: { x: 1 }, 
-        //         });
-        //     }, 200); 
-        // }
-        // window.onload = () => {
-        //     startInfiniteConfetti();
-        // };
+    
+         function startInfiniteConfetti() {
+             setInterval(() => {
+                 confetti({
+                     particleCount: 30,
+                     angle: 60,
+                     spread: 100,
+                     origin: { x: 0 }, 
+                 });
+                 confetti({
+                     particleCount: 30,
+                     angle: 120,
+                     spread: 100,
+                     origin: { x: 1 }, 
+                 });
+             }, 200); 
+         }
+         window.onload = () => {
+             startInfiniteConfetti();
+         };
     </script>
     <script src="public/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>  
